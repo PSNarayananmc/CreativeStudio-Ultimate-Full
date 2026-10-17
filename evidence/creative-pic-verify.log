@@ -1,0 +1,49 @@
+=== 1. layout of extracted image ===
+extract_exit=0
+-- root entries:
+AppRun
+creative-pic.desktop
+creative-pic.png
+usr
+-- old branding leftovers:
+ls: cannot access 'squashfs-root/creative-studio.desktop': No such file or directory
+ls: cannot access 'squashfs-root/creative-studio.png': No such file or directory
+-- desktop entry name:
+Name=Creative Pic
+-- kritarc theme line:
+Theme=Creative Pic Dark
+-- theme file Name=:
+Name=Creative Pic Dark
+-- workspace name:
+name="Creative Pic"
+-- docs dir:
+COPYING.GPL-3
+README-CREATIVE-PIC.txt
+SOURCE-CODE-OFFER.txt
+=== 2. GLIBC ceiling on new binary ===
+krita binary max GLIBC symbol: GLIBC_2.14
+unresolved deps for krita binary: 0
+=== 3. QEMU Denverton (SSE4.2-only, no AVX) — --version ===
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.01H:ECX.x2apic [bit 21]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.01H:ECX.tsc-deadline [bit 24]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EBX.rdseed [bit 18]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EBX.sha-ni [bit 29]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EDX.spec-ctrl [bit 26]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EDX.arch-capabilities [bit 29]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EDX.ssbd [bit 31]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.80000001H:ECX.3dnowprefetch [bit 8]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.0DH:EAX.xsavec [bit 1]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: MSR(10AH).rdctl-no [bit 0]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: MSR(10AH).skip-l1dfl-vmentry [bit 3]
+QEMU_VERSION_EXIT=0
+=== 4. GUI launch under Xvfb + window title check ===
+window_id_creative_pic=
+title_screenshot=fallback-taken (window name not matched)
+-- all window names:
+
+Qt Selection Owner for krita
+Qt Client Leader Window — Krita
+Krita
+=== 5. workspace flag test (CreativePic workspace loads) ===
+ws_screenshot=taken
+=== VERIFY_DONE ===

@@ -6,6 +6,9 @@
 
 Base engine: Krita `v5.2.16` (commit `7d9aefc93f15998eca13458bb9a065e2cca77c02`) · Qt 5.12.8 · KF5 5.68 · built with gcc 9.4 inside a real Ubuntu 20.04 (focal) build environment, Release/-O2, generic x86-64/SSE2 baseline (no `-march=native`).
 
+![Creative Pic splash — live capture from the v0.2 build](assets/creative-pic-splash.png)
+*The v0.2 Creative Pic splash, captured live from the rebuilt AppImage (evidence: `evidence/creative-pic-verify.log`).*
+
 ![Creative Pic — main workspace](assets/hero-main-workspace.png)
 *The studio workspace: dark "Creative Pic Dark" theme, left toolbox, center canvas (real brush stroke), right dockers — Advanced Color Selector, Tool Options, Layers, Brush Presets.*
 
