@@ -65,6 +65,12 @@ What this demonstrates beyond the synthetic acceptance tests:
 - **Desktop integration**: launches and behaves as a normal windowed application on a stock Ubuntu session, with no bundled-library conflicts on the host
 - **Portability**: the same binary moved from the build sandbox to user hardware with zero installation steps
 
+## Windows build (in progress)
+
+A real Windows pipeline is running on GitHub Actions — it uses **KDE's official Krita Windows CI machinery** (prebuilt dependency packages from KDE's public artifact registry + `run-ci-build.py`) on `windows-latest` runners, with the same Creative Studio branding overlay applied to the Krita 5.2.16 source before compilation. Output: portable `krita-x64-5.2.16.zip` (contains `krita.exe`) + NSIS `setup.exe` (unsigned — SmartScreen note in [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md)).
+
+![windows-build status](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/actions/workflows/windows-build.yml/badge.svg) — artifacts are attached to the [v0.1 release](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.1) as soon as a run produces them. Full details and caveats: [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md).
+
 ## What this is
 
 Creative Studio Ultimate (Full) is a re-branded, tuned distribution of the complete Krita 5.2.16 feature set:

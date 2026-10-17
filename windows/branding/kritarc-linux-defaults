@@ -1,0 +1,17 @@
+# Creative Studio Ultimate — low-spec profile (Intel J1800-class, 4 GB RAM)
+# Tuned defaults: memory ceilings, thread cap, swap discipline, undo bound.
+# Users can override any of these in ~/.config/kritarc (root group, no section header).
+memoryHardLimitPercent=35
+memorySoftLimitPercent=2
+maxNumberOfThreads=2
+maxSwapSize=2048
+undoStackLimit=100
+[theme]
+Theme=Creative Studio Dark
+
+[StartPage]
+showNews=false
+askForAutosaveRecovery=false
+
+[performance]
+disableAVXOptimizations=false
