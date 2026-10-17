@@ -13,7 +13,7 @@
   <rect width="1200" height="220" fill="url(#bg)"/>
   <rect x="60" y="118" width="1080" height="6" fill="url(#acc)" rx="3"/>
   <text x="600" y="86" font-family="DejaVu Sans" font-size="58" font-weight="bold"
-        fill="#ffffff" text-anchor="middle">CREATIVE STUDIO ULTIMATE</text>
+        fill="#ffffff" text-anchor="middle">CREATIVE PIC</text>
   <text x="600" y="170" font-family="DejaVu Sans" font-size="24"
-        fill="#9aa2b0" text-anchor="middle">Full edition — powered by the Krita engine</text>
+        fill="#9aa2b0" text-anchor="middle">Professional image editing — powered by the Krita engine</text>
 </svg>

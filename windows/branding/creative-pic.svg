@@ -9,6 +9,6 @@
   <rect x="12" y="12" width="232" height="232" rx="48" fill="url(#tile)"/>
   <rect x="60" y="36" width="136" height="8" rx="4" fill="#4fc3f7"/>
   <text x="128" y="152" font-family="DejaVu Sans" font-size="96" font-weight="900"
-        fill="#ffffff" text-anchor="middle">CS</text>
+        fill="#ffffff" text-anchor="middle">CP</text>
   <rect x="76" y="200" width="104" height="10" rx="5" fill="#7c4dff"/>
 </svg>

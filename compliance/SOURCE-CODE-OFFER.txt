@@ -1,4 +1,5 @@
-CREATIVE STUDIO ULTIMATE (Full edition) — source code offer
+CREATIVE PIC — source code offer
+(formerly distributed as "Creative Studio Ultimate (Full edition)", v0.1)
 ============================================================
 
 This application is built on Krita, copyright the Krita Foundation and
@@ -18,9 +19,10 @@ Modifications applied for this distribution (also available on request):
      krita_qt512_compat.h + source patches: Qt::SkipEmptyParts,
      QImage::convertTo, QWidget::screen, QPainterPath::clear)
   2. Branding assets: splash screen, start-page banner, desktop entry,
-     application icon, color scheme "Creative Studio Dark"
+     application icon, color scheme "Creative Pic Dark", product display
+     name (KisApplication.cpp applicationDisplayName -> "Creative Pic")
   3. Default configuration: tuned low-spec profile (root-group keys of
-     kritarc) and Creative Studio workspace preset
+     kritarc) and the "Creative Pic" workspace preset
 
 Per GPL section 3, the complete corresponding source for this binary
 distribution is available, at no charge, from the upstream repository

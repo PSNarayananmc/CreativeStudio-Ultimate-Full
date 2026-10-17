@@ -2,7 +2,7 @@
 
 ## What this is
 
-A **real Windows build pipeline** for Creative Studio Ultimate, running on
+A **real Windows build pipeline** for Creative Pic, running on
 GitHub-hosted Windows machines (`windows-latest`) via
 [`.github/workflows/windows-build.yml`](../.github/workflows/windows-build.yml).
 It does **not** cross-compile and does **not** fake anything: the Linux AppImage
@@ -29,11 +29,17 @@ platform requires.
    — the exact same packages the official Krita releases are built against —
    then configures and compiles Krita with CMake/Ninja under MSVC.
 5. `build-windows-package.py` produces:
-   - `krita-x64-5.2.16.zip` — **portable** package containing `krita.exe`
-   - `krita-x64-5.2.16-setup.exe` — **NSIS installer** (needs `nsis` via
-     choco; built best-effort)
+   - `krita-x64-5.2.16.zip` — **portable** package containing `krita.exe`,
+     renamed on upload to `CreativePic-x64-5.2.16-portable.zip`
+   - `krita-x64-5.2.16-setup.exe` — **NSIS installer**, renamed on upload to
+     `CreativePic-x64-5.2.16-setup.exe` (needs `nsis` via choco; built
+     best-effort)
 
-Both are attached to the `v0.1` release and kept as workflow artifacts.
+Both are attached to the `v0.2` release and kept as workflow artifacts.
+The installer wizard title, Add/Remove-Programs entry and Start-Menu
+folder say **Creative Pic** (patched into `installer_krita.nsi` by
+`apply-branding.ps1`); the main window title reports **Creative Pic**
+(patched `KisApplication.cpp` display name).
 
 ## Current status & known caveats (kept honest)
 
@@ -44,9 +50,9 @@ Both are attached to the `v0.1` release and kept as workflow artifacts.
 - **Unsigned binaries**: there is no code-signing certificate, so
   Windows SmartScreen shows a warning on first launch of the setup exe
   (choose "More info → Run anyway"). The portable zip has no such prompt.
-- The executable keeps its upstream name `krita.exe` inside the branded
-  package (full product rename of the binary is deliberately out of scope for
-  v0.1 — see KNOWN-LIMITATIONS in the reports).
+- The executable keeps its upstream file name `krita.exe` inside the branded
+  package (binary-name stability keeps config dirs, plugins and file
+  associations compatible; the visible product name is Creative Pic).
 - **Low-spec config keys are not pre-baked** on Windows (Windows has no
   `/etc/xdg` equivalent for KConfig). If you run on 4 GB RAM, add these to
   `%APPDATA%\krita\kritarc` (root group, top of file) — reference:
@@ -58,8 +64,8 @@ Both are attached to the `v0.1` release and kept as workflow artifacts.
   maxSwapSize=2048
   undoStackLimit=100
   ```
-- Theme/workspace on Windows: select **Settings → Themes → Creative Studio
-  Dark** and **Window → Workspace → CreativeStudio** (both ship inside the
+- Theme/workspace on Windows: select **Settings → Themes → Creative Pic
+  Dark** and **Window → Workspace → Creative Pic** (both ship inside the
   build; auto-default comes with the Linux /etc/xdg mechanism only).
 
 ## Running it

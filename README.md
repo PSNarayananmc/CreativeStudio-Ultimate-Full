@@ -1,17 +1,24 @@
-# Creative Studio Ultimate (Full)
+# Creative Pic
+
+> **Renamed in v0.2** — this project was formerly distributed as *Creative Studio Ultimate (Full)* (v0.1). Same engine, same tuning, new name.
 
 **A professional image editing studio built from the KDE Krita 5.2.16 source tree, packaged as a fully self-contained AppImage for Ubuntu 20.04 LTS (x86_64) and compatible distributions.**
 
 Base engine: Krita `v5.2.16` (commit `7d9aefc93f15998eca13458bb9a065e2cca77c02`) · Qt 5.12.8 · KF5 5.68 · built with gcc 9.4 inside a real Ubuntu 20.04 (focal) build environment, Release/-O2, generic x86-64/SSE2 baseline (no `-march=native`).
 
-![Creative Studio Ultimate — main workspace](assets/hero-main-workspace.png)
-*The studio workspace: dark "Creative Studio Dark" theme, left toolbox, center canvas (real brush stroke), right dockers — Advanced Color Selector, Tool Options, Layers, Brush Presets.*
+![Creative Pic — main workspace](assets/hero-main-workspace.png)
+*The studio workspace: dark "Creative Pic Dark" theme, left toolbox, center canvas (real brush stroke), right dockers — Advanced Color Selector, Tool Options, Layers, Brush Presets.*
 
 ---
 
 ## Download
 
-Grab the AppImage from the [**v0.1 release page**](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.1):
+Grab the AppImage from the [**v0.2 release page**](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.2):
+
+| File | What it is |
+|---|---|
+| `CreativePic-x86_64.AppImage` | Rebranded v0.2 build (Krita 5.2.16 engine, Creative Pic identity) |
+| `krita-5.2.16.tar.xz` + `.sig` | Complete corresponding source per GPL §3 (official KDE tarball + GPG signature) |
 
 ```
 sha256sum CreativeStudio-Ultimate-Full-x86_64.AppImage
@@ -37,7 +44,7 @@ All screenshots below are genuine captures from the released AppImage, taken dur
 | Themed start page | New document in the studio workspace |
 |---|---|
 | ![](assets/startpage-creative-studio-dark.png) | ![](assets/new-document-studio-workspace.png) |
-| *Dark start page with Creative Studio branding* | *Layers docker (Paint Layer 1 + Background) and Brush Presets* |
+| *Dark start page with Creative Pic branding* | *Layers docker (Paint Layer 1 + Background) and Brush Presets* |
 
 | Export dialog | Low-spec CPU proof |
 |---|---|
@@ -51,7 +58,7 @@ All screenshots below are genuine captures from the released AppImage, taken dur
 
 The v0.1 AppImage was installed (no installation — just download, `chmod +x`, run) on a real Ubuntu desktop and tested against a **real-world Photoshop workflow**: a commercial-style 59.4 MiB YouTube-thumbnail template (`9c54d1fb-…psd`, 1280×720, 300 ppi) authored in Adobe Photoshop with layer groups, shape layers, and layer effects (Drop Shadow, Outer Glow, Inner Glow).
 
-| Adobe Photoshop (original authoring) | Creative Studio Ultimate v0.1 (same .psd opened) |
+| Adobe Photoshop (original authoring) | Creative Pic v0.2 (same .psd opened; screenshot from the v0.1-era build) |
 |---|---|
 | ![](assets/photoshop-reference-same-psd.png) | ![](assets/real-hardware-psd-youtube-template.png) |
 | *The template as authored — groups: Adjustment, Text, Design, Image, Icon with layer effects* | *The exact same file opened in the AppImage on the user's machine — shape layers, text and layer effects composited by the bundled engine* |
@@ -67,15 +74,15 @@ What this demonstrates beyond the synthetic acceptance tests:
 
 ## Windows build (in progress)
 
-A real Windows pipeline is running on GitHub Actions — it uses **KDE's official Krita Windows CI machinery** (prebuilt dependency packages from KDE's public artifact registry + `run-ci-build.py`) on `windows-latest` runners, with the same Creative Studio branding overlay applied to the Krita 5.2.16 source before compilation. Output: portable `krita-x64-5.2.16.zip` (contains `krita.exe`) + NSIS `setup.exe` (unsigned — SmartScreen note in [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md)).
+A real Windows pipeline is running on GitHub Actions — it uses **KDE's official Krita Windows CI machinery** (prebuilt dependency packages from KDE's public artifact registry + `run-ci-build.py`) on `windows-latest` runners, with the same Creative Pic branding overlay applied to the Krita 5.2.16 source before compilation. Output: portable `CreativePic-x64-5.2.16-portable.zip` (contains `krita.exe`) + NSIS `CreativePic-x64-5.2.16-setup.exe` (unsigned — SmartScreen note in [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md)).
 
-![windows-build status](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/actions/workflows/windows-build.yml/badge.svg) — artifacts are attached to the [v0.1 release](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.1) as soon as a run produces them. Full details and caveats: [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md).
+![windows-build status](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/actions/workflows/windows-build.yml/badge.svg) — artifacts are attached to the [v0.2 release](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.2) as soon as a run produces them. Full details and caveats: [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md).
 
 ## What this is
 
-Creative Studio Ultimate (Full) is a re-branded, tuned distribution of the complete Krita 5.2.16 feature set:
+Creative Pic is a re-branded, tuned distribution of the complete Krita 5.2.16 feature set:
 
-- **Studio UI**: dark "Creative Studio Dark" theme (default), Photoshop-style studio workspace preset (left toolbox / center canvas / right dockers — Tool Options, Advanced Color Selector, Layers, Brush Presets) — `--workspace CreativeStudio` or *Window → Workspace*
+- **Studio UI**: dark "Creative Pic Dark" theme (default), Photoshop-style studio workspace preset (left toolbox / center canvas / right dockers — Tool Options, Advanced Color Selector, Layers, Brush Presets) — `--workspace CreativePic` or *Window → Workspace*
 - **Photoshop-compatible keyboard shortcut profile** included, selectable in *Settings → Keyboard Shortcuts*
 - **Full Krita feature set retained**: layers & groups, transparency/filter masks, selections, 100+ brush presets, transform tools, filters, color management (LCMS/OCIO, RGBA/GRAYA/CMYKA), PSD import/export, animation, PyKrita scripting
 
