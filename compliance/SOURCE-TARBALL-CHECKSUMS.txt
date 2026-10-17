@@ -1,0 +1,10 @@
+# Source tarball checksums — release v0.1
+# Attached to https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.1
+
+# Upstream base source (complete corresponding source for the GPL-3 binary)
+# Origin: https://download.kde.org/stable/krita/5.2.16/krita-5.2.16.tar.xz
+# 12,524 files, root dir krita-5.2.16/; GPG signature attached as krita-5.2.16.tar.xz.sig
+3bd3bf786be78185a9d93cca14a9d5f2dcdc227e895d8f5fc836a04b2f2ed875  krita-5.2.16.tar.xz
+
+# Released binary artifact (see ../appimage/sha256.txt)
+4121b810e4faf4fdd0f936bb3c5ea3ac868f03b31e00f417ea7832783f6ce535  CreativeStudio-Ultimate-Full-x86_64.AppImage
