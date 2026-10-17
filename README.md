@@ -47,6 +47,24 @@ All screenshots below are genuine captures from the released AppImage, taken dur
 ![](assets/appimage-export-pixel-proof.png)
 *Pixel-verified export: brush stroke painted in the AppImage, exported to PNG, and diff-checked at pixel level.*
 
+## Proven on real hardware (user-verified)
+
+The v0.1 AppImage was installed (no installation — just download, `chmod +x`, run) on a real Ubuntu desktop and tested against a **real-world Photoshop workflow**: a commercial-style 59.4 MiB YouTube-thumbnail template (`9c54d1fb-…psd`, 1280×720, 300 ppi) authored in Adobe Photoshop with layer groups, shape layers, and layer effects (Drop Shadow, Outer Glow, Inner Glow).
+
+| Adobe Photoshop (original authoring) | Creative Studio Ultimate v0.1 (same .psd opened) |
+|---|---|
+| ![](assets/photoshop-reference-same-psd.png) | ![](assets/real-hardware-psd-youtube-template.png) |
+| *The template as authored — groups: Adjustment, Text, Design, Image, Icon with layer effects* | *The exact same file opened in the AppImage on the user's machine — shape layers, text and layer effects composited by the bundled engine* |
+
+![](assets/real-hardware-ubuntu-desktop.png)
+*The AppImage running as an ordinary desktop application on real Ubuntu hardware (native window integration, stock brush presets and dockers all loaded) — a fresh A4 300 dpi document before the PSD import.*
+
+What this demonstrates beyond the synthetic acceptance tests:
+
+- **Real-world PSD interoperability**: a large, effect-heavy production template opens and composites correctly — not just the API-level round-trips recorded in [`reports/TEST-REPORT.md`](reports/TEST-REPORT.md)
+- **Desktop integration**: launches and behaves as a normal windowed application on a stock Ubuntu session, with no bundled-library conflicts on the host
+- **Portability**: the same binary moved from the build sandbox to user hardware with zero installation steps
+
 ## What this is
 
 Creative Studio Ultimate (Full) is a re-branded, tuned distribution of the complete Krita 5.2.16 feature set:
