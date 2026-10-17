@@ -1,0 +1,4 @@
+DEPLOYQT_EXIT=127
+Cannot open /proc/self/exe: No such file or directory
+Failed to get fs offset for /proc/self/exe
+DEPLOYQT_EXIT=127

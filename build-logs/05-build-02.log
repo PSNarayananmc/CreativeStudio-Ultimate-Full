@@ -1,0 +1,6 @@
+/src/build-krita/libs/widgetutils/kritawidgetutils_autogen/EWIEGA46WW/../../../../../krita/libs/widgetutils/KoUpdater.h:124:45: error: expected ‘;’ at end of member declaration
+  124 |     Q_DISABLE_COPY_MOVE(KoDummyUpdaterHolder)
+      |                                             ^
+      |                                              ;
+[16/3119 3.069s] Building CXX object libs/color/colord/CMakeFiles/kritacolord.dir/CdSensorInterface.cpp.o
+ninja: build stopped: subcommand failed.

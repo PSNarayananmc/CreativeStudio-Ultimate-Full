@@ -1,0 +1,33 @@
+CREATIVE STUDIO ULTIMATE (Full edition) — source code offer
+============================================================
+
+This application is built on Krita, copyright the Krita Foundation and
+contributors, licensed under the GNU General Public License version 3
+(or, at your option, any later version).
+
+Base source code:
+  Project : Krita
+  Version : 5.2.16
+  Commit  : 7d9aefc93f15998eca13458bb9a065e2cca77c02 (tag v5.2.16)
+  Upstream: https://invent.kde.org/graphics/krita
+            https://github.com/KDE/krita
+            https://download.kde.org/stable/krita/5.2.16/
+
+Modifications applied for this distribution (also available on request):
+  1. Qt 5.12.8 compatibility patches (forced-include header
+     krita_qt512_compat.h + source patches: Qt::SkipEmptyParts,
+     QImage::convertTo, QWidget::screen, QPainterPath::clear)
+  2. Branding assets: splash screen, start-page banner, desktop entry,
+     application icon, color scheme "Creative Studio Dark"
+  3. Default configuration: tuned low-spec profile (root-group keys of
+     kritarc) and Creative Studio workspace preset
+
+Per GPL section 3, the complete corresponding source for this binary
+distribution is available, at no charge, from the upstream repository
+above (identical tag) plus the modification list above, for a period of
+at least three years from the last distribution of this package.
+
+Bundled third-party libraries retain their own licenses (LGPL, BSD, MIT,
+Apache-2.0 etc.); per-package copyright files are preserved under
+/usr/share/doc/. See also LicenseList.csv shipped with the pykrita
+plugins and the About dialog of the application.

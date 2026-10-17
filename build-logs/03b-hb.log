@@ -1,0 +1,125 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+WARNHarfBuzz has a Meson port and tries to migrate all the other build systems to it, please consider using it as we might remove our cmake port soon.
+CMake Warning (dev) at CMakeLists.txt:78 (include):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /usr/bin/python3.8 (found version "3.8.10")
+-- Looking for atexit
+-- Looking for atexit - found
+-- Looking for mprotect
+-- Looking for mprotect - found
+-- Looking for sysconf
+-- Looking for sysconf - found
+-- Looking for getpagesize
+-- Looking for getpagesize - found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for isatty
+-- Looking for isatty - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for stdbool.h
+-- Looking for stdbool.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.13.3")
+-- Looking for FT_Get_Var_Blend_Coordinates
+-- Looking for FT_Get_Var_Blend_Coordinates - found
+-- Looking for FT_Set_Var_Blend_Coordinates
+-- Looking for FT_Set_Var_Blend_Coordinates - found
+-- Looking for FT_Done_MM_Var
+-- Looking for FT_Done_MM_Var - found
+-- Performing Test CXX_SUPPORTS_FLAG_BSYMB_FUNCS
+-- Performing Test CXX_SUPPORTS_FLAG_BSYMB_FUNCS - Success
+-- Performing Test COMPILER_SUPPORTS_CXX11
+-- Performing Test COMPILER_SUPPORTS_CXX11 - Success
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    HB_BUILD_TESTS
+
+
+-- Build files have been written to: /src/build/harfbuzz
+ninja: Entering directory `/src/build/harfbuzz'
+[1/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-number.cc.o
+[2/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-ot-cff1-table.cc.o
+[3/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-ot-cff2-table.cc.o
+[4/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-static.cc.o
+[5/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-cff-common.cc.o
+[6/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-cff1.cc.o
+[7/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-cff2.cc.o
+[8/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-input.cc.o
+[9/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-instancer-solver.cc.o
+[10/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-plan.cc.o
+[11/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-repacker.cc.o
+[12/16] Building CXX object CMakeFiles/harfbuzz.dir/src/harfbuzz.cc.o
+[13/16] Linking C shared library libharfbuzz.so
+[14/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/graph/gsubgpos-context.cc.o
+[15/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset.cc.o
+[16/16] Linking C shared library libharfbuzz-subset.so
+ninja: Entering directory `/src/build/harfbuzz'
+[0/1] Install the project...
+-- Install configuration: "Release"
+-- Up-to-date: /usr/include/harfbuzz/hb-aat-layout.h
+-- Up-to-date: /usr/include/harfbuzz/hb-aat.h
+-- Up-to-date: /usr/include/harfbuzz/hb-blob.h
+-- Up-to-date: /usr/include/harfbuzz/hb-buffer.h
+-- Up-to-date: /usr/include/harfbuzz/hb-common.h
+-- Up-to-date: /usr/include/harfbuzz/hb-cplusplus.hh
+-- Up-to-date: /usr/include/harfbuzz/hb-deprecated.h
+-- Up-to-date: /usr/include/harfbuzz/hb-draw.h
+-- Up-to-date: /usr/include/harfbuzz/hb-face.h
+-- Up-to-date: /usr/include/harfbuzz/hb-font.h
+-- Up-to-date: /usr/include/harfbuzz/hb-map.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-color.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-deprecated.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-font.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-layout.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-math.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-meta.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-metrics.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-name.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-shape.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot-var.h
+-- Up-to-date: /usr/include/harfbuzz/hb-ot.h
+-- Up-to-date: /usr/include/harfbuzz/hb-paint.h
+-- Up-to-date: /usr/include/harfbuzz/hb-set.h
+-- Up-to-date: /usr/include/harfbuzz/hb-shape-plan.h
+-- Up-to-date: /usr/include/harfbuzz/hb-shape.h
+-- Up-to-date: /usr/include/harfbuzz/hb-style.h
+-- Up-to-date: /usr/include/harfbuzz/hb-unicode.h
+-- Up-to-date: /usr/include/harfbuzz/hb-version.h
+-- Up-to-date: /usr/include/harfbuzz/hb.h
+-- Installing: /usr/include/harfbuzz/hb-ft.h
+-- Up-to-date: /usr/include/harfbuzz/hb-subset.h
+-- Installing: /usr/lib/x86_64-linux-gnu/libharfbuzz.so
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz.pc
+-- Old export file "/usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzzConfig.cmake" will be replaced.  Removing files [/usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzzConfig-release.cmake].
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzzConfig.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzzConfig-release.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/libharfbuzz-subset.so
+-- Set non-toolchain portion of runtime path of "/usr/lib/x86_64-linux-gnu/libharfbuzz-subset.so" to ""
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz-subset.pc
+HB_REBUILD_DONE

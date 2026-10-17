@@ -1,0 +1,6 @@
+/src/krita/krita_qt512_compat.h:13:10: fatal error: QtGlobal: No such file or directory
+   13 | #include <QtGlobal>
+      |          ^~~~~~~~~~
+compilation terminated.
+[5/3234 0.612s] Building CXX object libs/version/CMakeFiles/kritaversion.dir/KritaVersionWrapper.cpp.o
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,8 @@
+[1792164791] WID=2097171
+[1792164803] strokes painted
+-rw-rw-r-- 1 root root 181629 Oct 16 15:33 /root/gui-saved.kra
+[1792164820] save-as done
+ls: cannot access '/root/gui-exported.png': No such file or directory
+[1792164845] export attempted
+[1792164865] reopen attempted
+[1792164873] done

@@ -1,0 +1,8 @@
+=== version under Denverton ===
+Failed to initialize instances shared memory:  "QSharedMemory::attach: unable to lock"
+krita 5.2.16
+QEMU_VERSION_EXIT=0
+=== GUI under Denverton ===
+WID=2097162
+GUI_RENDERED_UNDER_QEMU_APPIMAGE
+AIQ2_DONE

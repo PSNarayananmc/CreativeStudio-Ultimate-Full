@@ -1,0 +1,15 @@
+=== AUDIT 1: GLIBC symbol ceiling (max GLIBC_ version required) ===
+MAX_GLIBC_FOUND: GLIBC_2.30
+=== AUDIT 2: dependency check (ldd missing) ===
+MISSING_DEPS: /tmp/squashfs-root/usr/bin/kritarunner: 	libkritaui.so.19 => not found
+	libkritawidgetutils.so.19 => not found
+	libkritaresources.so.19 => not found
+	libkritaglobal.so.19 => not found
+	libKF5I18n.so.5 => not found
+	libKF5ConfigCore.so.5 => not found
+MISSING_DEP_BINARIES=1 (of 42 sampled)
+=== AUDIT 3: QEMU Denverton (J1800-class SSE4.2, no AVX) ===
+QEMU_VERSION_EXIT=134
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.01H:ECX.x2apic [bit 21]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.01H:ECX.tsc-deadline [bit 24]
+AUDITS_DONE

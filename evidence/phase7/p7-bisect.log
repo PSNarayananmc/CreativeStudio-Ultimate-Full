@@ -1,0 +1,13 @@
+PROBE_B0=0
+stripped_bin=3
+PROBE_B1=0
+stripped_libkrita=1
+PROBE_B2=0
+stripped_kritapluginlibs=0
+PROBE_B3=0
+stripped_qt=1
+PROBE_B4=0
+stripped_kf5others=1
+PROBE_B5=0
+stripped_toplevel_rest=1
+PROBE_B6=0

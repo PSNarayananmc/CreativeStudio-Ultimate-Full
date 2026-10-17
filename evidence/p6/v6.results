@@ -1,0 +1,3 @@
+RESULT: t07b_gray_doc = PASS 
+RESULT: t07c_convert_graya_to_rgba = PASS RGBA
+RESULT: t07d_cmyka_doc = PASS profiles=1

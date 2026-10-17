@@ -1,0 +1,13 @@
+EXTRACT_EXIT=0
+BIN=/tools/squashfs-root/usr/bin/linuxdeployqt
+DEPLOYQT_EXIT=1
+EXTRACT_EXIT=0
+AppRun
+linuxdeployqt.desktop
+linuxdeployqt.svg
+usr
+BIN=/tools/squashfs-root/usr/bin/linuxdeployqt
+linuxdeployqt  (commit ), build 107 built on 2025-10-21 17:57:43 UTC
+ERROR: Unknown argument: "-unsupported-allow-newer-glibc" 
+
+DEPLOYQT_EXIT=1

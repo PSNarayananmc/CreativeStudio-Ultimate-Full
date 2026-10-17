@@ -1,0 +1,7 @@
+/tmp/r-12-reverify.sh: line 15: 30525 Illegal instruction     timeout 300 $AI --appimage-extract >> $LOG 2>&1
+EXTRACT_EXIT=132
+[19:17:42] version probe
+VERSION_EXIT=127
+[19:17:43] GUI launch
+WID=
+RESULT: gui_launch = FAIL

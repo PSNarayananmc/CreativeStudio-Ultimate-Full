@@ -1,0 +1,36 @@
+--- GROUP g1 (exit pending) ---
+/tmp/r-08b-phase6-api2.sh: line 23:  4380 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $name.py > /root/p6/$name.log 2>&1
+GROUP_EXIT[g1]=139
+RESULT: t01_create_document = PASS 
+RESULT: t02_multilayer_paint = FAIL rootchildren=4
+--- GROUP g2 (exit pending) ---
+/tmp/r-08b-phase6-api2.sh: line 23:  4418 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $name.py > /root/p6/$name.log 2>&1
+GROUP_EXIT[g2]=139
+INTROSPECT filters=50
+INTROSPECT Filter methods: apply, blockSignals, childEvent, children, configuration, connectNotify, customEvent, deleteLater, destroyed, disconnect, disconnectNotify, dumpObjectInfo, dumpObjectTree, dynamicPropertyNames, event, eventFilter, findChild, findChildren, inherits, installEventFilter, isSignalConnected, isWidgetType, isWindowType, killTimer, metaObject, moveToThread, name, objectName, objectNameChanged, parent, property, pyqtConfigure, receivers, removeEventFilter, sender, senderSignalIndex, setConfiguration, setName, setObjectName, setParent, setProperty, signalsBlocked, startFilter, startTimer, staticMetaObject, thread, timerEvent, tr
+RESULT: t05_filters = FAIL apply exc AttributeError("'Document' object has no attribute 'applyFilter'") / AttributeError("'Document' object has no attribute 'applyFilter'")
+INTROSPECT Node methods: addChildNode, alphaLocked, animated, blendingMode, blockSignals, bounds, channels, childEvent, childNodes, children, clone, collapsed, colorDepth, colorLabel, colorModel, colorProfile, connectNotify, cropNode, customEvent, deleteLater, destroyed, disconnect, disconnectNotify, dumpObjectInfo, dumpObjectTree, duplicate, dynamicPropertyNames, enableAnimation, event, eventFilter, findChild, findChildNodes, findChildren, hasExtents, hasKeyframeAtTime, icon, index, inheritAlpha, inherits, installEventFilter, isSignalConnected, isWidgetType, isWindowType, killTimer, layerStyleToAsl, locked, mergeDown, metaObject, move, moveToThread, name, objectName, objectNameChanged, opacity, parent, parentNode, pixelData, pixelDataAtTime, position, projectionPixelData, property, pyqtConfigure, receivers, remove, removeChildNode, removeEventFilter, rotateNode, save, scaleNode, sender, senderSignalIndex, setAlphaLocked, setBlendingMode, setChildNodes, setCollapsed, setColorLabel, setColorProfile, setColorSpace, setInheritAlpha, setLayerStyleFromAsl, setLocked, setName, setObjectName, setOpacity, setParent, setPixelData, setProperty, setVisible, shearNode, signalsBlocked, startTimer, staticMetaObject, thread, thumbnail, timerEvent, tr, type, uniqueId, visible
+scaleNode exc: TypeError("scaleNode(self, Union[QPointF, QPoint], int, int, str): argument 1 has unexpected type 'float'")
+RESULT: t06_transform = PASS done=['rotate']
+--- GROUP g3 (exit pending) ---
+/tmp/r-08b-phase6-api2.sh: line 23:  4460 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $name.py > /root/p6/$name.log 2>&1
+GROUP_EXIT[g3]=139
+INTROSPECT profile=sRGB-elle-V2-srgbtrc.icc
+RESULT: t07a_profile_present = PASS sRGB-elle-V2-srgbtrc.icc
+--- GROUP g4 (exit pending) ---
+/tmp/r-08b-phase6-api2.sh: line 23:  4497 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $name.py > /root/p6/$name.log 2>&1
+GROUP_EXIT[g4]=139
+RESULT: t08a_psd_save = PASS size=30662
+RESULT: t08b_psd_reopen_layers = PASS layers=3
+--- GROUP g5 (exit pending) ---
+/tmp/r-08b-phase6-api2.sh: line 23:  4540 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $name.py > /root/p6/$name.log 2>&1
+GROUP_EXIT[g5]=139
+RESULT: t09a_kra_save = PASS size=34279
+RESULT: t09b_kra_reopen = PASS 
+RESULT: t09c_export_png_jpg_tiff = FAIL {'png': 'EXC AttributeError("\'Document\' object has no attribute \'exportDocument\'")', 'jpg': 'EXC AttributeError("\'Document\' object has no attribute \'exportDocument\'")', 'tiff': 'EXC AttributeError("\'Document\' object has no attribute \'exportDocument\'")'}
+--- GROUP g6 (exit pending) ---
+/tmp/r-08b-phase6-api2.sh: line 23:  4585 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $name.py > /root/p6/$name.log 2>&1
+GROUP_EXIT[g6]=139
+INTROSPECT anim methods: animationLength, framesPerSecond, importAnimation, setFramesPerSecond
+RESULT: t10_animation_doc = PASS anim-api=['animationLength', 'framesPerSecond', 'importAnimation', 'setFramesPerSecond']
+ALL_GROUPS_DONE

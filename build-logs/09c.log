@@ -1,0 +1,5 @@
+[splash-rebuild 23/25 1.567s] Building CXX object krita/CMakeFiles/krita.dir/qrc_splash.cpp.o
+[splash-rebuild 24/25 2.001s] Linking CXX executable krita/krita
+-- Up-to-date: /krita-stage/share/metainfo/org.kde.krita.appdata.xml
+-- Up-to-date: /krita-stage/share/krita/shortcuts
+SPLASH_REBUILD_DONE

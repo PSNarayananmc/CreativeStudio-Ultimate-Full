@@ -1,0 +1,258 @@
+DEPS_BUILD_DONE
+EXTRA_DEPS_DONE
+=== freetype 2.13.3 ===
+CMake Deprecation Warning at CMakeLists.txt:113 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- The C compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1")
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")
+-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37")
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /src/build/freetype
+ninja: Entering directory `/src/build/freetype'
+[1/44] Building C object CMakeFiles/freetype.dir/src/autofit/autofit.c.o
+[2/44] Building C object CMakeFiles/freetype.dir/src/base/ftbbox.c.o
+[3/44] Building C object CMakeFiles/freetype.dir/src/base/ftbdf.c.o
+[4/44] Building C object CMakeFiles/freetype.dir/src/base/ftbase.c.o
+[5/44] Building C object CMakeFiles/freetype.dir/src/base/ftbitmap.c.o
+[6/44] Building C object CMakeFiles/freetype.dir/src/base/ftcid.c.o
+[7/44] Building C object CMakeFiles/freetype.dir/src/base/ftfstype.c.o
+[8/44] Building C object CMakeFiles/freetype.dir/src/base/ftgasp.c.o
+[9/44] Building C object CMakeFiles/freetype.dir/src/base/ftgxval.c.o
+[10/44] Building C object CMakeFiles/freetype.dir/src/base/ftinit.c.o
+[11/44] Building C object CMakeFiles/freetype.dir/src/base/ftglyph.c.o
+[12/44] Building C object CMakeFiles/freetype.dir/src/base/ftotval.c.o
+[13/44] Building C object CMakeFiles/freetype.dir/src/base/ftpatent.c.o
+[14/44] Building C object CMakeFiles/freetype.dir/src/base/ftpfr.c.o
+[15/44] Building C object CMakeFiles/freetype.dir/src/base/ftmm.c.o
+[16/44] Building C object CMakeFiles/freetype.dir/src/base/ftsynth.c.o
+[17/44] Building C object CMakeFiles/freetype.dir/src/base/fttype1.c.o
+[18/44] Building C object CMakeFiles/freetype.dir/src/base/ftwinfnt.c.o
+[19/44] Building C object CMakeFiles/freetype.dir/src/base/ftstroke.c.o
+[20/44] Building C object CMakeFiles/freetype.dir/src/bzip2/ftbzip2.c.o
+[21/44] Building C object CMakeFiles/freetype.dir/src/bdf/bdf.c.o
+[22/44] Building C object CMakeFiles/freetype.dir/src/cache/ftcache.c.o
+[23/44] Building C object CMakeFiles/freetype.dir/src/cid/type1cid.c.o
+[24/44] Building C object CMakeFiles/freetype.dir/src/gzip/ftgzip.c.o
+[25/44] Building C object CMakeFiles/freetype.dir/src/lzw/ftlzw.c.o
+[26/44] Building C object CMakeFiles/freetype.dir/src/pcf/pcf.c.o
+[27/44] Building C object CMakeFiles/freetype.dir/src/cff/cff.c.o
+[28/44] Building C object CMakeFiles/freetype.dir/src/pfr/pfr.c.o
+[29/44] Building C object CMakeFiles/freetype.dir/src/pshinter/pshinter.c.o
+[30/44] Building C object CMakeFiles/freetype.dir/src/psnames/psnames.c.o
+[31/44] Building C object CMakeFiles/freetype.dir/src/raster/raster.c.o
+[32/44] Building C object CMakeFiles/freetype.dir/src/sdf/sdf.c.o
+[33/44] Building C object CMakeFiles/freetype.dir/src/psaux/psaux.c.o
+[34/44] Building C object CMakeFiles/freetype.dir/src/smooth/smooth.c.o
+[35/44] Building C object CMakeFiles/freetype.dir/src/svg/svg.c.o
+[36/44] Building C object CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o
+[37/44] Building C object CMakeFiles/freetype.dir/src/truetype/truetype.c.o
+[38/44] Building C object CMakeFiles/freetype.dir/src/type1/type1.c.o
+[39/44] Building C object CMakeFiles/freetype.dir/src/winfonts/winfnt.c.o
+[40/44] Building C object CMakeFiles/freetype.dir/src/type42/type42.c.o
+[41/44] Building C object CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o
+[42/44] Building C object CMakeFiles/freetype.dir/src/base/ftdebug.c.o
+[43/44] Linking C shared library libfreetype.so.6.20.2
+[44/44] Creating library symlink libfreetype.so.6 libfreetype.so
+ninja: Entering directory `/src/build/freetype'
+[0/1] Install the project...
+-- Install configuration: "Release"
+-- Up-to-date: /usr/include/freetype2
+-- Up-to-date: /usr/include/freetype2/freetype
+-- Installing: /usr/include/freetype2/freetype/ftrender.h
+-- Installing: /usr/include/freetype2/freetype/ftsynth.h
+-- Installing: /usr/include/freetype2/freetype/ftlist.h
+-- Installing: /usr/include/freetype2/freetype/fterrdef.h
+-- Installing: /usr/include/freetype2/freetype/fterrors.h
+-- Installing: /usr/include/freetype2/freetype/ftadvanc.h
+-- Installing: /usr/include/freetype2/freetype/ftwinfnt.h
+-- Installing: /usr/include/freetype2/freetype/ftglyph.h
+-- Installing: /usr/include/freetype2/freetype/tttags.h
+-- Installing: /usr/include/freetype2/freetype/ftchapters.h
+-- Installing: /usr/include/freetype2/freetype/ftotval.h
+-- Installing: /usr/include/freetype2/freetype/ftbitmap.h
+-- Installing: /usr/include/freetype2/freetype/ftbzip2.h
+-- Installing: /usr/include/freetype2/freetype/ftmoderr.h
+-- Up-to-date: /usr/include/freetype2/freetype/config
+-- Installing: /usr/include/freetype2/freetype/config/integer-types.h
+-- Installing: /usr/include/freetype2/freetype/config/ftmodule.h
+-- Installing: /usr/include/freetype2/freetype/config/ftheader.h
+-- Installing: /usr/include/freetype2/freetype/config/mac-support.h
+-- Installing: /usr/include/freetype2/freetype/config/public-macros.h
+-- Installing: /usr/include/freetype2/freetype/config/ftstdlib.h
+-- Installing: /usr/include/freetype2/freetype/ftsizes.h
+-- Installing: /usr/include/freetype2/freetype/t1tables.h
+-- Installing: /usr/include/freetype2/freetype/ftgasp.h
+-- Installing: /usr/include/freetype2/freetype/otsvg.h
+-- Installing: /usr/include/freetype2/freetype/ftsnames.h
+-- Installing: /usr/include/freetype2/freetype/ftbdf.h
+-- Installing: /usr/include/freetype2/freetype/ftgxval.h
+-- Installing: /usr/include/freetype2/freetype/ftmm.h
+-- Installing: /usr/include/freetype2/freetype/ftlzw.h
+-- Installing: /usr/include/freetype2/freetype/ftcid.h
+-- Installing: /usr/include/freetype2/freetype/ftgzip.h
+-- Installing: /usr/include/freetype2/freetype/ftbbox.h
+-- Installing: /usr/include/freetype2/freetype/ftsystem.h
+-- Installing: /usr/include/freetype2/freetype/ftcache.h
+-- Installing: /usr/include/freetype2/freetype/ftlcdfil.h
+-- Installing: /usr/include/freetype2/freetype/ftmodapi.h
+-- Installing: /usr/include/freetype2/freetype/tttables.h
+-- Installing: /usr/include/freetype2/freetype/fttypes.h
+-- Installing: /usr/include/freetype2/freetype/ftpfr.h
+-- Installing: /usr/include/freetype2/freetype/ftmac.h
+-- Installing: /usr/include/freetype2/freetype/ftincrem.h
+-- Installing: /usr/include/freetype2/freetype/ftstroke.h
+-- Installing: /usr/include/freetype2/freetype/ftfntfmt.h
+-- Installing: /usr/include/freetype2/freetype/ftlogging.h
+-- Installing: /usr/include/freetype2/freetype/freetype.h
+-- Installing: /usr/include/freetype2/freetype/ftimage.h
+-- Installing: /usr/include/freetype2/freetype/fttrigon.h
+-- Installing: /usr/include/freetype2/freetype/ftparams.h
+-- Installing: /usr/include/freetype2/freetype/ftoutln.h
+-- Installing: /usr/include/freetype2/freetype/ftdriver.h
+-- Installing: /usr/include/freetype2/freetype/ttnameid.h
+-- Installing: /usr/include/freetype2/freetype/ftcolor.h
+-- Installing: /usr/include/freetype2/ft2build.h
+-- Installing: /usr/include/freetype2/freetype/config/ftconfig.h
+-- Installing: /usr/include/freetype2/freetype/config/ftoption.h
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/freetype2.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/libfreetype.so.6.20.2
+-- Installing: /usr/lib/x86_64-linux-gnu/libfreetype.so.6
+-- Installing: /usr/lib/x86_64-linux-gnu/libfreetype.so
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/freetype/freetype-config.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/freetype/freetype-config-release.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/freetype/freetype-config-version.cmake
+=== harfbuzz 8.3.0 ===
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+WARNHarfBuzz has a Meson port and tries to migrate all the other build systems to it, please consider using it as we might remove our cmake port soon.
+CMake Warning (dev) at CMakeLists.txt:78 (include):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /usr/bin/python3.8 (found version "3.8.10")
+-- Looking for atexit
+-- Looking for atexit - found
+-- Looking for mprotect
+-- Looking for mprotect - found
+-- Looking for sysconf
+-- Looking for sysconf - found
+-- Looking for getpagesize
+-- Looking for getpagesize - found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for isatty
+-- Looking for isatty - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for stdbool.h
+-- Looking for stdbool.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Performing Test CXX_SUPPORTS_FLAG_BSYMB_FUNCS
+-- Performing Test CXX_SUPPORTS_FLAG_BSYMB_FUNCS - Success
+-- Performing Test COMPILER_SUPPORTS_CXX11
+-- Performing Test COMPILER_SUPPORTS_CXX11 - Success
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    HB_BUILD_TESTS
+
+
+-- Build files have been written to: /src/build/harfbuzz
+ninja: Entering directory `/src/build/harfbuzz'
+[1/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-number.cc.o
+[2/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-ot-cff1-table.cc.o
+[3/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-ot-cff2-table.cc.o
+[4/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-static.cc.o
+[5/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-cff-common.cc.o
+[6/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-cff1.cc.o
+[7/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-cff2.cc.o
+[8/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-input.cc.o
+[9/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-instancer-solver.cc.o
+[10/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-plan.cc.o
+[11/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset-repacker.cc.o
+[12/16] Building CXX object CMakeFiles/harfbuzz.dir/src/harfbuzz.cc.o
+[13/16] Linking C shared library libharfbuzz.so
+[14/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/graph/gsubgpos-context.cc.o
+[15/16] Building CXX object CMakeFiles/harfbuzz-subset.dir/src/hb-subset.cc.o
+[16/16] Linking C shared library libharfbuzz-subset.so
+ninja: Entering directory `/src/build/harfbuzz'
+[0/1] Install the project...
+-- Install configuration: "Release"
+-- Installing: /usr/include/harfbuzz/hb-aat-layout.h
+-- Installing: /usr/include/harfbuzz/hb-aat.h
+-- Installing: /usr/include/harfbuzz/hb-blob.h
+-- Installing: /usr/include/harfbuzz/hb-buffer.h
+-- Installing: /usr/include/harfbuzz/hb-common.h
+-- Installing: /usr/include/harfbuzz/hb-cplusplus.hh
+-- Installing: /usr/include/harfbuzz/hb-deprecated.h
+-- Installing: /usr/include/harfbuzz/hb-draw.h
+-- Installing: /usr/include/harfbuzz/hb-face.h
+-- Installing: /usr/include/harfbuzz/hb-font.h
+-- Installing: /usr/include/harfbuzz/hb-map.h
+-- Installing: /usr/include/harfbuzz/hb-ot-color.h
+-- Installing: /usr/include/harfbuzz/hb-ot-deprecated.h
+-- Installing: /usr/include/harfbuzz/hb-ot-font.h
+-- Installing: /usr/include/harfbuzz/hb-ot-layout.h
+-- Installing: /usr/include/harfbuzz/hb-ot-math.h
+-- Installing: /usr/include/harfbuzz/hb-ot-meta.h
+-- Installing: /usr/include/harfbuzz/hb-ot-metrics.h
+-- Installing: /usr/include/harfbuzz/hb-ot-name.h
+-- Installing: /usr/include/harfbuzz/hb-ot-shape.h
+-- Installing: /usr/include/harfbuzz/hb-ot-var.h
+-- Installing: /usr/include/harfbuzz/hb-ot.h
+-- Installing: /usr/include/harfbuzz/hb-paint.h
+-- Installing: /usr/include/harfbuzz/hb-set.h
+-- Installing: /usr/include/harfbuzz/hb-shape-plan.h
+-- Installing: /usr/include/harfbuzz/hb-shape.h
+-- Installing: /usr/include/harfbuzz/hb-style.h
+-- Installing: /usr/include/harfbuzz/hb-unicode.h
+-- Installing: /usr/include/harfbuzz/hb-version.h
+-- Installing: /usr/include/harfbuzz/hb.h
+-- Installing: /usr/include/harfbuzz/hb-subset.h
+-- Installing: /usr/lib/x86_64-linux-gnu/libharfbuzz.so
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzzConfig.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzzConfig-release.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/libharfbuzz-subset.so
+-- Set non-toolchain portion of runtime path of "/usr/lib/x86_64-linux-gnu/libharfbuzz-subset.so" to ""
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz-subset.pc
+FT_HB_DONE

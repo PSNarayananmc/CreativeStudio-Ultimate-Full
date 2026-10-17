@@ -1,0 +1,6 @@
+/usr/bin/ld: raqm.c:(.text+0x23fa): undefined reference to `hb_ft_font_create_referenced'
+/usr/bin/ld: raqm.c:(.text+0x240e): undefined reference to `hb_ft_font_set_load_flags'
+/usr/bin/ld: raqm.c:(.text+0x2508): undefined reference to `hb_ft_font_set_load_flags'
+collect2: error: ld returned 1 exit status
+[232/2965 164.761s] Building CXX object libs/resourcewidgets/CMakeFiles/kritaresourcewidgets.dir/KisResourceUserOperations.cpp.o
+ninja: build stopped: subcommand failed.

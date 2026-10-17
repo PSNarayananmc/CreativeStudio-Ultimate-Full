@@ -1,0 +1,9 @@
+=== WINDOWS BY NAME ===
+2097156
+=== BY CLASS ===
+WID=2097171
+XGetInputFocus returned the focused window of 1. This is likely a bug in the X server.
+XGetInputFocus returned the focused window of 1. This is likely a bug in the X server.
+XGetInputFocus returned the focused window of 1. This is likely a bug in the X server.
+XGetInputFocus returned the focused window of 1. This is likely a bug in the X server.
+-rw-rw-r-- 1 root root 64107 Oct 16 15:25 /root/menu-open.png

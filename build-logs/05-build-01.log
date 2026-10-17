@@ -1,0 +1,5 @@
+      |                                             ^
+      |                                              ;
+[151/3256 95.669s] Building CXX object libs/color/colord/CMakeFiles/kritacolord.dir/CdProfileInterface.cpp.o
+ninja: build stopped: subcommand failed.
+NINJA_EXIT=%{PIPESTATUS}

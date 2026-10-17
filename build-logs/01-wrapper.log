@@ -1,0 +1,16 @@
++ LOG=/home/z/my-project/logs/01-debootstrap.log
++ D=/home/z/downloads/debootstrap-tree
++ mkdir -p /home/z/downloads/debootstrap-tree
++ cd /home/z/downloads/debootstrap-tree
++ '[' -f data.tar.xz ']'
++ true
++ '[' '!' -d usr/share/debootstrap ']'
++ ls usr/share/debootstrap/
++ head -5
+functions
+scripts
++ unshare --user --map-root-user --mount --fork /bin/bash -c '
+  export DEBOOTSTRAP_DIR=/home/z/downloads/debootstrap-tree/usr/share/debootstrap
+  export PATH=/home/z/downloads/debootstrap-tree/usr/sbin:$PATH
+  debootstrap --variant=minbase --include=ca-certificates,curl,sudo,gpgv focal /home/z/cs-rootfs http://archive.ubuntu.com/ubuntu
+'

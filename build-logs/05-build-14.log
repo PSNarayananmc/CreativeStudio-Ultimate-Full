@@ -1,0 +1,6 @@
+/src/krita/libs/ui/widgets/KisColorSamplerPreviewPreview.cpp: In member function ‘virtual void KisColorSamplerPreviewPreview::paintEvent(QPaintEvent*)’:
+/src/krita/libs/ui/widgets/KisColorSamplerPreviewPreview.cpp:121:10: error: ‘class QPainterPath’ has no member named ‘clear’
+  121 |     edge.clear();
+      |          ^~~~~
+[110/1963 85.345s] Building CXX object libs/ui/CMakeFiles/kritaui.dir/utils/kis_document_aware_spin_box_unit_manager.cpp.o
+ninja: build stopped: subcommand failed.

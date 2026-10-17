@@ -1,0 +1,8 @@
+[1792166729] version check via AppImage
+This doesn't look like a squashfs image.
+Failed to open squashfs image
+Failed to extract AppImage
+VERSION_EXIT=127
+[1792166729] GUI launch from AppImage
+[1792166910] WID=
+[1792166910] done

@@ -1,0 +1,10 @@
+DEPLOYQT_EXIT=0
+0
+Log: "libpcre.so.3" already at target location
+Log: Checking rpath in "/appdir/usr/lib/libpcre.so.3"
+Log: Changing rpath in "/appdir/usr/lib/libpcre.so.3" to "$ORIGIN"
+Log: Checking rpath in "/appdir/usr/plugins/sqldrivers/libqsqlite.so"
+Log: Changing rpath in "/appdir/usr/plugins/sqldrivers/libqsqlite.so" to "$ORIGIN/../../lib"
+WARNING: "/appdir/usr/bin/qt.conf" already exists, will not overwrite.
+DEPLOYQT_EXIT=0
+0

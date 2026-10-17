@@ -1,0 +1,9 @@
+/tmp/r-12-reverify.sh: line 22:  5449 Segmentation fault      timeout 240 $EX/AppRun --version > /root/p7-version.txt 2>&1
+/tmp/r-12-reverify.sh: line 28:  5454 Segmentation fault      timeout 240 $EX/AppRun --version > /root/p7-version.txt 2>&1
+/tmp/r-12-reverify.sh: line 44:  5462 Segmentation fault      timeout 900 $EX/AppRun --nosplash /root/p7-input.png > /root/p7-gui.log 2>&1
+EXTRACT_EXIT=0
+[19:42:07] version probe
+VERSION_EXIT=139
+[19:42:12] GUI launch
+WID=
+RESULT: gui_launch = FAIL

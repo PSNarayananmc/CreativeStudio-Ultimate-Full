@@ -1,0 +1,14 @@
+=== DRIVER LOG ===
+test input written 31903
+-rw-rw-r-- 1 root root 31903 Oct 16 15:27 /root/test-input.png
+[1792164438] launching krita with test-input.png
+[1792164440] WID=2097171
+[1792164446] open screenshot taken
+[1792164450] save dialog screenshot
+-rw-rw-r-- 1 root root 170545 Oct 16 15:27 /root/gui-saved.kra
+[1792164464] save attempted
+[1792164468] export dialog screenshot
+ls: cannot access '/root/gui-exported.png': No such file or directory
+[1792164485] export attempted
+[1792164506] reopen attempted
+[1792164511] driver done

@@ -1,0 +1,22 @@
+head: cannot open '/tmp/opt-root/usr/share/krita/windowlayouts/Dual' for reading: No such file or directory
+head: cannot open 'screen' for reading: No such file or directory
+head: cannot open 'editing.kwl' for reading: No such file or directory
+head: cannot open '/tmp/opt-root/usr/share/krita/windowlayouts/Cockpit' for reading: No such file or directory
+head: cannot open '(laptop' for reading: No such file or directory
+head: cannot open 'mode).kwl' for reading: No such file or directory
+ASSEMBLED 119539351
+[19:16:14] extract original
+[19:16:14] extracted 348 MB
+[19:16:14] strip unneeded from all ELF files
+[19:16:17] stripped 368 ELF files
+[19:16:17] prune dev-only resources
+[19:16:17] after prune: 316 MB
+[19:16:17] bake Phase 4 tuned low-spec config (root-group keys BEFORE sections)
+[19:16:17] config baked into usr/etc/xdg/kritarc
+[19:16:17] lowmem profile doc added
+[19:16:17] mksquashfs (xz, 1M blocks, max dict)
+[19:17:10] squashfs built: 119345152 bytes
+[19:17:10] carve runtime + patch digest_md5 + assemble
+[19:17:10] assembled
+RESULT: old_size=142068216 new_size=119539351 delta=22528865 saved_pct=15
+P7_OPTIMIZE_DONE

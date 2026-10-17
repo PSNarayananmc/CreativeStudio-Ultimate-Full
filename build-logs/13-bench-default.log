@@ -1,0 +1,4 @@
+=== CONFIG: DEFAULT CONFIG (hard 50% of RAM) ===
+(defaults)
+/root/run-bench.sh: line 10: 28520 Aborted                 timeout 500 /krita-stage/bin/kritarunner -s bench > /root/bench-out.log 2>&1
+RUNNER_EXIT=134

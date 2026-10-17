@@ -1,0 +1,6 @@
+/src/krita/libs/image/kis_paint_device.cc: In member function ‘void KisPaintDevice::convertFromQImage(const QImage&, const KoColorProfile*, qint32, qint32)’:
+/src/krita/libs/image/kis_paint_device.cc:1605:15: error: ‘class QImage’ has no member named ‘convertTo’
+ 1605 |         image.convertTo(QImage::Format_ARGB32);
+      |               ^~~~~~~~~
+[177/2563 145.188s] Building CXX object libs/image/CMakeFiles/kritaimage.dir/kis_fixed_paint_device.cpp.o
+ninja: build stopped: subcommand failed.

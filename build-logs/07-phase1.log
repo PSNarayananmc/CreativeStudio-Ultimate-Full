@@ -1,0 +1,18 @@
+RUNNER_EXIT=124
+=== RESULTS ===
+pykrita_loaded|PASS|
+create_document_800x600_rgba_u8|PASS|
+doc_wait_done|PASS|
+fill_layer_added|PASS|
+paint_layer_added|PASS|
+pixel_setpixeldata|PASS|
+=== FILES ===
+=== RUNNER TAIL ===
+Creating engine
+Try to import the pykrita module
+CHECK pykrita_loaded: PASS 
+CHECK create_document_800x600_rgba_u8: PASS 
+CHECK doc_wait_done: PASS 
+CHECK fill_layer_added: PASS 
+CHECK paint_layer_added: PASS 
+CHECK pixel_setpixeldata: PASS 

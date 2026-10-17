@@ -1,0 +1,15 @@
+EXTRACT_EXIT=0
+BIN=/tools/squashfs-root/usr/bin/linuxdeployqt
+DEPLOYQT_EXIT=0
+Found binary from desktop file: "/appdir/usr/bin/krita"
+FHS-like mode with PREFIX, fhsPrefix: "/appdir/usr"
+app-binary: "/appdir/usr/bin/krita"
+appDirPath: "/appdir"
+relativeBinPath: "usr/bin/krita"
+Keeping existing AppRun
+Copied "/appdir/usr/share/applications/creative-studio.desktop" to "/appdir/creative-studio.desktop"
+Found icons from desktop file: ("/appdir/usr/share/icons/hicolor/scalable/apps/creative-studio.svg", "/appdir/usr/share/icons/hicolor/256x256/apps/creative-studio.png")
+iconToBeUsed: "/appdir/usr/share/icons/hicolor/256x256/apps/creative-studio.png"
+Copied "/appdir/usr/share/icons/hicolor/256x256/apps/creative-studio.png" to "/appdir/creative-studio.png"
+qmakePath 3= ""
+DEPLOYQT_EXIT=0

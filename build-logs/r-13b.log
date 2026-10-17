@@ -1,0 +1,12 @@
+X Error of failed request:  BadWindow (invalid Window parameter)
+  Major opcode of failed request:  42 (X_SetInputFocus)
+  Resource id in failed request:  0x20000a
+  Serial number of failed request:  18
+  Current serial number in output stream:  18
+=== QEMU Denverton: krita --version (env set) ===
+QEMU_VERSION_EXIT=0
+krita 5.2.16
+=== QEMU Denverton: GUI launch (paint test) ===
+QEMU_WID=2097162
+QEMU_PAINT_ATTEMPTED
+QEMU2_DONE

@@ -1,0 +1,11 @@
+/tmp/r-12-reverify.sh: line 26: 17494 Segmentation fault      timeout 240 $EX/AppRun --version > /root/p7-version.txt 2>&1
+/tmp/r-12-reverify.sh: line 32: 17499 Segmentation fault      timeout 240 $EX/AppRun --version > /root/p7-version.txt 2>&1
+/tmp/r-12-reverify.sh: line 48: 17507 Segmentation fault      timeout 900 $EX/AppRun --nosplash /root/p7-input.png > /root/p7-gui.log 2>&1
+EXTRACT_EXIT=0
+[20:05:15] warmup probe (cold-cache first run is segfault-prone in synthetic env)
+WARMUP_EXIT=0
+[20:05:18] version probe
+VERSION_EXIT=139
+[20:05:23] GUI launch
+WID=
+RESULT: gui_launch = FAIL

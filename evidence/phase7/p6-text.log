@@ -1,0 +1,5 @@
+-rw-rw-r-- 1 root root 94832 Oct 16 20:23 /root/tt-saved.kra
+TEXT_TEST_DONE
+KRA_OK layers_in_xml=2
+LAYER_FILES=['Unnamed/layers/layer2', 'Unnamed/layers/layer2.defaultpixel', 'Unnamed/layers/layer2.icc']
+SHAPE_DATA=[]

@@ -1,0 +1,10 @@
+=== freetype state before ===
+lrwxrwxrwx 1 root root 21 Oct 16 13:17 /usr/lib/x86_64-linux-gnu/libfreetype.so.6 -> libfreetype.so.6.20.2
+/usr/lib/x86_64-linux-gnu/libfreetype.so.6.20.2
+=== rebuilding harfbuzz 8.3.0 ===
+=== state after ===
+/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.20600.4
+libharfbuzz.so.0
+libharfbuzz.so.0.20600.4
+/usr/lib/x86_64-linux-gnu/libfreetype.so.6.20.2
+FIX_LIBS_DONE

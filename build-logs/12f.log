@@ -1,0 +1,40 @@
+=== krita --version under Denverton (no AVX) ===
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.01H:ECX.x2apic [bit 21]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.01H:ECX.tsc-deadline [bit 24]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EBX.rdseed [bit 18]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EBX.sha-ni [bit 29]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EDX.spec-ctrl [bit 26]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EDX.arch-capabilities [bit 29]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.07H:EDX.ssbd [bit 31]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.80000001H:ECX.3dnowprefetch [bit 8]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: CPUID.0DH:EAX.xsavec [bit 1]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: MSR(10AH).rdctl-no [bit 0]
+qemu-x86_64-static: warning: TCG doesn't support requested feature: MSR(10AH).skip-l1dfl-vmentry [bit 3]
+QEMU_VERSION_EXIT=1
+=== full GUI under Denverton ===
+WID=
+=== glibc ceiling in bundle ===
+GLIBC_2.2.5
+GLIBC_2.3
+GLIBC_2.3.2
+GLIBC_2.3.3
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.6
+GLIBC_2.7
+GLIBC_2.8
+GLIBC_2.9
+GLIBC_2.10
+GLIBC_2.11
+GLIBC_2.12
+GLIBC_2.14
+GLIBC_2.15
+GLIBC_2.16
+GLIBC_2.17
+GLIBC_2.25
+GLIBC_2.26
+GLIBC_2.27
+GLIBC_2.28
+GLIBC_2.29
+GLIBC_2.30
+AIQEMU_DONE

@@ -1,0 +1,6 @@
+[18:48:51] stroke done; ctrl+s
+ls: cannot access '/root/bk-test.kra~': No such file or directory
+-rw-rw-r-- 1 root root 34279 Oct 16 18:48 /root/bk-test.kra
+RESULT: backup_file_on_save = FAIL file=
+RESULT: autosave_files_now = 
+GUI6_DONE

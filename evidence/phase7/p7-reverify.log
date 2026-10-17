@@ -1,0 +1,18 @@
+EXTRACT_EXIT=0
+[20:21:56] warmup probe (cold-cache first run is segfault-prone in synthetic env)
+krita 5.2.16
+WARMUP_EXIT=0
+[20:21:59] version probe
+VERSION_EXIT=0
+krita 5.2.16
+[20:21:59] GUI launch
+WID=2097171
+[20:22:10] paint strokes
+[20:22:17] save KRA
+-rw-rw-r-- 1 root root 127088 Oct 16 20:11 /root/p7-saved.kra
+[20:22:39] quit
+[20:22:45] CLI export
+EXPORT_EXIT=0
+RESULT: p7_save_kra = PASS (size=127088 layers_xml=2)
+RESULT: p7_export_png = PASS size=24658 dark_px=3093
+P7_REVERIFY_DONE

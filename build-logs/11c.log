@@ -1,0 +1,6 @@
+at https://github.com/AppImage/appimage.github.io
+APPIMAGE_EXIT=0
+total 138748
+drwxrwxr-x  2 root root      4096 Oct 16 16:12 .
+drwxr-xr-x 24 root root      4096 Oct 16 16:04 ..
+-rwxr-xr-x  1 root root 142068216 Oct 16 16:13 CreativeStudio-Ultimate-Full-x86_64.AppImage

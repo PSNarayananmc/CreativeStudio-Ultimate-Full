@@ -1,0 +1,5 @@
+DEPLOYQT_EXIT=127
+Cannot open /proc/self/exe: No such file or directory
+Failed to get fs offset for /proc/self/exe
+/root/run-deployqt2.sh: line 10: /tools/squashfs-root/usr/bin/linuxdeployqt: No such file or directory
+DEPLOYQT_EXIT=127

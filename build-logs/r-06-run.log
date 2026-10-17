@@ -1,0 +1,30 @@
+/tmp/r-06-appimage-verify.sh: line 36:  3380 Aborted                 timeout 240 $EX/AppRun --version >> $LOG 2>&1
+Error, do this: mount -t proc proc /proc
+Error, do this: mount -t proc proc /proc
+[17:29:07] test input generated (1024x768)
+EXTRACT_EXIT=0
+[17:29:08] version probe
+qt.qpa.xcb: could not connect to display :77
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: xcb.
+
+VERSION_EXIT=134
+[17:29:11] GUI launch
+[17:29:21] WID=2097171
+[17:29:29] screenshot: opened
+[17:29:36] strokes painted
+=== MEMORY SNAPSHOT (after paint, stock config) ===
+TOTAL_RSS_ALL_PROCESSES_KB=
+[17:29:39] undo pressed
+-rw-rw-r-- 1 root root 121378 Oct 16 17:29 /root/re-saved.kra
+[17:30:05] save-as done
+ls: cannot access '/root/re-export.png': No such file or directory
+[17:30:30] export done
+[17:30:38] quit
+KRA_OK maindoc has IMAGE: True
+KRA_LAYER_COUNT_XML: 2
+EXPORT_MISSING
+ARTIFACTS_FAIL
+[17:30:39] DONE

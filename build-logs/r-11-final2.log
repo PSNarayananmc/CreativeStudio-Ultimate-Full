@@ -1,0 +1,8 @@
+head: cannot open '/tmp/opt-root/usr/share/krita/windowlayouts/Dual' for reading: No such file or directory
+head: cannot open 'screen' for reading: No such file or directory
+head: cannot open 'editing.kwl' for reading: No such file or directory
+head: cannot open '/tmp/opt-root/usr/share/krita/windowlayouts/Cockpit' for reading: No such file or directory
+head: cannot open '(laptop' for reading: No such file or directory
+head: cannot open 'mode).kwl' for reading: No such file or directory
+RT_SIZE=944632 SQ_SIZE=135348224 TOTAL=136292856
+stat: cannot stat '/tmp/new-appimage': No such file or directory

@@ -1,0 +1,12 @@
+PROBE_E0=0
+PROBE_libKF5Completion.so.5=0
+PROBE_libKF5ConfigCore.so.5=0
+PROBE_libKF5ConfigGui.so.5=0
+PROBE_libKF5CoreAddons.so.5=0
+PROBE_libKF5Crash.so.5=139
+PROBE_libKF5GuiAddons.so.5=139
+PROBE_libKF5I18n.so.5=139
+PROBE_libKF5ItemViews.so.5=139
+PROBE_libKF5KDcraw.so.5=139
+PROBE_libKF5WidgetsAddons.so.5=139
+PROBE_libKF5WindowSystem.so.5=139

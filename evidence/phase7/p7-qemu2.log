@@ -1,0 +1,7 @@
+=== QEMU Denverton: krita --version (env set) ===
+QEMU_VERSION_EXIT=0
+krita 5.2.16
+=== QEMU Denverton: GUI launch (paint test) ===
+QEMU_WID=2097162
+QEMU_PAINT_ATTEMPTED
+QEMU2_DONE

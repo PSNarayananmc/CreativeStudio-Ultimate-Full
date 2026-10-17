@@ -1,0 +1,6 @@
+FAILED: [code=1] plugins/extensions/pykrita/sip/krita/sipkritapart0.cpp /src/build-krita/plugins/extensions/pykrita/sip/krita/sipkritapart0.cpp 
+cd /src/build-krita/plugins/extensions/pykrita/sip && /usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -E echo && /usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -E touch /src/build-krita/plugins/extensions/pykrita/sip/./krita/sipkritapart0.cpp && /usr/bin/sip -t ALL -t WS_X11 -t Qt_5_12_4 -g -o -x PyKDE_QVector -n sip -j 1 -c /src/build-krita/plugins/extensions/pykrita/sip/./krita -I /usr/share/sip -I /usr/share/sip/PyQt5 -I /src/krita/plugins/extensions/pykrita/sip/krita /src/krita/plugins/extensions/pykrita/sip/krita/kritamod.sip
+
+sip: Unable to find file "QtCore/QtCoremod.sip"
+[319/1618 319.388s] Automatic MOC for target kritawaveletdecompose
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,6 @@
+=== TEST 1: krita --version under Silvermont emulation (SSE4.2, no AVX, no FMA) ===
+qemu-x86_64-static: unable to find CPU model 'Silvermont'
+T1_EXIT=1
+=== TEST 2: full GUI + brush paint under Silvermont ===
+WID=
+QEMU_TEST_DONE

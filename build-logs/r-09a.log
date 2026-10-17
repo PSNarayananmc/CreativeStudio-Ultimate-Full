@@ -1,0 +1,12 @@
+/tmp/r-09a-phase6-gui1.sh: line 99:  6000 Killed                  timeout 900 $EX/AppRun --nosplash /root/gui-input.png > /root/p6/gui-run.log 2>&1
+[18:21:10] user config written
+RESULT: gui_launch_to_window_ms = 1018 (WID=2097171)
+[18:21:29] brush stroke done
+[18:21:34] eraser stroke done
+RESULT: gui_eraser_switch_changed_canvas = PASS (diff_px=239)
+[18:21:37] undo done
+RESULT: gui_undo_changed_canvas = PASS (diff_px=239)
+[18:21:37] waiting 80s for autosave tick
+RESULT: gui_autosave_file_created = FAIL files=
+[18:23:00] krita killed with SIGKILL
+GUI1_DONE

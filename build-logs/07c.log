@@ -1,0 +1,8 @@
+KRITA_EXIT=124
+NO PNG
+/root/cli-test.png: cannot open `/root/cli-test.png' (No such file or directory)
+krita.lib.resources: Created table "resources_signature"
+krita.lib.resources: Filled lookup table storage_types
+krita.lib.resources: Filled lookup table resource_types
+krita.lib.resources: Filled version table
+QObject::startTimer: Timers cannot have negative intervals

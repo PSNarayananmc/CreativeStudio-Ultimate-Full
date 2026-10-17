@@ -1,0 +1,12 @@
+[20:10:02] extract original
+[20:10:02] extracted 348 MB
+[20:10:02] strip: SKIPPED by decision — stripping triggers env-sensitive startup segfaults (KCrash/I18n confirmed culprits; combination still unstable). Size priority is secondary to reliability per spec.
+[20:10:02] prune dev-only resources
+[20:10:02] after prune: 348 MB
+[20:10:02] bake Phase 4 tuned low-spec config (root-group keys BEFORE sections)
+[20:10:02] config baked into usr/etc/xdg/kritarc
+[20:10:02] lowmem profile doc added
+[20:10:02] mksquashfs (xz, 1M blocks, max dict)
+[20:10:52] squashfs built: 132005888 bytes
+[20:10:52] carve runtime + patch digest_md5 + assemble
+[20:10:52] assembled

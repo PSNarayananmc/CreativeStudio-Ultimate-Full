@@ -1,0 +1,9 @@
+EXIT[png]=124
+EXIT[jpg]=124
+EXIT[tiff]=124
+/tmp/r-08f-phase6-api6.sh: line 89:  5250 Segmentation fault      PYTHONPATH=/root/p6 timeout 300 $KR --script v6a.py > /root/p6/v6a.log 2>&1
+EXIT[v6a]=139
+=== V6 RESULTS ===
+RESULT: t07b_gray_doc = PASS 
+RESULT: t07c_convert_graya_to_rgba = PASS RGBA
+RESULT: t07d_cmyka_doc = PASS profiles=1

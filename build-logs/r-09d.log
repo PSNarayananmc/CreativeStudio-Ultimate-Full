@@ -1,0 +1,34 @@
+/tmp/r-09d-autosave-kra.sh: line 52:  6532 Killed                  timeout 600 $EX/AppRun --nosplash /root/auto-test.kra > /root/p6/auto-run.log 2>&1
+[18:29:03] config variants written
+[18:29:19] stroke painted; waiting 80s
+[18:30:39] searching autosave files
+RESULT: autosave_file_kra = FAIL files=
+total 70256
+drwxrwxr-x 21 root root     4096 Oct 16 18:29 .
+drwxrwxr-x  4 root root     4096 Oct 16 17:40 ..
+-rw-rw-r--  1 root root        6 Oct 16 17:29 KRITA_RESOURCE_VERSION
+-rw-r--r--  1 root root 16137844 Oct 16 17:29 Krita_3_Default_Resources.bundle
+-rw-r--r--  1 root root 17454102 Oct 16 17:29 Krita_4_Default_Resources.bundle
+-rw-r--r--  1 root root  2211603 Oct 16 17:29 Krita_Artists_SeExpr_examples.bundle
+-rw-r--r--  1 root root  1826102 Oct 16 17:29 RGBA_brushes.bundle
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 asl
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 brushes
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 color-schemes
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 gamutmasks
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 gradients
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 input
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 layerstyles
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 paintoppresets
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 palettes
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 patterns
+drwxrwxr-x  4 root root     4096 Oct 16 17:29 preset_icons
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 pykrita
+-rw-r--r--  1 root root 34217984 Oct 16 18:29 resourcecache.sqlite
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 seexpr_scripts
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 sessions
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 symbols
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 tasksets
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 templates
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 windowlayouts
+drwxrwxr-x  2 root root     4096 Oct 16 17:29 workspaces
+GUI3_DONE

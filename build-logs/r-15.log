@@ -1,0 +1,8 @@
+FINAL_TOTAL=132958712
+[20:20:47] extract current optimized image
+[20:20:47] add GPL compliance + product docs
+[20:20:47] docs added
+[20:20:47] mksquashfs (zstd-19) + assemble
+[20:21:36] assembled /out/final.AppImage
+FINAL_DONE
+/tmp/r-15-final-repack.sh: line 111: EOF: command not found

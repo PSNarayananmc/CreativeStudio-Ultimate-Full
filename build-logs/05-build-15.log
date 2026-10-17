@@ -1,0 +1,6 @@
+      |                  ^~~~~~~~~~~~
+/src/krita/libs/ui/input/kis_single_action_shortcut.cpp:90:18: error: aggregate ‘QVector<int> shortcutKeys’ has incomplete type and cannot be defined
+   90 |     QVector<int> shortcutKeys;
+      |                  ^~~~~~~~~~~~
+[50/1879 24.692s] Building CXX object libs/ui/CMakeFiles/kritaui.dir/input/kis_stroke_shortcut.cpp.o
+ninja: build stopped: subcommand failed.

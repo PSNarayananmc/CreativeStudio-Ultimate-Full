@@ -1,0 +1,6 @@
+/src/krita/libs/pigment/resources/KoColorSet.cpp: In member function ‘bool KoColorSet::Private::loadPsp()’:
+/src/krita/libs/pigment/resources/KoColorSet.cpp:1498:68: error: ‘SkipEmptyParts’ is not a member of ‘Qt’
+ 1498 |         QStringList a = l[i + 3].replace('\t', ' ').split(' ', Qt::SkipEmptyParts);
+      |                                                                    ^~~~~~~~~~~~~~
+[102/3058 85.286s] Building CXX object libs/pigment/CMakeFiles/kritapigment.dir/colorspaces/KoRgbU8ColorSpace.cpp.o
+ninja: build stopped: subcommand failed.

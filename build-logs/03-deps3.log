@@ -1,0 +1,825 @@
+=== libmypaint 1.6.1 ===
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... none needed
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.16... yes
+checking for platform... unix
+checking whether to turn on debugging... no
+checking whether to turn on profiling... no
+checking for JSON... yes
+checking for library containing floorf... -lm
+checking for library containing powf... none required
+checking for library containing expf... none required
+checking for library containing fabsf... none required
+checking whether C compiler accepts -fsanitize=undefined... yes
+checking whether the linker accepts -fsanitize=undefined... yes
+checking whether NLS is requested... yes
+checking for intltool-update... /usr/bin/intltool-update
+checking for intltool-merge... /usr/bin/intltool-merge
+checking for intltool-extract... /usr/bin/intltool-extract
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for perl... /usr/bin/perl
+checking for perl >= 5.8.1... 5.30.0
+checking for XML::Parser... ok
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for LC_MESSAGES... yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking for ngettext in libc... yes
+checking for dgettext in libc... yes
+checking for bind_textdomain_codeset... yes
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for dcgettext... yes
+checking if msgfmt accepts -c... yes
+checking for gmsgfmt... (cached) /usr/bin/msgfmt
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for library containing dgettext... none required
+checking for gobject-introspection... no (disabled, use --enable-introspection to enable)
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating doc/Doxyfile
+config.status: creating doc/Makefile
+config.status: creating gegl/libmypaint-gegl.pc
+config.status: creating gegl/Makefile
+config.status: creating libmypaint.pc
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating tests/Makefile
+config.status: creating tests/gegl/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: executing po/stamp-it commands
+
+  Configured libmypaint 1.6.1
+
+make  all-recursive
+make[1]: Entering directory '/src/libmypaint-1.6.1'
+Making all in .
+make[2]: Entering directory '/src/libmypaint-1.6.1'
+depbase=`echo brushmodes.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT brushmodes.lo -MD -MP -MF $depbase.Tpo -c -o brushmodes.lo brushmodes.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo fifo.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT fifo.lo -MD -MP -MF $depbase.Tpo -c -o fifo.lo fifo.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT brushmodes.lo -MD -MP -MF .deps/brushmodes.Tpo -c brushmodes.c  -fPIC -DPIC -o .libs/brushmodes.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT fifo.lo -MD -MP -MF .deps/fifo.Tpo -c fifo.c  -fPIC -DPIC -o .libs/fifo.o
+depbase=`echo helpers.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT helpers.lo -MD -MP -MF $depbase.Tpo -c -o helpers.lo helpers.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT helpers.lo -MD -MP -MF .deps/helpers.Tpo -c helpers.c  -fPIC -DPIC -o .libs/helpers.o
+depbase=`echo mypaint-mapping.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-mapping.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-mapping.lo mypaint-mapping.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo mypaint.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint.lo -MD -MP -MF $depbase.Tpo -c -o mypaint.lo mypaint.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-mapping.lo -MD -MP -MF .deps/mypaint-mapping.Tpo -c mypaint-mapping.c  -fPIC -DPIC -o .libs/mypaint-mapping.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint.lo -MD -MP -MF .deps/mypaint.Tpo -c mypaint.c  -fPIC -DPIC -o .libs/mypaint.o
+depbase=`echo mypaint-brush.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-brush.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-brush.lo mypaint-brush.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo mypaint-brush-settings.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-brush-settings.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-brush-settings.lo mypaint-brush-settings.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-brush.lo -MD -MP -MF .deps/mypaint-brush.Tpo -c mypaint-brush.c  -fPIC -DPIC -o .libs/mypaint-brush.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-brush-settings.lo -MD -MP -MF .deps/mypaint-brush-settings.Tpo -c mypaint-brush-settings.c  -fPIC -DPIC -o .libs/mypaint-brush-settings.o
+depbase=`echo mypaint-fixed-tiled-surface.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-fixed-tiled-surface.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-fixed-tiled-surface.lo mypaint-fixed-tiled-surface.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-fixed-tiled-surface.lo -MD -MP -MF .deps/mypaint-fixed-tiled-surface.Tpo -c mypaint-fixed-tiled-surface.c  -fPIC -DPIC -o .libs/mypaint-fixed-tiled-surface.o
+depbase=`echo mypaint-matrix.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-matrix.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-matrix.lo mypaint-matrix.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-matrix.lo -MD -MP -MF .deps/mypaint-matrix.Tpo -c mypaint-matrix.c  -fPIC -DPIC -o .libs/mypaint-matrix.o
+depbase=`echo mypaint-symmetry.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-symmetry.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-symmetry.lo mypaint-symmetry.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-symmetry.lo -MD -MP -MF .deps/mypaint-symmetry.Tpo -c mypaint-symmetry.c  -fPIC -DPIC -o .libs/mypaint-symmetry.o
+depbase=`echo mypaint-rectangle.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-rectangle.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-rectangle.lo mypaint-rectangle.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-rectangle.lo -MD -MP -MF .deps/mypaint-rectangle.Tpo -c mypaint-rectangle.c  -fPIC -DPIC -o .libs/mypaint-rectangle.o
+depbase=`echo mypaint-surface.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-surface.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-surface.lo mypaint-surface.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo mypaint-tiled-surface.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-tiled-surface.lo -MD -MP -MF $depbase.Tpo -c -o mypaint-tiled-surface.lo mypaint-tiled-surface.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-surface.lo -MD -MP -MF .deps/mypaint-surface.Tpo -c mypaint-surface.c  -fPIC -DPIC -o .libs/mypaint-surface.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-tiled-surface.lo -MD -MP -MF .deps/mypaint-tiled-surface.Tpo -c mypaint-tiled-surface.c  -fPIC -DPIC -o .libs/mypaint-tiled-surface.o
+depbase=`echo operationqueue.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT operationqueue.lo -MD -MP -MF $depbase.Tpo -c -o operationqueue.lo operationqueue.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT operationqueue.lo -MD -MP -MF .deps/operationqueue.Tpo -c operationqueue.c  -fPIC -DPIC -o .libs/operationqueue.o
+depbase=`echo rng-double.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT rng-double.lo -MD -MP -MF $depbase.Tpo -c -o rng-double.lo rng-double.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT rng-double.lo -MD -MP -MF .deps/rng-double.Tpo -c rng-double.c  -fPIC -DPIC -o .libs/rng-double.o
+depbase=`echo tilemap.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -MT tilemap.lo -MD -MP -MF $depbase.Tpo -c -o tilemap.lo tilemap.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/json-c -D_POSIX_C_SOURCE=200809L -g -O2 -MT tilemap.lo -MD -MP -MF .deps/tilemap.Tpo -c tilemap.c  -fPIC -DPIC -o .libs/tilemap.o
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -I/usr/include/json-c   -D_POSIX_C_SOURCE=200809L -g -O2 -version-info 0:0:0 -no-undefined  -o libmypaint.la -rpath /usr/lib brushmodes.lo fifo.lo helpers.lo mypaint-mapping.lo mypaint.lo mypaint-brush.lo mypaint-brush-settings.lo mypaint-fixed-tiled-surface.lo mypaint-matrix.lo mypaint-symmetry.lo mypaint-rectangle.lo mypaint-surface.lo mypaint-tiled-surface.lo operationqueue.lo rng-double.lo tilemap.lo  -ljson-c  -lm 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/brushmodes.o .libs/fifo.o .libs/helpers.o .libs/mypaint-mapping.o .libs/mypaint.o .libs/mypaint-brush.o .libs/mypaint-brush-settings.o .libs/mypaint-fixed-tiled-surface.o .libs/mypaint-matrix.o .libs/mypaint-symmetry.o .libs/mypaint-rectangle.o .libs/mypaint-surface.o .libs/mypaint-tiled-surface.o .libs/operationqueue.o .libs/rng-double.o .libs/tilemap.o   -ljson-c -lm  -g -O2   -Wl,-soname -Wl,libmypaint.so.0 -o .libs/libmypaint.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libmypaint.so.0" && ln -s "libmypaint.so.0.0.0" "libmypaint.so.0")
+libtool: link: (cd ".libs" && rm -f "libmypaint.so" && ln -s "libmypaint.so.0.0.0" "libmypaint.so")
+libtool: link: ( cd ".libs" && rm -f "libmypaint.la" && ln -s "../libmypaint.la" "libmypaint.la" )
+make[2]: Leaving directory '/src/libmypaint-1.6.1'
+Making all in doc
+make[2]: Entering directory '/src/libmypaint-1.6.1/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/src/libmypaint-1.6.1/doc'
+Making all in gegl
+make[2]: Entering directory '/src/libmypaint-1.6.1/gegl'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/src/libmypaint-1.6.1/gegl'
+Making all in tests
+make[2]: Entering directory '/src/libmypaint-1.6.1/tests'
+Making all in .
+make[3]: Entering directory '/src/libmypaint-1.6.1/tests'
+depbase=`echo mypaint-benchmark.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..    -DLIBMYPAINT_TESTING_ABS_TOP_SRCDIR='"/src/libmypaint-1.6.1"'  -I./.. -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-benchmark.o -MD -MP -MF $depbase.Tpo -c -o mypaint-benchmark.o mypaint-benchmark.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mypaint-test-surface.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..    -DLIBMYPAINT_TESTING_ABS_TOP_SRCDIR='"/src/libmypaint-1.6.1"'  -I./.. -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-test-surface.o -MD -MP -MF $depbase.Tpo -c -o mypaint-test-surface.o mypaint-test-surface.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mypaint-utils-stroke-player.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..    -DLIBMYPAINT_TESTING_ABS_TOP_SRCDIR='"/src/libmypaint-1.6.1"'  -I./.. -D_POSIX_C_SOURCE=200809L -g -O2 -MT mypaint-utils-stroke-player.o -MD -MP -MF $depbase.Tpo -c -o mypaint-utils-stroke-player.o mypaint-utils-stroke-player.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo testutils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..    -DLIBMYPAINT_TESTING_ABS_TOP_SRCDIR='"/src/libmypaint-1.6.1"'  -I./.. -D_POSIX_C_SOURCE=200809L -g -O2 -MT testutils.o -MD -MP -MF $depbase.Tpo -c -o testutils.o testutils.c &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libmypaint-tests.a
+ar cru libmypaint-tests.a mypaint-benchmark.o mypaint-test-surface.o mypaint-utils-stroke-player.o testutils.o 
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libmypaint-tests.a
+make[3]: Leaving directory '/src/libmypaint-1.6.1/tests'
+Making all in gegl
+make[3]: Entering directory '/src/libmypaint-1.6.1/tests/gegl'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/src/libmypaint-1.6.1/tests/gegl'
+make[2]: Leaving directory '/src/libmypaint-1.6.1/tests'
+Making all in po
+make[2]: Entering directory '/src/libmypaint-1.6.1/po'
+file=`echo af | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file af.po
+file=`echo ar | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ar.po
+file=`echo as | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file as.po
+file=`echo ast | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ast.po
+file=`echo az | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file az.po
+file=`echo be | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file be.po
+file=`echo bg | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file bg.po
+file=`echo bn | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file bn.po
+file=`echo br | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file br.po
+file=`echo bs | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file bs.po
+file=`echo ca | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ca.po
+file=`echo ca@valencia | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ca@valencia.po
+file=`echo cs | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file cs.po
+file=`echo csb | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file csb.po
+file=`echo da | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file da.po
+file=`echo de | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file de.po
+file=`echo dz | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file dz.po
+file=`echo el | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file el.po
+file=`echo en_CA | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file en_CA.po
+file=`echo en_GB | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file en_GB.po
+file=`echo eo | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file eo.po
+file=`echo es | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file es.po
+file=`echo et | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file et.po
+file=`echo eu | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file eu.po
+file=`echo fa | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file fa.po
+file=`echo fi | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file fi.po
+file=`echo fr | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file fr.po
+file=`echo fy | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file fy.po
+file=`echo ga | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ga.po
+file=`echo gl | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file gl.po
+file=`echo gu | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file gu.po
+file=`echo he | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file he.po
+file=`echo hi | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file hi.po
+file=`echo hr | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file hr.po
+file=`echo hu | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file hu.po
+file=`echo hy | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file hy.po
+file=`echo id | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file id.po
+file=`echo is | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file is.po
+file=`echo it | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file it.po
+file=`echo ja | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ja.po
+file=`echo ka | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ka.po
+file=`echo kab | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file kab.po
+file=`echo kk | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file kk.po
+file=`echo kn | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file kn.po
+file=`echo ko | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ko.po
+file=`echo lt | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file lt.po
+file=`echo lv | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file lv.po
+file=`echo mai | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file mai.po
+file=`echo mn | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file mn.po
+file=`echo mr | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file mr.po
+file=`echo ms | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ms.po
+file=`echo nb | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file nb.po
+file=`echo nl | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file nl.po
+file=`echo nn_NO | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file nn_NO.po
+file=`echo oc | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file oc.po
+file=`echo pa | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file pa.po
+file=`echo pl | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file pl.po
+file=`echo pt | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file pt.po
+file=`echo pt_BR | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file pt_BR.po
+file=`echo ro | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ro.po
+file=`echo ru | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ru.po
+file=`echo sc | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sc.po
+file=`echo se | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file se.po
+file=`echo sk | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sk.po
+file=`echo sl | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sl.po
+file=`echo sq | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sq.po
+file=`echo sr | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sr.po
+file=`echo sr@latin | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sr@latin.po
+file=`echo sv | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sv.po
+file=`echo ta | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file ta.po
+file=`echo te | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file te.po
+file=`echo tg | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file tg.po
+file=`echo th | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file th.po
+file=`echo tr | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file tr.po
+file=`echo uk | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file uk.po
+file=`echo uz | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file uz.po
+file=`echo vi | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file vi.po
+file=`echo wa | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file wa.po
+file=`echo zh_CN | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file zh_CN.po
+file=`echo zh_HK | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file zh_HK.po
+file=`echo zh_TW | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file zh_TW.po
+make[2]: Leaving directory '/src/libmypaint-1.6.1/po'
+make[1]: Leaving directory '/src/libmypaint-1.6.1'
+Making install in .
+make[1]: Entering directory '/src/libmypaint-1.6.1'
+make[2]: Entering directory '/src/libmypaint-1.6.1'
+ /usr/bin/mkdir -p '/usr/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libmypaint.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libmypaint.so.0.0.0 /usr/lib/libmypaint.so.0.0.0
+libtool: install: (cd /usr/lib && { ln -s -f libmypaint.so.0.0.0 libmypaint.so.0 || { rm -f libmypaint.so.0 && ln -s libmypaint.so.0.0.0 libmypaint.so.0; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libmypaint.so.0.0.0 libmypaint.so || { rm -f libmypaint.so && ln -s libmypaint.so.0.0.0 libmypaint.so; }; })
+libtool: install: /usr/bin/install -c .libs/libmypaint.lai /usr/lib/libmypaint.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/usr/include/libmypaint'
+ /usr/bin/mkdir -p '/usr/include/libmypaint/fastapprox'
+ /usr/bin/install -c -m 644  fastapprox/fastpow.h fastapprox/sse.h fastapprox/fastexp.h fastapprox/cast.h fastapprox/fastlog.h '/usr/include/libmypaint/fastapprox'
+ /usr/bin/install -c -m 644  mypaint-config.h mypaint-glib-compat.h mypaint-mapping.h mypaint-matrix.h mypaint-symmetry.h mypaint-brush.h mypaint-brush-settings.h mypaint-brush-settings-gen.h mypaint-fixed-tiled-surface.h mypaint-rectangle.h mypaint-surface.h mypaint-tiled-surface.h '/usr/include/libmypaint/.'
+ /usr/bin/mkdir -p '/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libmypaint.pc '/usr/lib/pkgconfig'
+make[2]: Leaving directory '/src/libmypaint-1.6.1'
+make[1]: Leaving directory '/src/libmypaint-1.6.1'
+Making install in doc
+make[1]: Entering directory '/src/libmypaint-1.6.1/doc'
+make[2]: Entering directory '/src/libmypaint-1.6.1/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/src/libmypaint-1.6.1/doc'
+make[1]: Leaving directory '/src/libmypaint-1.6.1/doc'
+Making install in gegl
+make[1]: Entering directory '/src/libmypaint-1.6.1/gegl'
+make[2]: Entering directory '/src/libmypaint-1.6.1/gegl'
+make[2]: Leaving directory '/src/libmypaint-1.6.1/gegl'
+make[1]: Leaving directory '/src/libmypaint-1.6.1/gegl'
+Making install in tests
+make[1]: Entering directory '/src/libmypaint-1.6.1/tests'
+Making install in .
+make[2]: Entering directory '/src/libmypaint-1.6.1/tests'
+make[3]: Entering directory '/src/libmypaint-1.6.1/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/src/libmypaint-1.6.1/tests'
+make[2]: Leaving directory '/src/libmypaint-1.6.1/tests'
+Making install in gegl
+make[2]: Entering directory '/src/libmypaint-1.6.1/tests/gegl'
+make[3]: Entering directory '/src/libmypaint-1.6.1/tests/gegl'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/src/libmypaint-1.6.1/tests/gegl'
+make[2]: Leaving directory '/src/libmypaint-1.6.1/tests/gegl'
+make[1]: Leaving directory '/src/libmypaint-1.6.1/tests'
+Making install in po
+make[1]: Entering directory '/src/libmypaint-1.6.1/po'
+linguas="af ar as ast az be bg bn br bs ca ca@valencia cs csb da de dz el en_CA en_GB eo es et eu fa fi fr fy ga gl gu he hi hr hu hy id is it ja ka kab kk kn ko lt lv mai mn mr ms nb nl nn_NO oc pa pl pt pt_BR ro ru sc se sk sl sq sr sr@latin sv ta te tg th tr uk uz vi wa zh_CN zh_HK zh_TW "; \
+for lang in $linguas; do \
+  dir=/usr/share/locale/$lang/LC_MESSAGES; \
+  /bin/bash /src/libmypaint-1.6.1/install-sh -d $dir; \
+  if test -r $lang.gmo; then \
+    /usr/bin/install -c -m 644 $lang.gmo $dir/libmypaint.mo; \
+    echo "installing $lang.gmo as $dir/libmypaint.mo"; \
+  else \
+    /usr/bin/install -c -m 644 ./$lang.gmo $dir/libmypaint.mo; \
+    echo "installing ./$lang.gmo as" \
+	 "$dir/libmypaint.mo"; \
+  fi; \
+  if test -r $lang.gmo.m; then \
+    /usr/bin/install -c -m 644 $lang.gmo.m $dir/libmypaint.mo.m; \
+    echo "installing $lang.gmo.m as $dir/libmypaint.mo.m"; \
+  else \
+    if test -r ./$lang.gmo.m ; then \
+      /usr/bin/install -c -m 644 ./$lang.gmo.m \
+	$dir/libmypaint.mo.m; \
+      echo "installing ./$lang.gmo.m as" \
+	   "$dir/libmypaint.mo.m"; \
+    else \
+      true; \
+    fi; \
+  fi; \
+done
+installing af.gmo as /usr/share/locale/af/LC_MESSAGES/libmypaint.mo
+installing ar.gmo as /usr/share/locale/ar/LC_MESSAGES/libmypaint.mo
+installing as.gmo as /usr/share/locale/as/LC_MESSAGES/libmypaint.mo
+installing ast.gmo as /usr/share/locale/ast/LC_MESSAGES/libmypaint.mo
+installing az.gmo as /usr/share/locale/az/LC_MESSAGES/libmypaint.mo
+installing be.gmo as /usr/share/locale/be/LC_MESSAGES/libmypaint.mo
+installing bg.gmo as /usr/share/locale/bg/LC_MESSAGES/libmypaint.mo
+installing bn.gmo as /usr/share/locale/bn/LC_MESSAGES/libmypaint.mo
+installing br.gmo as /usr/share/locale/br/LC_MESSAGES/libmypaint.mo
+installing bs.gmo as /usr/share/locale/bs/LC_MESSAGES/libmypaint.mo
+installing ca.gmo as /usr/share/locale/ca/LC_MESSAGES/libmypaint.mo
+installing ca@valencia.gmo as /usr/share/locale/ca@valencia/LC_MESSAGES/libmypaint.mo
+installing cs.gmo as /usr/share/locale/cs/LC_MESSAGES/libmypaint.mo
+installing csb.gmo as /usr/share/locale/csb/LC_MESSAGES/libmypaint.mo
+installing da.gmo as /usr/share/locale/da/LC_MESSAGES/libmypaint.mo
+installing de.gmo as /usr/share/locale/de/LC_MESSAGES/libmypaint.mo
+installing dz.gmo as /usr/share/locale/dz/LC_MESSAGES/libmypaint.mo
+installing el.gmo as /usr/share/locale/el/LC_MESSAGES/libmypaint.mo
+installing en_CA.gmo as /usr/share/locale/en_CA/LC_MESSAGES/libmypaint.mo
+installing en_GB.gmo as /usr/share/locale/en_GB/LC_MESSAGES/libmypaint.mo
+installing eo.gmo as /usr/share/locale/eo/LC_MESSAGES/libmypaint.mo
+installing es.gmo as /usr/share/locale/es/LC_MESSAGES/libmypaint.mo
+installing et.gmo as /usr/share/locale/et/LC_MESSAGES/libmypaint.mo
+installing eu.gmo as /usr/share/locale/eu/LC_MESSAGES/libmypaint.mo
+installing fa.gmo as /usr/share/locale/fa/LC_MESSAGES/libmypaint.mo
+installing fi.gmo as /usr/share/locale/fi/LC_MESSAGES/libmypaint.mo
+installing fr.gmo as /usr/share/locale/fr/LC_MESSAGES/libmypaint.mo
+installing fy.gmo as /usr/share/locale/fy/LC_MESSAGES/libmypaint.mo
+installing ga.gmo as /usr/share/locale/ga/LC_MESSAGES/libmypaint.mo
+installing gl.gmo as /usr/share/locale/gl/LC_MESSAGES/libmypaint.mo
+installing gu.gmo as /usr/share/locale/gu/LC_MESSAGES/libmypaint.mo
+installing he.gmo as /usr/share/locale/he/LC_MESSAGES/libmypaint.mo
+installing hi.gmo as /usr/share/locale/hi/LC_MESSAGES/libmypaint.mo
+installing hr.gmo as /usr/share/locale/hr/LC_MESSAGES/libmypaint.mo
+installing hu.gmo as /usr/share/locale/hu/LC_MESSAGES/libmypaint.mo
+installing hy.gmo as /usr/share/locale/hy/LC_MESSAGES/libmypaint.mo
+installing id.gmo as /usr/share/locale/id/LC_MESSAGES/libmypaint.mo
+installing is.gmo as /usr/share/locale/is/LC_MESSAGES/libmypaint.mo
+installing it.gmo as /usr/share/locale/it/LC_MESSAGES/libmypaint.mo
+installing ja.gmo as /usr/share/locale/ja/LC_MESSAGES/libmypaint.mo
+installing ka.gmo as /usr/share/locale/ka/LC_MESSAGES/libmypaint.mo
+installing kab.gmo as /usr/share/locale/kab/LC_MESSAGES/libmypaint.mo
+installing kk.gmo as /usr/share/locale/kk/LC_MESSAGES/libmypaint.mo
+installing kn.gmo as /usr/share/locale/kn/LC_MESSAGES/libmypaint.mo
+installing ko.gmo as /usr/share/locale/ko/LC_MESSAGES/libmypaint.mo
+installing lt.gmo as /usr/share/locale/lt/LC_MESSAGES/libmypaint.mo
+installing lv.gmo as /usr/share/locale/lv/LC_MESSAGES/libmypaint.mo
+installing mai.gmo as /usr/share/locale/mai/LC_MESSAGES/libmypaint.mo
+installing mn.gmo as /usr/share/locale/mn/LC_MESSAGES/libmypaint.mo
+installing mr.gmo as /usr/share/locale/mr/LC_MESSAGES/libmypaint.mo
+installing ms.gmo as /usr/share/locale/ms/LC_MESSAGES/libmypaint.mo
+installing nb.gmo as /usr/share/locale/nb/LC_MESSAGES/libmypaint.mo
+installing nl.gmo as /usr/share/locale/nl/LC_MESSAGES/libmypaint.mo
+installing nn_NO.gmo as /usr/share/locale/nn_NO/LC_MESSAGES/libmypaint.mo
+installing oc.gmo as /usr/share/locale/oc/LC_MESSAGES/libmypaint.mo
+installing pa.gmo as /usr/share/locale/pa/LC_MESSAGES/libmypaint.mo
+installing pl.gmo as /usr/share/locale/pl/LC_MESSAGES/libmypaint.mo
+installing pt.gmo as /usr/share/locale/pt/LC_MESSAGES/libmypaint.mo
+installing pt_BR.gmo as /usr/share/locale/pt_BR/LC_MESSAGES/libmypaint.mo
+installing ro.gmo as /usr/share/locale/ro/LC_MESSAGES/libmypaint.mo
+installing ru.gmo as /usr/share/locale/ru/LC_MESSAGES/libmypaint.mo
+installing sc.gmo as /usr/share/locale/sc/LC_MESSAGES/libmypaint.mo
+installing se.gmo as /usr/share/locale/se/LC_MESSAGES/libmypaint.mo
+installing sk.gmo as /usr/share/locale/sk/LC_MESSAGES/libmypaint.mo
+installing sl.gmo as /usr/share/locale/sl/LC_MESSAGES/libmypaint.mo
+installing sq.gmo as /usr/share/locale/sq/LC_MESSAGES/libmypaint.mo
+installing sr.gmo as /usr/share/locale/sr/LC_MESSAGES/libmypaint.mo
+installing sr@latin.gmo as /usr/share/locale/sr@latin/LC_MESSAGES/libmypaint.mo
+installing sv.gmo as /usr/share/locale/sv/LC_MESSAGES/libmypaint.mo
+installing ta.gmo as /usr/share/locale/ta/LC_MESSAGES/libmypaint.mo
+installing te.gmo as /usr/share/locale/te/LC_MESSAGES/libmypaint.mo
+installing tg.gmo as /usr/share/locale/tg/LC_MESSAGES/libmypaint.mo
+installing th.gmo as /usr/share/locale/th/LC_MESSAGES/libmypaint.mo
+installing tr.gmo as /usr/share/locale/tr/LC_MESSAGES/libmypaint.mo
+installing uk.gmo as /usr/share/locale/uk/LC_MESSAGES/libmypaint.mo
+installing uz.gmo as /usr/share/locale/uz/LC_MESSAGES/libmypaint.mo
+installing vi.gmo as /usr/share/locale/vi/LC_MESSAGES/libmypaint.mo
+installing wa.gmo as /usr/share/locale/wa/LC_MESSAGES/libmypaint.mo
+installing zh_CN.gmo as /usr/share/locale/zh_CN/LC_MESSAGES/libmypaint.mo
+installing zh_HK.gmo as /usr/share/locale/zh_HK/LC_MESSAGES/libmypaint.mo
+installing zh_TW.gmo as /usr/share/locale/zh_TW/LC_MESSAGES/libmypaint.mo
+make[1]: Leaving directory '/src/libmypaint-1.6.1/po'
+=== KSeExpr 4.0.4.0 ===
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Welcome to KSeExpr 4.0.4.0 !
+-- CMAKE_INSTALL_PREFIX = /usr
+-- CMAKE_INSTALL_LIBDIR = lib/x86_64-linux-gnu
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Found Gettext: /usr/bin/msgmerge (found version "0.19.8.1") 
+-- Could NOT find GTest (missing: GTEST_LIBRARY GTEST_INCLUDE_DIR GTEST_MAIN_LIBRARY) 
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+-- Found Python3: /usr/bin/python3.8 (found version "3.8.10") found components: Interpreter 
+-- Found BISON: /usr/bin/bison (found version "3.5.1") 
+-- Found FLEX: /usr/bin/flex (found version "2.6.4") 
+-- Qt5 Enabled
+-- Performing Test KSeExpr_HAVE_CHARCONV_WITH_DOUBLES
+-- Performing Test KSeExpr_HAVE_CHARCONV_WITH_DOUBLES - Failed
+-- Performing Test KSeExpr_HAVE_DYNAMIC_DISPATCH
+-- Performing Test KSeExpr_HAVE_DYNAMIC_DISPATCH - Failed
+-- KSeExpr parser files: ExprParserLex.cpp;ExprParser.cpp
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+-- KSeExprUI parser files: ExprSpecParserLex.cpp;ExprSpecParser.cpp
+-- The following features have been enabled:
+
+ * KSeExprUI, Build the KSeExprUI widget library
+
+-- The following OPTIONAL packages have been found:
+
+ * ECM (required version >= 5.52.0)
+   Enables translations (if bundled) and automatic sanitizer support
+ * KF5I18n (required version >= 5.52.0)
+   Enables detection of fallback languages in KDE apps
+ * ZLIB
+ * PNG
+   Needed to support image file output in demos and tests
+ * Python3
+   Needed for running some tests
+ * BISON
+   Needed to build KSeExpr's language parser from source
+ * FLEX
+   Needed to build KSeExpr's language parser from source
+
+-- The following REQUIRED packages have been found:
+
+ * Gettext
+ * Qt5Core
+ * Qt5Gui
+ * Qt5Widgets
+ * Qt5 (required version >= 5.9.0)
+   Required if you're building KSeExprUI
+
+-- The following features have been disabled:
+
+ * LLVMBackend, Build the LLVM backend of KSeExpr
+ * Utils, Build the utilities
+ * Demos, Build the demos
+ * Docs, Build the documentation
+ * Tests, Build the tests
+ * SlowTests, Enables slow tests
+ * PregeneratedFiles, Build the language parser using the bundled, pregenerated files
+ * PerformanceStats, Print performance stats across KSeExpr
+
+-- The following OPTIONAL packages have not been found:
+
+ * Doxygen
+   Needed to build the documentation
+ * GTest
+   Needed for building the tests
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /src/build/kseexpr
+ninja: Entering directory `/src/build/kseexpr'
+[1/79] Generating ExprParserLexIn.cpp
+[2/79] Generating ExprParserLex.cpp
+[3/79] Generating y.tab.c, y.tab.h
+<command line>:3: warning: deprecated option: ‘--fixed-output-files’, use ‘-o y.tab.c’ [-Wdeprecated]
+[4/79] Generating ExprParser.tab.h
+[5/79] Generating ExprParser.cpp
+[6/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/Context.cpp.o
+[7/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/Curve.cpp.o
+[8/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprEnv.cpp.o
+[9/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprBuiltins.cpp.o
+[10/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprFunc.cpp.o
+[11/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/Expression.cpp.o
+[12/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprFuncX.cpp.o
+[13/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprLLVMCodeGeneration.cpp.o
+[14/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprFuncStandard.cpp.o
+[15/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprMultiExpr.cpp.o
+[16/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprNode.cpp.o
+[17/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprWalker.cpp.o
+[18/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/Noise.cpp.o
+[19/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/Utils.cpp.o
+[20/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprParserLex.cpp.o
+[21/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/Interpreter.cpp.o
+[22/79] Building CXX object src/KSeExpr/CMakeFiles/KSeExpr.dir/ExprParser.cpp.o
+[23/79] Linking CXX shared library src/KSeExpr/libKSeExpr.so.4.0.4.0
+[24/79] Creating library symlink src/KSeExpr/libKSeExpr.so.4 src/KSeExpr/libKSeExpr.so
+[25/79] Generating moc_ErrorMessages.cpp
+[26/79] Generating moc_ExprAddDialog.cpp
+[27/79] Generating moc_ExprBrowser.cpp
+[28/79] Generating moc_ExprColorCurve.cpp
+[29/79] Generating moc_ExprColorSwatch.cpp
+[30/79] Generating moc_ExprCompletionModel.cpp
+[31/79] Generating moc_ExprControlCollection.cpp
+[32/79] Generating moc_ExprControl.cpp
+[33/79] Generating moc_ExprCurve.cpp
+[34/79] Generating moc_ExprEditor.cpp
+[35/79] Generating moc_ExprFileDialog.cpp
+[36/79] Generating moc_ExprPopupDoc.cpp
+[37/79] Generating moc_ExprTextEdit.cpp
+[38/79] Generating ExprSpecParserLexIn.cpp
+[39/79] Generating ExprSpecParserLex.cpp
+[40/79] Generating y.tab.c, y.tab.h
+<command line>:3: warning: deprecated option: ‘--fixed-output-files’, use ‘-o y.tab.c’ [-Wdeprecated]
+[41/79] Generating ExprSpecParser.tab.h
+[42/79] Generating ExprSpecParser.cpp
+[43/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/BasicExpression.cpp.o
+[44/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ControlSpec.cpp.o
+[45/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/Debug.cpp.o
+[46/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/EditableExpression.cpp.o
+[47/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/Editable.cpp.o
+[48/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ErrorMessages.cpp.o
+[49/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprAddDialog.cpp.o
+[50/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprBrowser.cpp.o
+[51/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprColorCurve.cpp.o
+[52/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprColorSwatch.cpp.o
+[53/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprCompletionModel.cpp.o
+[54/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprControl.cpp.o
+[55/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprControlCollection.cpp.o
+[56/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprCurve.cpp.o
+[57/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprEditor.cpp.o
+[58/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprFileDialog.cpp.o
+[59/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprHighlighter.cpp.o
+[60/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprPopupDoc.cpp.o
+[61/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/Utils.cpp.o
+[62/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ErrorMessages.cpp.o
+[63/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprTextEdit.cpp.o
+[64/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprBrowser.cpp.o
+[65/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprAddDialog.cpp.o
+[66/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprColorSwatch.cpp.o
+[67/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprColorCurve.cpp.o
+[68/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprCompletionModel.cpp.o
+[69/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprControlCollection.cpp.o
+[70/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprControl.cpp.o
+[71/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprCurve.cpp.o
+[72/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprEditor.cpp.o
+[73/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprFileDialog.cpp.o
+[74/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprPopupDoc.cpp.o
+[75/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprSpecParserLex.cpp.o
+[76/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/moc_ExprTextEdit.cpp.o
+[77/79] Building CXX object src/KSeExprUI/CMakeFiles/KSeExprUI.dir/ExprSpecParser.cpp.o
+[78/79] Linking CXX shared library src/KSeExprUI/libKSeExprUI.so.4.0.4.0
+[79/79] Creating library symlink src/KSeExprUI/libKSeExprUI.so.4 src/KSeExprUI/libKSeExprUI.so
+ninja: Entering directory `/src/build/kseexpr'
+[0/1] Install the project...
+-- Install configuration: "Release"
+-- Installing: /usr/share/pkgconfig/kseexpr.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/KSeExpr/kseexpr-config.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/KSeExpr/kseexpr-config-version.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/KSeExpr/KSeExprTargets.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/cmake/KSeExpr/KSeExprTargets-release.cmake
+-- Installing: /usr/lib/x86_64-linux-gnu/libKSeExpr.so.4.0.4.0
+-- Installing: /usr/lib/x86_64-linux-gnu/libKSeExpr.so.4
+-- Installing: /usr/lib/x86_64-linux-gnu/libKSeExpr.so
+-- Installing: /usr/include/KSeExpr/Context.h
+-- Installing: /usr/include/KSeExpr/Curve.h
+-- Installing: /usr/include/KSeExpr/ErrorCode.h
+-- Installing: /usr/include/KSeExpr/Evaluator.h
+-- Installing: /usr/include/KSeExpr/ExprBuiltins.h
+-- Installing: /usr/include/KSeExpr/ExprEnv.h
+-- Installing: /usr/include/KSeExpr/Expression.h
+-- Installing: /usr/include/KSeExpr/ExprFunc.h
+-- Installing: /usr/include/KSeExpr/ExprFuncStandard.h
+-- Installing: /usr/include/KSeExpr/ExprFuncX.h
+-- Installing: /usr/include/KSeExpr/ExprLLVM.h
+-- Installing: /usr/include/KSeExpr/ExprLLVMAll.h
+-- Installing: /usr/include/KSeExpr/ExprMultiExpr.h
+-- Installing: /usr/include/KSeExpr/ExprNode.h
+-- Installing: /usr/include/KSeExpr/ExprParser.h
+-- Installing: /usr/include/KSeExpr/ExprPatterns.h
+-- Installing: /usr/include/KSeExpr/ExprType.h
+-- Installing: /usr/include/KSeExpr/ExprWalker.h
+-- Installing: /usr/include/KSeExpr/Interpreter.h
+-- Installing: /usr/include/KSeExpr/Noise.h
+-- Installing: /usr/include/KSeExpr/NoiseTables.h
+-- Installing: /usr/include/KSeExpr/PerformanceTimer.h
+-- Installing: /usr/include/KSeExpr/StringUtils.h
+-- Installing: /usr/include/KSeExpr/Timer.h
+-- Installing: /usr/include/KSeExpr/TypePrinter.h
+-- Installing: /usr/include/KSeExpr/Utils.h
+-- Installing: /usr/include/KSeExpr/VarBlock.h
+-- Installing: /usr/include/KSeExpr/Vec.h
+-- Installing: /usr/include/KSeExpr/kseexpr_export.h
+-- Installing: /usr/include/KSeExpr/ExprConfig.h
+-- Installing: /usr/lib/x86_64-linux-gnu/libKSeExprUI.so.4.0.4.0
+-- Installing: /usr/lib/x86_64-linux-gnu/libKSeExprUI.so.4
+-- Set runtime path of "/usr/lib/x86_64-linux-gnu/libKSeExprUI.so.4.0.4.0" to ""
+-- Installing: /usr/lib/x86_64-linux-gnu/libKSeExprUI.so
+-- Installing: /usr/include/KSeExprUI/ErrorMessages.h
+-- Installing: /usr/include/KSeExprUI/ExprAddDialog.h
+-- Installing: /usr/include/KSeExprUI/ExprBrowser.h
+-- Installing: /usr/include/KSeExprUI/ExprColorCurve.h
+-- Installing: /usr/include/KSeExprUI/ExprColorSwatch.h
+-- Installing: /usr/include/KSeExprUI/ExprCompletionModel.h
+-- Installing: /usr/include/KSeExprUI/ExprControlCollection.h
+-- Installing: /usr/include/KSeExprUI/ExprControl.h
+-- Installing: /usr/include/KSeExprUI/ExprCurve.h
+-- Installing: /usr/include/KSeExprUI/ExprEditor.h
+-- Installing: /usr/include/KSeExprUI/ExprFileDialog.h
+-- Installing: /usr/include/KSeExprUI/ExprPopupDoc.h
+-- Installing: /usr/include/KSeExprUI/ExprTextEdit.h
+-- Installing: /usr/include/KSeExprUI/Debug.h
+-- Installing: /usr/include/KSeExprUI/BasicExpression.h
+-- Installing: /usr/include/KSeExprUI/ControlSpec.h
+-- Installing: /usr/include/KSeExprUI/Editable.h
+-- Installing: /usr/include/KSeExprUI/EditableExpression.h
+-- Installing: /usr/include/KSeExprUI/ExprHighlighter.h
+-- Installing: /usr/include/KSeExprUI/ExprSpecType.h
+-- Installing: /usr/include/KSeExprUI/Utils.h
+DEPS_BUILD_DONE

@@ -1,0 +1,8 @@
+-- Installing: /krita-stage/share/krita/actions/kritamenu.action
+-- Installing: /krita-stage/share/metainfo/org.kde.krita.appdata.xml
+-- Up-to-date: /krita-stage/share/krita/shortcuts
+INSTALL_EXIT=0
+krita
+krita_version
+kritarunner
+186M	/krita-stage

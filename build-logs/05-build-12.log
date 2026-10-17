@@ -1,0 +1,6 @@
+                 from /src/build-krita/libs/ui/kritaui_autogen/mocs_compilation.cpp:63:
+/src/krita/libs/ui/opengl/kis_texture_tile_update_info.h: In member function ‘void KisTextureTileUpdateInfo::retrieveData(KisPaintDeviceSP, const QBitArray&, bool, int)’:
+/src/krita/libs/ui/opengl/kis_texture_tile_update_info.h:161:90: warning: comparison of integer expressions of different signedness: ‘int’ and ‘quint32’ {aka ‘unsigned int’} [-Wsign-compare]
+  161 |         if (!channelFlags.isEmpty() && selectedChannelIndex >= 0 && selectedChannelIndex < m_patchColorSpace->channelCount()) {
+      |                                                                     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,6 @@
+/tmp/r-09b-phase6-gui2.sh: line 53:  6266 Killed                  timeout 900 $EX/AppRun --nosplash /root/rec-input.png > /root/p6/rec-run.log 2>&1
+[18:24:46] stroke painted; waiting 85s for autosave
+RESULT: gui_autosave_file = FAIL file=
+[18:26:11] killing krita with SIGKILL (crash simulation)
+RESULT: recovery_dialog_detected = FAIL (wid=)
+GUI2_DONE

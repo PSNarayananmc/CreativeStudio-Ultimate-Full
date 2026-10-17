@@ -1,0 +1,6 @@
+[386/391 62.123s] Linking CXX shared module plugins/tools/karbonplugins/tools/krita_karbontools.so
+[387/391 62.417s] Linking CXX shared module plugins/tools/tool_lazybrush/kritatoollazybrush.so
+[388/391 62.676s] Linking CXX shared module plugins/tools/tool_smart_patch/kritatoolSmartPatch.so
+[389/391 62.868s] Linking CXX shared module plugins/tools/svgtexttool/krita_tool_svgtext.so
+[390/391 63.121s] Linking CXX shared module plugins/tools/tool_enclose_and_fill/kritatoolencloseandfill.so
+[391/391 63.306s] Linking CXX executable krita/krita

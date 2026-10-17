@@ -1,0 +1,6 @@
+/src/krita/libs/image/commands_new/KisSimpleModifyTransformMaskCommand.cpp:75:19: error: ‘m_undoCommands’ was not declared in this scope; did you mean ‘m_endOfCommand’?
+   75 |     std::for_each(m_undoCommands.begin(), m_undoCommands.end(), std::mem_fn(&KUndo2Command::undo));
+      |                   ^~~~~~~~~~~~~~
+      |                   m_endOfCommand
+[234/2748 185.977s] Building CXX object libs/image/CMakeFiles/kritaimage.dir/commands_new/KisUpdateCommandEx.cpp.o
+ninja: build stopped: subcommand failed.

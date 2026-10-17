@@ -1,0 +1,6 @@
+/src/krita/libs/pigment/resources/KoPattern.cpp: In member function ‘bool KoPattern::loadPatFromDevice(QIODevice*)’:
+/src/krita/libs/pigment/resources/KoPattern.cpp:161:17: error: ‘class QImage’ has no member named ‘convertTo’
+  161 |         pattern.convertTo(QImage::Format_Indexed8);
+      |                 ^~~~~~~~~
+[31/2984 17.631s] Building CXX object libs/pigment/CMakeFiles/kritapigment.dir/resources/KisSwatchGroup.cpp.o
+ninja: build stopped: subcommand failed.

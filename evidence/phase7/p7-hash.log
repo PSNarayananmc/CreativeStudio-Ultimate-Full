@@ -1,0 +1,45 @@
+TOTAL_DIFF_LINES=645
+< ./usr/bin/krita
+> ./usr/bin/krita
+< ./usr/bin/krita_version
+> ./usr/bin/krita_version
+< ./usr/bin/kritarunner
+> ./usr/bin/kritarunner
+< ./usr/etc/xdg/kritarc
+> ./usr/etc/xdg/kritarc
+< ./usr/lib/libHalf.so.24
+> ./usr/lib/libHalf.so.24
+< ./usr/lib/libIex-2_3.so.24
+> ./usr/lib/libIex-2_3.so.24
+< ./usr/lib/libIlmImf-2_3.so.24
+> ./usr/lib/libIlmImf-2_3.so.24
+< ./usr/lib/libIlmThread-2_3.so.24
+> ./usr/lib/libIlmThread-2_3.so.24
+< ./usr/lib/libKF5Completion.so.5
+> ./usr/lib/libKF5Completion.so.5
+< ./usr/lib/libKF5ConfigCore.so.5
+> ./usr/lib/libKF5ConfigCore.so.5
+< ./usr/lib/libKF5ConfigGui.so.5
+> ./usr/lib/libKF5ConfigGui.so.5
+< ./usr/lib/libKF5CoreAddons.so.5
+> ./usr/lib/libKF5CoreAddons.so.5
+< ./usr/lib/libKF5Crash.so.5
+> ./usr/lib/libKF5Crash.so.5
+< ./usr/lib/libKF5GuiAddons.so.5
+> ./usr/lib/libKF5GuiAddons.so.5
+< ./usr/lib/libKF5I18n.so.5
+> ./usr/lib/libKF5I18n.so.5
+=== where are krita plugins ===
+/tmp/squashfs-root/usr/plugins/xcbglintegrations/libqxcb-egl-integration.so
+/tmp/squashfs-root/usr/plugins/xcbglintegrations/libqxcb-glx-integration.so
+/tmp/squashfs-root/usr/plugins/iconengines/libqsvgicon.so
+/tmp/squashfs-root/usr/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
+/tmp/squashfs-root/usr/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so
+bearer
+iconengines
+imageformats
+platforminputcontexts
+platforms
+printsupport
+sqldrivers
+xcbglintegrations

@@ -1,0 +1,7 @@
+EXIT=124
+=== V5 RESULTS ===
+INTROSPECT colorModels: ['GRAYA', 'LABA', 'XYZA', 'A', 'RGBA', 'CMYKA', 'YCbCrA']
+introspect exc TypeError('colorDepths(self, str): not enough arguments')
+RESULT: t07b_gray_doc = PASS model=GRAYA
+convert exc AttributeError("'Document' object has no attribute 'convertColorModelAndDepth'")
+RESULT: t07c_convert_gray_to_rgba = FAIL ?

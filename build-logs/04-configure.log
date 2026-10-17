@@ -1,0 +1,479 @@
+-- Using CMake version: 3.31.6
+-- Krita version: 5.2.16
+-- Branding selected: default
+-- FindPythonLibrary: TRUE
+-- Python system site-packages directory: /usr/lib/python3.8/site-packages
+CMake Warning at cmake/modules/FindPythonLibrary.cmake:68 (message):
+  CMAKE_PREFIX_PATH variable is not set, we might NOT be able to detect SIP
+  modules
+Call Stack (most recent call first):
+  CMakeLists.txt:357 (find_package)
+
+
+-- Krita site-packages directories for SIP v4: /krita-stage/lib/krita-python-libs
+-- Krita site-packages directories for SIP v5+: /krita-stage/lib/python3.8/site-packages
+Installing in /krita-stage. Run /src/build-krita/prefix.sh to set the environment for krita.
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5Config/KF5ConfigQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5Config_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5Config/KF5ConfigConfig.cmake:40 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args` (KF5Config)
+  does not match the name of the calling package (KF5).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5WidgetsAddons/KF5WidgetsAddonsQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5WidgetsAddons_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfig.cmake:42 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (KF5WidgetsAddons) does not match the name of the calling package (KF5).
+  This can lead to problems in calling code that expects `find_package`
+  result variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5Completion/KF5CompletionQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5Completion_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5Completion/KF5CompletionConfig.cmake:41 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (KF5Completion) does not match the name of the calling package (KF5).  This
+  can lead to problems in calling code that expects `find_package` result
+  variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5CoreAddons/KF5CoreAddonsQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5CoreAddons_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5CoreAddons/KF5CoreAddonsConfig.cmake:78 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (KF5CoreAddons) does not match the name of the calling package (KF5).  This
+  can lead to problems in calling code that expects `find_package` result
+  variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5GuiAddons/KF5GuiAddonsQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5GuiAddons_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5GuiAddons/KF5GuiAddonsConfig.cmake:44 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (KF5GuiAddons) does not match the name of the calling package (KF5).  This
+  can lead to problems in calling code that expects `find_package` result
+  variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5I18n/KF5I18nQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5I18n_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5I18n/KF5I18nConfig.cmake:42 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args` (KF5I18n)
+  does not match the name of the calling package (KF5).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5ItemViews/KF5ItemViewsQCHTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5ItemViews_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5ItemViews/KF5ItemViewsConfig.cmake:42 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (KF5ItemViews) does not match the name of the calling package (KF5).  This
+  can lead to problems in calling code that expects `find_package` result
+  variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5WindowSystem_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemConfig.cmake:42 (include)
+  /usr/share/ECM/find-modules/FindKF5.cmake:74 (find_package)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (KF5WindowSystem) does not match the name of the calling package (KF5).
+  This can lead to problems in calling code that expects `find_package`
+  result variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/find-modules/FindKF5.cmake:78 (find_package_handle_standard_args)
+  CMakeLists.txt:425 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/KF5Crash/KF5CrashQchTargets.cmake:6 (set_target_properties):
+  Policy CMP0160 is not set: More read-only target properties now error when
+  trying to set them.  Run "cmake --help-policy CMP0160" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  IMPORTED property is read-only for target("KF5Crash_QCH")
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/KF5Crash/KF5CrashConfig.cmake:44 (include)
+  CMakeLists.txt:612 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning at cmake/modules/CheckLibTIFFPSDSupport.cmake:60 (message):
+  Your version of libtiff cannot read or write Photoshop TIFFs!
+Call Stack (most recent call first):
+  CMakeLists.txt:952 (include)
+
+
+CMake Warning at cmake/modules/Findlibjpeg-turbo.cmake:113 (message):
+  Cannot determine libjpeg-turbo version without pkg-config
+Call Stack (most recent call first):
+  CMakeLists.txt:965 (find_package)
+
+
+-- Could NOT find libjpeg-turbo (missing: libjpeg-turbo_INCLUDE_DIR libjpeg-turbo_LIBRARY turbojpeg) (Required is at least version "2.1.3")
+-- Could NOT find GIF (missing: GIF_LIBRARY GIF_INCLUDE_DIR) 
+-- Could NOT find HEIF (missing: HEIF_INCLUDE_DIR HEIF_LIBRARY) (Required is at least version "1.11.0")
+CMake Warning at cmake/modules/FindOpenJPEG.cmake:159 (message):
+  Cannot determine OpenJPEG version without pkg-config
+Call Stack (most recent call first):
+  CMakeLists.txt:992 (find_package)
+
+
+-- Could NOT find OpenJPEG (missing: OpenJPEG_INCLUDE_DIR OpenJPEG_LIBRARY) (Required is at least version "2.3.0")
+-- Could NOT find JPEGXL (missing: JPEGXL_LIBRARY JPEGXL_INCLUDE_DIR) (Required is at least version "0.7.0")
+-- Found SIP version: 4.19.21
+-- Found PyQt5 version: 5.14.1
+CMake Warning at CMakeLists.txt:1053 (find_package):
+  By not providing "FindMlt7.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "Mlt7", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "Mlt7" with any of
+  the following names:
+
+    Mlt7Config.cmake
+    mlt7-config.cmake
+
+  Add the installation prefix of "Mlt7" to CMAKE_PREFIX_PATH or set
+  "Mlt7_DIR" to a directory containing one of the above files.  If "Mlt7"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+-- Found QtGui OpenGL support
+CMake Warning at CMakeLists.txt:1087 (find_package):
+  Could not find a configuration file for package "Eigen3" that is compatible
+  with requested version "5".
+
+  The following configuration files were considered but not accepted:
+
+    /usr/lib/cmake/eigen3/Eigen3Config.cmake, version: 3.3.7
+    /lib/cmake/eigen3/Eigen3Config.cmake, version: 3.3.7
+
+
+
+-- Could NOT find xsimd: found neither xsimdConfig.cmake nor xsimd-config.cmake (Required is at least version "8.1.0")
+-- Could NOT find xsimd: found neither xsimdConfig.cmake nor xsimd-config.cmake (Required is at least version "9")
+-- Could NOT find xsimd: found neither xsimdConfig.cmake nor xsimd-config.cmake (Required is at least version "10")
+-- Could NOT find xsimd: found neither xsimdConfig.cmake nor xsimd-config.cmake (Required is at least version "11")
+-- Could NOT find xsimd: found neither xsimdConfig.cmake nor xsimd-config.cmake (Required is at least version "12")
+-- Could NOT find xsimd: found neither xsimdConfig.cmake nor xsimd-config.cmake (Required is at least version "13")
+-- Poppler: Qt5 requires Core
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (Poppler_Core) does not match the name of the calling package (Poppler).
+  This can lead to problems in calling code that expects `find_package`
+  result variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/modules/ECMFindModuleHelpers.cmake:248 (find_package_handle_standard_args)
+  /usr/share/ECM/find-modules/FindPoppler.cmake:112 (ecm_find_package_handle_library_components)
+  CMakeLists.txt:1180 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /usr/local/lib/python3.8/dist-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
+  The package name passed to `find_package_handle_standard_args`
+  (Poppler_Qt5) does not match the name of the calling package (Poppler).
+  This can lead to problems in calling code that expects `find_package`
+  result variables (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /usr/share/ECM/modules/ECMFindModuleHelpers.cmake:248 (find_package_handle_standard_args)
+  /usr/share/ECM/find-modules/FindPoppler.cmake:112 (ecm_find_package_handle_library_components)
+  CMakeLists.txt:1180 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Checking for module 'quazip'
+--   No package 'quazip' found
+-- Found QUAZIP: /usr/lib/x86_64-linux-gnu/libquazip5.so (Required is at least version "0.6")
+-- Found the following HarfBuzz libraries:
+--  HarfBuzz (required): /usr/lib/x86_64-linux-gnu/libharfbuzz.so
+041315 - The version of SIP found expressed as a 6 digit hex number suitable for comparison as a string.
+4.19.21 - The version of SIP found as a human readable string.
+/usr/bin/sip - Path and filename of the SIP command line executable.
+/usr/share/sip - default SIP dir
+/usr/include/python3.8 - Directory holding the SIP C++ header file.
+
+Broken tests:
+    * libs-flake-TestPointMergeCommand
+    * libs-flake-TestSvgText
+    * libs-flake-TestSvgTextCloned
+    * libs-flake-TestSvgTextRoundTrip
+    * libs-image-kis_transform_mask_test
+    * libs-image-kis_perspective_transform_worker_test
+    * libs-ui-KisPaintingAssistantsDecorationTest
+    * libs-ui-KisClipboardTest
+    * libs-ui-FreehandStrokeTest
+    * libs-ui-FreehandStrokeBenchmark
+    * libs-ui-KisPaintOnTransparencyMaskTest
+    * libs-ui-FillProcessingVisitorTest
+    * libs-ui-FilterStrokeTest
+    * libs-ui-KisSelectionManagerTest
+    * libs-ui-KisNodeManagerTest
+    * libs-ui-KisZoomAndPanTest
+    * libs-ui-KisActionManagerTest
+    * libs-ui-KisCategoriesMapperTest
+    * krita-filters-kis_all_filter_test
+    * krita-filters-kis_crash_filter_test
+    * plugins-impex-kis_png_test
+    * plugins-impex-kis_csv_test
+    * plugins-impex-KisSvgTest
+    * plugins-metadata-KisExifTest
+    * plugins-libpaintop-kis_linked_pattern_manager_test
+    * plugins-defaultpaintops-KisBrushOpTest
+    * plugins-tools-basictools-MoveStrokeTest
+    * plugins-tooltransform-TransformStrokeStrategyTest
+-- The following features have been enabled:
+
+ * Hide safe asserts, Don't show message box for "safe" asserts, just ignore them automatically and dump a message to the terminal.
+ * Lock free hash table, Use lock free hash table instead of blocking.
+ * Limit long tests, Run long running unittests in a limited quick mode
+ * Enable updaters, Enable updaters/update notifications.
+
+-- The following OPTIONAL packages have been found:
+
+ * PythonLibrary (required version >= 3.8), Python Library, <https://www.python.org>
+   Required by the Krita PyQt plugin
+ * Qt5Qml (required version >= 5.12.8)
+ * Qt5Quick (required version >= 5.12.0), QtQuick, <https://www.qt.io/>
+   Optionally used for the touch gui for Krita
+ * Qt5QuickWidgets (required version >= 5.12.0), QtQuickWidgets, <https://www.qt.io/>
+   Optionally used for the touch gui for Krita
+ * Qt5DBus (required version >= 5.12.0), Qt DBUS integration, <https://www.qt.io/>
+   Optionally used to provide a dbus api on Linux
+ * KF5Crash (required version >= 5.44.0), KDE's Crash Handler, <https://api.kde.org/frameworks-api/frameworks5-apidocs/kcrash/html/index.html>
+   Optionally used to provide crash reporting on Linux
+ * WebP (required version >= 1.2.0), <https://developers.google.com/speed/webp>
+   Required by the WebP plugin
+ * KSeExpr (required version >= 4.0.0.0), <https://invent.kde.org/graphics/kseexpr>
+   Required by the SeExpr generator layer
+ * OpenEXR, A library for handling OpenEXR high dynamic-range image files, <https://www.openexr.com/>
+ * JPEG, Free library for JPEG image compression. Note that libjpeg8 is NOT supported., <https://www.libjpeg-turbo.org>
+   Required by the Krita JPEG filter
+ * FFTW3, A fast, free C FFT library, <http://www.fftw.org/>
+   Required by the Krita for fast convolution operators and some G'Mic features
+ * OpenColorIO (required version >= 1.1.1), The OpenColorIO Library, <https://www.opencolorio.org>
+   Required by the Krita LUT docker
+ * SIP (required version >= 4.19.13), Support for generating SIP Python bindings, <https://www.riverbankcomputing.com/software/sip/download>
+   Required by the Krita PyQt plugin
+ * PyQt5 (required version >= 5.6.0), Python bindings for Qt5., <https://www.riverbankcomputing.com/software/pyqt/download5>
+   Required by the Krita PyQt plugin
+ * LibMyPaint (required version >= 1.4.0), MyPaint brush engine API for C/C++
+   Required for the MyPaint brush engine
+ * Poppler, A PDF rendering library, <https://poppler.freedesktop.org/>
+   Required by the Krita PDF filter.
+ * KF5KDcraw (required version >= 5.0.0), A thread-safe wrapper around libraw, <https://api.kde.org/libkdcraw/html/index.html>
+   Needed for reading RAW files
+
+-- The following RECOMMENDED packages have been found:
+
+ * GSL, <https://www.gnu.org/software/gsl>
+   Required by Krita's Transform tool.
+
+-- The following REQUIRED packages have been found:
+
+ * Python (required version >= 3.8)
+ * ECM (required version >= 5.22)
+ * KF5Config (required version >= 5.44.0)
+ * KF5WidgetsAddons (required version >= 5.44.0)
+ * KF5Completion (required version >= 5.44.0)
+ * KF5CoreAddons (required version >= 5.44.0)
+ * KF5GuiAddons (required version >= 5.44.0)
+ * KF5ItemViews (required version >= 5.44.0)
+ * KF5WindowSystem (required version >= 5.44.0)
+ * KF5 (required version >= 5.44.0)
+ * Qt5Widgets
+ * Qt5Xml
+ * Qt5Network
+ * Qt5PrintSupport
+ * Qt5Svg
+ * Qt5Test
+ * Qt5Concurrent
+ * Qt5Sql
+ * Qt5X11Extras
+ * Qt5 (required version >= 5.12.0)
+ * X11
+ * PNG
+ * boost_headers (required version == 1.71.0)
+ * Boost (required version >= 1.69), Boost provides free peer-reviewed portable C++ source libraries., <https://www.boost.org>
+ * Immer
+ * Zug
+ * Lager
+ * ZLIB, Compression library, <https://www.zlib.net/>
+   Required by Krita's PNG and PSD support
+ * TIFF, TIFF Library and Utilities, <http://www.libtiff.org>
+   Required by the Krita TIFF filter
+ * Eigen3 (required version >= 3.3), C++ template library for linear algebra, <http://eigen.tuxfamily.org>
+ * LibExiv2 (required version >= 0.16), Image metadata support, <http://www.exiv2.org>
+ * LCMS2 (required version >= 2.4), LittleCMS Color management engine, <http://www.littlecms.com>
+   Will be used for color management and is necessary for Krita
+ * QUAZIP (required version >= 0.6), A library for reading and writing zip files, <https://stachenov.github.io/quazip/>
+   Needed for reading and writing KRA and ORA files
+ * Qt5Core (required version >= 5.2.0)
+ * Qt5Gui (required version >= 5.2.0)
+ * Freetype (required version >= 2.11.0), A library for rendering glyphs, <https://download.savannah.gnu.org/releases/freetype>
+   Needed for rendering text vector shapes.
+ * HarfBuzz (required version >= 4.0.0), OpenType text shaping engine, <https://harfbuzz.github.io>
+   Needed for rendering text vector shapes.
+ * Fontconfig (required version >= 2.13.1), Fontconfig is a library for configuring and customizing font access, <https://www.fontconfig.org/>
+   Needed for getting font file information.
+ * libunibreak (required version >= 5.0), Implementation of the line breaking and word breaking algorithms as described in Unicode Standard Annex 14 and Unicode Standard Annex 29, <https://github.com/adah1972/libunibreak>
+   Needed for rendering text vector shapes.
+ * FriBidi (required version >= 1.0.6), GNU FriBidi, <https://github.com/fribidi/fribidi>
+   Needed by libraqm to perform bidirectional text layout.
+ * Gettext
+ * KF5I18n
+ * Threads
+
+-- The following features have been disabled:
+
+ * Install benchmarks, Install benchmarks into the installation root to make them packagable
+ * Crash on safe asserts, Crash unconditionally whenever a "safe" assert happens. Useful for running unittests
+ * Foundation Build, A Foundation build is a binary release build that can package some extra things like color themes. Linux distributions that build and install Krita into a default system location should not define this option to true.
+ * Enable Broken Tests, Runs broken test when "make test" is invoked (use -DKRITA_ENABLE_BROKEN_TESTS=ON to enable).
+ * Build Qt Designer plugins, Builds Qt Designer plugins for Krita widgets (use -DBUILD_KRITA_QT_DESIGNER_PLUGINS=ON to enable).
+ * Precompiled Headers, precompiled headers make build process faster on some systems
+ * ASAN address sanitizer, crash Krita if it violates address access rules (-DECM_ENABLE_SANITIZERS=address)
+
+-- The following OPTIONAL packages have not been found:
+
+ * libjpeg-turbo (required version >= 2.1.3), libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2, AVX2, Neon, AltiVec) to accelerate baseline JPEG compression and decompression on x86, x86-64, Arm, and PowerPC systems, as well as progressive JPEG compression on x86 and x86-64 systems., <https://www.libjpeg-turbo.org>
+   Required by the Krita JPEG and TIFF filters
+ * GIF, Library for loading and saving gif files., <http://giflib.sourceforge.net/>
+   Required by the Krita GIF filter
+ * HEIF (required version >= 1.11.0), Library for loading and saving heif files., <https://github.com/strukturag/libheif>
+   Required by the Krita HEIF filter
+ * OpenJPEG (required version >= 2.3.0), Library for loading and saving jp2000 files., <https://www.openjpeg.org/>
+   Required by the Krita JP2000 filter
+ * JPEGXL (required version >= 0.7.0), JPEG XL is a royalty-free raster-graphics file format that supports both lossy and lossless compression and is experimentally supported by Chrome, Firefox, and Edge., <https://github.com/libjxl/libjxl>
+   Required by the Krita JPEG-XL filter
+ * Mlt7, Media Lovin' Toolkit (Multimedia Framework), <https://mltframework.org/>
+   Required to do audio/video syncrhonization and processing. No MLT = No Audio! 
+ * xsimd (required version >= 13), C++ wrappers for SIMD intrinsics, <https://github.com/xtensor-stack/xsimd>
+   Required by Krita for vectorization
+
+-- Configuring done (1.0s)
+CMake Warning (dev) at CMakeLists.txt:782 (add_library):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /src/krita/libs/image/commands/KisBatchUpdateLayerModificationCommand.cpp
+Call Stack (most recent call first):
+  libs/image/CMakeLists.txt:366 (kis_add_library)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Generating done (4.3s)
+-- Build files have been written to: /src/build-krita
+CMAKE_CONFIGURE_DONE

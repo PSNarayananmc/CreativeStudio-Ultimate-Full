@@ -1,0 +1,6 @@
+/src/krita/libs/ui/tool/KisAsyncColorSamplerHelper.cpp: In member function ‘void KisAsyncColorSamplerHelper::paintCircle(QPainter&, const QRectF&, const QColor&, const QColor&)’:
+/src/krita/libs/ui/tool/KisAsyncColorSamplerHelper.cpp:494:22: error: ‘class QPainterPath’ has no member named ‘clear’
+  494 |             clipPath.clear();
+      |                      ^~~~~
+[231/2165 227.561s] Building CXX object libs/ui/CMakeFiles/kritaui.dir/toolbox/KoToolBox.cpp.o
+ninja: build stopped: subcommand failed.

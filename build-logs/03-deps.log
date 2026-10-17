@@ -1,0 +1,534 @@
+=== libunibreak 5.1 (autotools) ===
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking whether ln -s works... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating libunibreak.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-recursive
+make[1]: Entering directory '/src/libunibreak-5.1'
+Making all in src
+make[2]: Entering directory '/src/libunibreak-5.1/src'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-unibreakbase.lo -MD -MP -MF .deps/libunibreak_la-unibreakbase.Tpo -c -o libunibreak_la-unibreakbase.lo `test -f 'unibreakbase.c' || echo './'`unibreakbase.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-unibreakdef.lo -MD -MP -MF .deps/libunibreak_la-unibreakdef.Tpo -c -o libunibreak_la-unibreakdef.lo `test -f 'unibreakdef.c' || echo './'`unibreakdef.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-unibreakbase.lo -MD -MP -MF .deps/libunibreak_la-unibreakbase.Tpo -c unibreakbase.c  -fPIC -DPIC -o .libs/libunibreak_la-unibreakbase.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-unibreakdef.lo -MD -MP -MF .deps/libunibreak_la-unibreakdef.Tpo -c unibreakdef.c  -fPIC -DPIC -o .libs/libunibreak_la-unibreakdef.o
+mv -f .deps/libunibreak_la-unibreakbase.Tpo .deps/libunibreak_la-unibreakbase.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-linebreak.lo -MD -MP -MF .deps/libunibreak_la-linebreak.Tpo -c -o libunibreak_la-linebreak.lo `test -f 'linebreak.c' || echo './'`linebreak.c
+mv -f .deps/libunibreak_la-unibreakdef.Tpo .deps/libunibreak_la-unibreakdef.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-linebreakdata.lo -MD -MP -MF .deps/libunibreak_la-linebreakdata.Tpo -c -o libunibreak_la-linebreakdata.lo `test -f 'linebreakdata.c' || echo './'`linebreakdata.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-linebreak.lo -MD -MP -MF .deps/libunibreak_la-linebreak.Tpo -c linebreak.c  -fPIC -DPIC -o .libs/libunibreak_la-linebreak.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-linebreakdata.lo -MD -MP -MF .deps/libunibreak_la-linebreakdata.Tpo -c linebreakdata.c  -fPIC -DPIC -o .libs/libunibreak_la-linebreakdata.o
+mv -f .deps/libunibreak_la-linebreak.Tpo .deps/libunibreak_la-linebreak.Plo
+mv -f .deps/libunibreak_la-linebreakdata.Tpo .deps/libunibreak_la-linebreakdata.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-linebreakdef.lo -MD -MP -MF .deps/libunibreak_la-linebreakdef.Tpo -c -o libunibreak_la-linebreakdef.lo `test -f 'linebreakdef.c' || echo './'`linebreakdef.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-emojidef.lo -MD -MP -MF .deps/libunibreak_la-emojidef.Tpo -c -o libunibreak_la-emojidef.lo `test -f 'emojidef.c' || echo './'`emojidef.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-emojidef.lo -MD -MP -MF .deps/libunibreak_la-emojidef.Tpo -c emojidef.c  -fPIC -DPIC -o .libs/libunibreak_la-emojidef.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-linebreakdef.lo -MD -MP -MF .deps/libunibreak_la-linebreakdef.Tpo -c linebreakdef.c  -fPIC -DPIC -o .libs/libunibreak_la-linebreakdef.o
+mv -f .deps/libunibreak_la-linebreakdef.Tpo .deps/libunibreak_la-linebreakdef.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-graphemebreak.lo -MD -MP -MF .deps/libunibreak_la-graphemebreak.Tpo -c -o libunibreak_la-graphemebreak.lo `test -f 'graphemebreak.c' || echo './'`graphemebreak.c
+mv -f .deps/libunibreak_la-emojidef.Tpo .deps/libunibreak_la-emojidef.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -W -Wall -g -O2 -MT libunibreak_la-wordbreak.lo -MD -MP -MF .deps/libunibreak_la-wordbreak.Tpo -c -o libunibreak_la-wordbreak.lo `test -f 'wordbreak.c' || echo './'`wordbreak.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-graphemebreak.lo -MD -MP -MF .deps/libunibreak_la-graphemebreak.Tpo -c graphemebreak.c  -fPIC -DPIC -o .libs/libunibreak_la-graphemebreak.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -W -Wall -g -O2 -MT libunibreak_la-wordbreak.lo -MD -MP -MF .deps/libunibreak_la-wordbreak.Tpo -c wordbreak.c  -fPIC -DPIC -o .libs/libunibreak_la-wordbreak.o
+mv -f .deps/libunibreak_la-graphemebreak.Tpo .deps/libunibreak_la-graphemebreak.Plo
+mv -f .deps/libunibreak_la-wordbreak.Tpo .deps/libunibreak_la-wordbreak.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -W -Wall -g -O2 -no-undefined -version-info 5:1:0  -o libunibreak.la -rpath /usr/lib libunibreak_la-unibreakbase.lo libunibreak_la-unibreakdef.lo libunibreak_la-linebreak.lo libunibreak_la-linebreakdata.lo libunibreak_la-linebreakdef.lo libunibreak_la-emojidef.lo libunibreak_la-graphemebreak.lo libunibreak_la-wordbreak.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libunibreak_la-unibreakbase.o .libs/libunibreak_la-unibreakdef.o .libs/libunibreak_la-linebreak.o .libs/libunibreak_la-linebreakdata.o .libs/libunibreak_la-linebreakdef.o .libs/libunibreak_la-emojidef.o .libs/libunibreak_la-graphemebreak.o .libs/libunibreak_la-wordbreak.o    -g -O2   -Wl,-soname -Wl,libunibreak.so.5 -o .libs/libunibreak.so.5.0.1
+libtool: link: (cd ".libs" && rm -f "libunibreak.so.5" && ln -s "libunibreak.so.5.0.1" "libunibreak.so.5")
+libtool: link: (cd ".libs" && rm -f "libunibreak.so" && ln -s "libunibreak.so.5.0.1" "libunibreak.so")
+libtool: link: ( cd ".libs" && rm -f "libunibreak.la" && ln -s "../libunibreak.la" "libunibreak.la" )
+make[2]: Leaving directory '/src/libunibreak-5.1/src'
+make[2]: Entering directory '/src/libunibreak-5.1'
+make[2]: Leaving directory '/src/libunibreak-5.1'
+make[1]: Leaving directory '/src/libunibreak-5.1'
+Making install in src
+make[1]: Entering directory '/src/libunibreak-5.1/src'
+make[2]: Entering directory '/src/libunibreak-5.1/src'
+ /usr/bin/mkdir -p '/usr/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libunibreak.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libunibreak.so.5.0.1 /usr/lib/libunibreak.so.5.0.1
+libtool: install: (cd /usr/lib && { ln -s -f libunibreak.so.5.0.1 libunibreak.so.5 || { rm -f libunibreak.so.5 && ln -s libunibreak.so.5.0.1 libunibreak.so.5; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libunibreak.so.5.0.1 libunibreak.so || { rm -f libunibreak.so && ln -s libunibreak.so.5.0.1 libunibreak.so; }; })
+libtool: install: /usr/bin/install -c .libs/libunibreak.lai /usr/lib/libunibreak.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[3]: Entering directory '/src/libunibreak-5.1/src'
+[ -f //usr/lib/libunibreak.a ] && \
+rm -f //usr/lib/liblinebreak.a && \
+ln -s libunibreak.a //usr/lib/liblinebreak.a
+make[3]: [Makefile:849: install-exec-hook] Error 1 (ignored)
+make[3]: Leaving directory '/src/libunibreak-5.1/src'
+ /usr/bin/mkdir -p '/usr/include'
+ /usr/bin/install -c -m 644 unibreakbase.h unibreakdef.h linebreak.h linebreakdef.h graphemebreak.h wordbreak.h '/usr/include'
+make[2]: Leaving directory '/src/libunibreak-5.1/src'
+make[1]: Leaving directory '/src/libunibreak-5.1/src'
+make[1]: Entering directory '/src/libunibreak-5.1'
+make[2]: Entering directory '/src/libunibreak-5.1'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libunibreak.pc '/usr/lib/pkgconfig'
+make[2]: Leaving directory '/src/libunibreak-5.1'
+make[1]: Leaving directory '/src/libunibreak-5.1'
+=== libwebp 1.3.2 ===
+-- The C compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAVE_BUILTIN_BSWAP16
+-- Performing Test HAVE_BUILTIN_BSWAP16 - Success
+-- Performing Test HAVE_BUILTIN_BSWAP32
+-- Performing Test HAVE_BUILTIN_BSWAP32 - Success
+-- Performing Test HAVE_BUILTIN_BSWAP64
+-- Performing Test HAVE_BUILTIN_BSWAP64 - Success
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Performing Test HAVE_MATH_LIBRARY
+-- Performing Test HAVE_MATH_LIBRARY - Failed
+-- Adding -lm flag.
+-- Looking for include file GLUT/glut.h
+-- Looking for include file GLUT/glut.h - not found
+-- Looking for include file GL/glut.h
+-- Looking for include file GL/glut.h - not found
+-- Looking for include file OpenGL/glut.h
+-- Looking for include file OpenGL/glut.h - not found
+-- Looking for include file shlwapi.h
+-- Looking for include file shlwapi.h - not found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file wincodec.h
+-- Looking for include file wincodec.h - not found
+-- Looking for include file windows.h
+-- Looking for include file windows.h - not found
+-- Performing Test WEBP_HAVE_FLAG_SSE41
+-- Performing Test WEBP_HAVE_FLAG_SSE41 - Failed
+-- Performing Test WEBP_HAVE_FLAG_SSE41
+-- Performing Test WEBP_HAVE_FLAG_SSE41 - Success
+-- Performing Test WEBP_HAVE_FLAG_SSE2
+-- Performing Test WEBP_HAVE_FLAG_SSE2 - Success
+-- Performing Test WEBP_HAVE_FLAG_MIPS32
+-- Performing Test WEBP_HAVE_FLAG_MIPS32 - Failed
+-- Performing Test WEBP_HAVE_FLAG_MIPS32
+-- Performing Test WEBP_HAVE_FLAG_MIPS32 - Failed
+-- Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2
+-- Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2 - Failed
+-- Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2
+-- Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2 - Failed
+-- Performing Test HAS_COMPILE_FLAG
+-- Performing Test HAS_COMPILE_FLAG - Failed
+-- Performing Test WEBP_HAVE_FLAG_NEON
+-- Performing Test WEBP_HAVE_FLAG_NEON - Failed
+-- Performing Test WEBP_HAVE_FLAG_NEON
+-- Performing Test WEBP_HAVE_FLAG_NEON - Failed
+-- Performing Test WEBP_HAVE_FLAG_MSA
+-- Performing Test WEBP_HAVE_FLAG_MSA - Failed
+-- Performing Test WEBP_HAVE_FLAG_MSA
+-- Performing Test WEBP_HAVE_FLAG_MSA - Failed
+-- Performing Test HAS_COMPILE_FLAG
+-- Performing Test HAS_COMPILE_FLAG - Failed
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /src/build/webp
+ninja: Entering directory `/src/build/webp'
+[1/148] Building C object CMakeFiles/webpmux.dir/examples/webpmux.c.o
+[2/148] Building C object CMakeFiles/libwebpmux.dir/src/mux/anim_encode.c.o
+[3/148] Building C object CMakeFiles/libwebpmux.dir/src/mux/muxedit.c.o
+[4/148] Building C object CMakeFiles/libwebpmux.dir/src/mux/muxinternal.c.o
+[5/148] Building C object CMakeFiles/libwebpmux.dir/src/mux/muxread.c.o
+[6/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/color_cache_utils.c.o
+[7/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/bit_reader_utils.c.o
+[8/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/filters_utils.c.o
+[9/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/huffman_utils.c.o
+[10/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/quant_levels_dec_utils.c.o
+[11/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/random_utils.c.o
+[12/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/rescaler_utils.c.o
+[13/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/utils.c.o
+[14/148] Building C object CMakeFiles/webputilsdecode.dir/src/utils/thread_utils.c.o
+[15/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/cpu.c.o
+[16/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/alpha_processing.c.o
+[17/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/dec_clip_tables.c.o
+[18/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/filters.c.o
+[19/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/dec.c.o
+[20/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/rescaler.c.o
+[21/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/lossless.c.o
+[22/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/upsampling.c.o
+[23/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/alpha_processing_sse41.c.o
+[24/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/dec_sse41.c.o
+[25/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/yuv.c.o
+[26/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/lossless_sse41.c.o
+[27/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/upsampling_sse41.c.o
+[28/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/alpha_processing_sse2.c.o
+[29/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/yuv_sse41.c.o
+[30/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/filters_sse2.c.o
+[31/148] Building C object CMakeFiles/webputils.dir/src/utils/bit_writer_utils.c.o
+[32/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/dec_sse2.c.o
+[33/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/rescaler_sse2.c.o
+[34/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/lossless_sse2.c.o
+[35/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/upsampling_sse2.c.o
+[36/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/cost.c.o
+[37/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/yuv_sse2.c.o
+[38/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/lossless_enc.c.o
+[39/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/enc.c.o
+[40/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/ssim.c.o
+[41/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/cost_sse2.c.o
+[42/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/lossless_enc_sse2.c.o
+[43/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/ssim_sse2.c.o
+[44/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/enc_sse2.c.o
+[45/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/lossless_enc_sse41.c.o
+[46/148] Building C object CMakeFiles/webpdsp.dir/src/dsp/enc_sse41.c.o
+[47/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv_neon.c.o
+[48/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv_cpu.c.o
+[49/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv_csp.c.o
+[50/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv_sse2.c.o
+[51/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv_gamma.c.o
+[52/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv_dsp.c.o
+[53/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/alpha_processing.c.o
+[54/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/cpu.c.o
+[55/148] Building C object CMakeFiles/sharpyuv.dir/sharpyuv/sharpyuv.c.o
+[56/148] Linking C shared library libsharpyuv.so.0.0.1
+[57/148] Creating library symlink libsharpyuv.so.0 libsharpyuv.so
+[58/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/dec_clip_tables.c.o
+[59/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/filters.c.o
+[60/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/dec.c.o
+[61/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/rescaler.c.o
+[62/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/lossless.c.o
+[63/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/upsampling.c.o
+[64/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/alpha_processing_sse41.c.o
+[65/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/yuv.c.o
+[66/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/dec_sse41.c.o
+[67/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/lossless_sse41.c.o
+[68/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/upsampling_sse41.c.o
+[69/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/alpha_processing_sse2.c.o
+[70/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/yuv_sse41.c.o
+[71/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/filters_sse2.c.o
+[72/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/dec_sse2.c.o
+[73/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/lossless_sse2.c.o
+[74/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/rescaler_sse2.c.o
+[75/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/upsampling_sse2.c.o
+[76/148] Building C object CMakeFiles/webpdspdecode.dir/src/dsp/yuv_sse2.c.o
+[77/148] Building C object CMakeFiles/webpencode.dir/src/enc/alpha_enc.c.o
+[78/148] Building C object CMakeFiles/webpencode.dir/src/enc/analysis_enc.c.o
+[79/148] Building C object CMakeFiles/webpencode.dir/src/enc/backward_references_cost_enc.c.o
+[80/148] Building C object CMakeFiles/webpencode.dir/src/enc/config_enc.c.o
+[81/148] Building C object CMakeFiles/webpencode.dir/src/enc/backward_references_enc.c.o
+[82/148] Building C object CMakeFiles/webpencode.dir/src/enc/cost_enc.c.o
+[83/148] Building C object CMakeFiles/webpencode.dir/src/enc/filter_enc.c.o
+[84/148] Building C object CMakeFiles/webpencode.dir/src/enc/frame_enc.c.o
+[85/148] Building C object CMakeFiles/webpencode.dir/src/enc/histogram_enc.c.o
+[86/148] Building C object CMakeFiles/webpencode.dir/src/enc/near_lossless_enc.c.o
+[87/148] Building C object CMakeFiles/webpencode.dir/src/enc/iterator_enc.c.o
+[88/148] Building C object CMakeFiles/webpencode.dir/src/enc/picture_enc.c.o
+[89/148] Building C object CMakeFiles/webpencode.dir/src/enc/picture_psnr_enc.c.o
+[90/148] Building C object CMakeFiles/webpencode.dir/src/enc/picture_rescale_enc.c.o
+[91/148] Building C object CMakeFiles/webpencode.dir/src/enc/picture_csp_enc.c.o
+[92/148] Building C object CMakeFiles/webpencode.dir/src/enc/picture_tools_enc.c.o
+[93/148] Building C object CMakeFiles/webpencode.dir/src/enc/predictor_enc.c.o
+[94/148] Building C object CMakeFiles/webpencode.dir/src/enc/syntax_enc.c.o
+[95/148] Building C object CMakeFiles/webpencode.dir/src/enc/token_enc.c.o
+[96/148] Building C object CMakeFiles/webpencode.dir/src/enc/tree_enc.c.o
+[97/148] Building C object CMakeFiles/webpencode.dir/src/enc/quant_enc.c.o
+[98/148] Building C object CMakeFiles/webpencode.dir/src/enc/webp_enc.c.o
+[99/148] Building C object CMakeFiles/exampleutil.dir/examples/example_util.c.o
+[100/148] Building C object CMakeFiles/imagedec.dir/imageio/image_dec.c.o
+[101/148] Building C object CMakeFiles/imagedec.dir/imageio/jpegdec.c.o
+[102/148] Building C object CMakeFiles/imagedec.dir/imageio/metadata.c.o
+[103/148] Building C object CMakeFiles/imagedec.dir/imageio/pngdec.c.o
+[104/148] Building C object CMakeFiles/webpencode.dir/src/enc/vp8l_enc.c.o
+[105/148] Building C object CMakeFiles/imagedec.dir/imageio/tiffdec.c.o
+[106/148] Building C object CMakeFiles/imagedec.dir/imageio/pnmdec.c.o
+[107/148] Building C object CMakeFiles/imagedec.dir/imageio/webpdec.c.o
+[108/148] Building C object CMakeFiles/imagedec.dir/imageio/wicdec.c.o
+[109/148] Building C object CMakeFiles/webputils.dir/src/utils/color_cache_utils.c.o
+[110/148] Building C object CMakeFiles/webputils.dir/src/utils/filters_utils.c.o
+[111/148] Building C object CMakeFiles/webputils.dir/src/utils/bit_reader_utils.c.o
+[112/148] Building C object CMakeFiles/webputils.dir/src/utils/quant_levels_dec_utils.c.o
+[113/148] Building C object CMakeFiles/webputils.dir/src/utils/huffman_utils.c.o
+[114/148] Building C object CMakeFiles/webputils.dir/src/utils/random_utils.c.o
+[115/148] Building C object CMakeFiles/webputils.dir/src/utils/rescaler_utils.c.o
+[116/148] Building C object CMakeFiles/webputils.dir/src/utils/thread_utils.c.o
+[117/148] Building C object CMakeFiles/webputils.dir/src/utils/utils.c.o
+[118/148] Building C object CMakeFiles/webputils.dir/src/utils/quant_levels_utils.c.o
+[119/148] Building C object CMakeFiles/webputils.dir/src/utils/huffman_encode_utils.c.o
+[120/148] Building C object CMakeFiles/imageioutil.dir/imageio/imageio_util.c.o
+[121/148] Building C object CMakeFiles/imageenc.dir/imageio/image_enc.c.o
+[122/148] Building C object CMakeFiles/webpdecode.dir/src/dec/alpha_dec.c.o
+[123/148] Building C object CMakeFiles/webpdecode.dir/src/dec/buffer_dec.c.o
+[124/148] Building C object CMakeFiles/webpinfo.dir/examples/webpinfo.c.o
+[125/148] Building C object CMakeFiles/webpdecode.dir/src/dec/frame_dec.c.o
+[126/148] Building C object CMakeFiles/webpdecode.dir/src/dec/idec_dec.c.o
+[127/148] Building C object CMakeFiles/webpdecode.dir/src/dec/quant_dec.c.o
+[128/148] Building C object CMakeFiles/webpdecode.dir/src/dec/io_dec.c.o
+[129/148] Building C object CMakeFiles/webpdecode.dir/src/dec/tree_dec.c.o
+[130/148] Building C object CMakeFiles/webpdecode.dir/src/dec/vp8_dec.c.o
+[131/148] Building C object CMakeFiles/webpdecode.dir/src/dec/webp_dec.c.o
+[132/148] Building C object CMakeFiles/webpdecode.dir/src/dec/vp8l_dec.c.o
+[133/148] Linking C shared library libwebpdecoder.so.3.1.8
+[134/148] Creating library symlink libwebpdecoder.so.3 libwebpdecoder.so
+[135/148] Linking C shared library libwebp.so.7.1.8
+[136/148] Creating library symlink libwebp.so.7 libwebp.so
+[137/148] Building C object CMakeFiles/webpdemux.dir/src/demux/anim_decode.c.o
+[138/148] Linking C shared library libwebpmux.so.3.0.13
+[139/148] Linking C static library libimageioutil.a
+[140/148] Creating library symlink libwebpmux.so.3 libwebpmux.so
+[141/148] Linking C static library libexampleutil.a
+[142/148] Linking C static library libimageenc.a
+[143/148] Linking C executable webpmux
+[144/148] Linking C executable webpinfo
+[145/148] Building C object CMakeFiles/webpdemux.dir/src/demux/demux.c.o
+[146/148] Linking C shared library libwebpdemux.so.2.0.14
+[147/148] Creating library symlink libwebpdemux.so.2 libwebpdemux.so
+[148/148] Linking C static library libimagedec.a
+ninja: Entering directory `/src/build/webp'
+[0/1] Install the project...
+-- Install configuration: "Release"
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/libsharpyuv.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/libsharpyuv.so.0.0.1
+-- Installing: /usr/lib/x86_64-linux-gnu/libsharpyuv.so.0
+-- Set runtime path of "/usr/lib/x86_64-linux-gnu/libsharpyuv.so.0.0.1" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/lib/x86_64-linux-gnu/libsharpyuv.so
+-- Installing: /usr/include/webp/sharpyuv/sharpyuv.h
+-- Installing: /usr/include/webp/sharpyuv/sharpyuv_csp.h
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/libwebpdecoder.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/libwebp.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/libwebpdemux.pc
+-- Installing: /usr/lib/x86_64-linux-gnu/pkgconfig/libwebpmux.pc
+-- Installing: /usr/bin/webpinfo
+-- Set runtime path of "/usr/bin/webpinfo" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/bin/webpmux
+-- Set runtime path of "/usr/bin/webpmux" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpdecoder.so.3.1.8
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpdecoder.so.3
+-- Set runtime path of "/usr/lib/x86_64-linux-gnu/libwebpdecoder.so.3.1.8" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpdecoder.so
+-- Installing: /usr/include/webp/decode.h
+-- Installing: /usr/include/webp/types.h
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebp.so.7.1.8
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebp.so.7
+-- Set runtime path of "/usr/lib/x86_64-linux-gnu/libwebp.so.7.1.8" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebp.so
+-- Up-to-date: /usr/include/webp/decode.h
+-- Installing: /usr/include/webp/encode.h
+-- Up-to-date: /usr/include/webp/types.h
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpdemux.so.2.0.14
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpdemux.so.2
+-- Set runtime path of "/usr/lib/x86_64-linux-gnu/libwebpdemux.so.2.0.14" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpdemux.so
+-- Up-to-date: /usr/include/webp/decode.h
+-- Installing: /usr/include/webp/demux.h
+-- Installing: /usr/include/webp/mux_types.h
+-- Up-to-date: /usr/include/webp/types.h
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpmux.so.3.0.13
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpmux.so.3
+-- Set runtime path of "/usr/lib/x86_64-linux-gnu/libwebpmux.so.3.0.13" to "/usr/lib/x86_64-linux-gnu"
+-- Installing: /usr/lib/x86_64-linux-gnu/libwebpmux.so
+-- Installing: /usr/include/webp/mux.h
+-- Up-to-date: /usr/include/webp/mux_types.h
+-- Up-to-date: /usr/include/webp/types.h
+-- Installing: /usr/share/WebP/cmake/WebPTargets.cmake
+-- Installing: /usr/share/WebP/cmake/WebPTargets-release.cmake
+-- Installing: /usr/share/WebP/cmake/WebPConfigVersion.cmake
+-- Installing: /usr/share/WebP/cmake/WebPConfig.cmake
+-- Installing: /usr/share/man/man1/webpmux.1
+-- Installing: /usr/share/man/man1/webpinfo.1
+=== libmypaint 1.6.1 ===
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... none needed
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.16... yes
+checking for platform... unix
+checking whether to turn on debugging... no
+checking whether to turn on profiling... no
+checking for JSON... yes
+checking for library containing floorf... -lm
+checking for library containing powf... none required
+checking for library containing expf... none required
+checking for library containing fabsf... none required
+checking whether C compiler accepts -fsanitize=undefined... yes
+checking whether the linker accepts -fsanitize=undefined... yes
+checking whether NLS is requested... yes
+./configure: line 10481: intltool-update: command not found
+checking for intltool-update... no
+checking for intltool-merge... no
+checking for intltool-extract... no
+configure: error: The intltool scripts were not found. Please install intltool.

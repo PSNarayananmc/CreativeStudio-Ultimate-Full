@@ -1,0 +1,6 @@
+/src/krita/libs/widgetutils/xmlgui/kkeysequencewidget.cpp:28:10: fatal error: QtGui/private/qkeymapper_p.h: No such file or directory
+   28 | #include <QtGui/private/qkeymapper_p.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[186/3234 130.609s] Building CXX object libs/widgetutils/CMakeFiles/kritawidgetutils.dir/xmlgui/khelpmenu.cpp.o
+ninja: build stopped: subcommand failed.

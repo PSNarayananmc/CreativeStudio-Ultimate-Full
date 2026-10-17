@@ -1,0 +1,14 @@
+/tmp/07f-gui-test.sh: line 10: 23759 Segmentation fault      python3 /root/make-test-input.py >> $LOG 2>&1
+ls: cannot access '/root/test-input.png': No such file or directory
+=== DRIVER LOG ===
+[1792164344] launching krita with test-input.png
+[1792164346] WID=2097179
+[1792164352] open screenshot taken
+[1792164356] save dialog screenshot
+ls: cannot access '/root/gui-saved.kra': No such file or directory
+[1792164369] save attempted
+[1792164374] export dialog screenshot
+ls: cannot access '/root/gui-exported.png': No such file or directory
+[1792164391] export attempted
+[1792164412] reopen attempted
+[1792164417] driver done

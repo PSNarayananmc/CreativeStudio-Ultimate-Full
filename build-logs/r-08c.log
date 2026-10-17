@@ -1,0 +1,18 @@
+/tmp/r-08c-phase6-api3.sh: line 161:  4696 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $g.py > /root/p6/$g.log 2>&1
+EXIT[v3a]=139
+/tmp/r-08c-phase6-api3.sh: line 161:  4733 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $g.py > /root/p6/$g.log 2>&1
+EXIT[v3b]=139
+/tmp/r-08c-phase6-api3.sh: line 161:  4772 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $g.py > /root/p6/$g.log 2>&1
+EXIT[v3c]=139
+EXIT[v3d]=0
+=== V3 RESULTS ===
+INTROSPECT root children: [('Background', 'paintlayer'), ('Base', 'paintlayer'), ('Ink', 'paintlayer'), ('Grp', 'grouplayer')]
+INTROSPECT inner parent: None
+RESULT: t02_multilayer_paint = FAIL names=['Background', 'Base', 'Ink', 'Grp'] px=False
+RESULT: t04_transparency_mask = PASS types=['transparencymask']
+RESULT: t04b_filter_mask = PASS types=['transparencymask', 'filtermask']
+INTROSPECT Document methods: activeNode, animationLength, annotation, annotationDescription, annotationTypes, backgroundColor, batchmode, blockSignals, bounds, childEvent, children, clone, close, colorDepth, colorModel, colorProfile, connectNotify, createCloneLayer, createColorizeMask, createFileLayer, createFillLayer, createFilterLayer, createFilterMask, createGroupLayer, createNode, createSelectionMask, createTransformMask, createTransparencyMask, createVectorLayer, crop, currentTime, customEvent, deleteLater, destroyed, disconnect, disconnectNotify, documentInfo, dumpObjectInfo, dumpObjectTree, dynamicPropertyNames, event, eventFilter, exportImage, fileName, findChild, findChildren, flatten, framesPerSecond, fullClipRangeEndTime, fullClipRangeStartTime, guidesLocked, guidesVisible, height, horizontalGuides, importAnimation, inherits, installEventFilter, isSignalConnected, isWidgetType, isWindowType, killTimer, lock, metaObject, modified, moveToThread, name, nodeByName, nodeByUniqueID, objectName, objectNameChanged, parent, pixelData, playBackEndTime, playBackStartTime, projection, property, pyqtConfigure, receivers, refreshProjection, removeAnnotation, removeEventFilter, resizeImage, resolution, rootNode, rotateImage, save, saveAs, scaleImage, selection, sender, senderSignalIndex, setActiveNode, setAnnotation, setBackgroundColor, setBatchmode, setColorProfile, setColorSpace, setCurrentTime, setDocumentInfo, setFileName, setFramesPerSecond, setFullClipRangeEndTime, setFullClipRangeStartTime, setGuidesLocked, setGuidesVisible, setHeight, setHorizontalGuides, setModified, setName, setObjectName, setParent, setPlayBackRange, setProperty, setResolution, setSelection, setVerticalGuides, setWidth, setXOffset, setXRes, setYOffset, setYRes, shearImage, signalsBlocked, startTimer, staticMetaObject, thread, thumbnail, timerEvent, topLevelNodes, tr, tryBarrierLock, unlock, verticalGuides, waitForDone, width, xOffset, xRes, yOffset, yRes
+INTROSPECT Selection made 100x80
+INTROSPECT selection setter: setSelection
+RESULT: t03_selection_set = PASS setSelection ok
+RESULT: t05_gaussian_filter = FAIL applied=['apply5'] changed=False

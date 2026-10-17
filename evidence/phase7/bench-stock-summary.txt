@@ -1,0 +1,7 @@
+=== MONITOR SUMMARY ===
+PEAK pid=9762 name=krita rss=616708 kB vsz=1708392 kB
+PEAK pid=9985 name=krita rss=265444 kB vsz=1192376 kB
+PEAK pid=10059 name=krita rss=600352 kB vsz=1779004 kB
+PEAK pid=10282 name=krita rss=264608 kB vsz=1192384 kB
+TOTAL_PEAK_RSS_KB=1747112 (1706.2 MB)
+SAMPLES=1098

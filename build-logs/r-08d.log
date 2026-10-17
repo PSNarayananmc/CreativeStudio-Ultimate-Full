@@ -1,0 +1,14 @@
+/tmp/r-08d-phase6-api4.sh: line 129:  4905 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $g.py > /root/p6/$g.log 2>&1
+EXIT[v4a]=139
+/tmp/r-08d-phase6-api4.sh: line 129:  4942 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $g.py > /root/p6/$g.log 2>&1
+EXIT[v4b]=139
+/tmp/r-08d-phase6-api4.sh: line 129:  4981 Segmentation fault      PYTHONPATH=/root/p6 timeout 400 $KR --script $g.py > /root/p6/$g.log 2>&1
+EXIT[v4c]=139
+=== V4 RESULTS ===
+RESULT: t02_multilayer_paint = PASS root=['Background', 'Base', 'Ink', 'Grp'] grp=['Inner'] pxR=200
+RESULT: t04_masks_transparency_and_filter = PASS ['transparencymask', 'filtermask']
+RESULT: t05_filter_apply = PASS filter=invert sampled_diff=1024
+INTROSPECT gray profiles: []
+RESULT: t07b_gray_doc_real_profile = FAIL []
+RESULT: t07c_convert_gray_to_rgba = FAIL ?
+RESULT: t09c_export_png_jpg_tiff = FAIL {'png': "EXC TypeError('exportImage(self, str, InfoObject): not enough arguments')", 'jpg': "EXC TypeError('exportImage(self, str, InfoObject): not enough arguments')", 'tiff': "EXC TypeError('exportImage(self, str, InfoObject): not enough arguments')"}

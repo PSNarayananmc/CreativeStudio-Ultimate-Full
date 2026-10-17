@@ -1,0 +1,13 @@
+/tmp/r-08-phase6-api.sh: line 194:  4304 Segmentation fault      PYTHONPATH=/root/p6 timeout 500 $EX/usr/bin/kritarunner --script api_tests.py > /root/p6/runner.log 2>&1
+RUNNER_EXIT=139
+=== RESULTS ===
+RESULT: t00_pykrita_loaded = PASS runner-ok
+INTROSPECT Krita methods: action, actions, activeDocument, activeWindow, addDockWidgetFactory, addExtension, addProfile, batchmode, blockSignals, childEvent, children, colorDepths, colorModels, connectNotify, createDocument, customEvent, deleteLater, destroyed, disconnect, disconnectNotify, dockers, documents, dumpObjectInfo, dumpObjectTree, dynamicPropertyNames, event, eventFilter, extensions, filter, filterStrategies, filters, findChild, findChildren, fromVariant, getAppDataLocation, icon, inherits, installEventFilter, instance, isSignalConnected, isWidgetType, isWindowType, killTimer, krita_i18n, krita_i18nc, metaObject, moveToThread, notifier, objectName, objectNameChanged, openDocument, openWindow, parent, profiles, property, pyqtConfigure, readSetting, receivers, recentDocuments, removeEventFilter, resources, sender, senderSignalIndex, setActiveDocument, setBatchmode, setObjectName, setParent, setProperty, signalsBlocked, startTimer, staticMetaObject, thread, timerEvent, tr, version, views, windows, writeSetting
+RESULT: t01_create_document = PASS 800x600
+RESULT: t02_multilayer_paint = FAIL EXCEPTION TypeError('addChildNode(self, Node, Node): not enough arguments')
+RESULT: t03_selection_fill = FAIL EXCEPTION NameError("name 'Selection' is not defined")
+RESULT: t04_masks = FAIL EXCEPTION TypeError('addChildNode(self, Node, Node): not enough arguments')
+INTROSPECT filter count=50 sample=['asc-cdl', 'autocontrast', 'blur', 'burn', 'colorbalance', 'colortoalpha', 'colortransfer', 'crosschannel']
+RESULT: t05_filters = FAIL EXCEPTION AttributeError("'Filter' object has no attribute 'getDefaults'")
+RESULT: t06_transform = FAIL EXCEPTION IndexError('list index out of range')
+INTROSPECT profile=sRGB-elle-V2-srgbtrc.icc model=RGBA depth=U8
