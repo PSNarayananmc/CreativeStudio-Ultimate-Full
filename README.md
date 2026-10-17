@@ -4,6 +4,9 @@
 
 Base engine: Krita `v5.2.16` (commit `7d9aefc93f15998eca13458bb9a065e2cca77c02`) · Qt 5.12.8 · KF5 5.68 · built with gcc 9.4 inside a real Ubuntu 20.04 (focal) build environment, Release/-O2, generic x86-64/SSE2 baseline (no `-march=native`).
 
+![Creative Studio Ultimate — main workspace](assets/hero-main-workspace.png)
+*The studio workspace: dark "Creative Studio Dark" theme, left toolbox, center canvas (real brush stroke), right dockers — Advanced Color Selector, Tool Options, Layers, Brush Presets.*
+
 ---
 
 ## Download
@@ -26,6 +29,23 @@ chmod +x CreativeStudio-Ultimate-Full-x86_64.AppImage
 - **Runs offline**
 - Targets Ubuntu 20.04 LTS (glibc ≥ 2.30; max bundled symbol version is GLIBC_2.30), works on newer distributions
 - Runs comfortably in 4 GB RAM (peak 586 MB GUI RSS measured on a 48-megapixel workload)
+
+## See it in action
+
+All screenshots below are genuine captures from the released AppImage, taken during the automated acceptance tests (Xvfb 1920×1080 + xdotool) — the same runs that produced the pixel-verified evidence in [`evidence/`](evidence/).
+
+| Themed start page | New document in the studio workspace |
+|---|---|
+| ![](assets/startpage-creative-studio-dark.png) | ![](assets/new-document-studio-workspace.png) |
+| *Dark start page with Creative Studio branding* | *Layers docker (Paint Layer 1 + Background) and Brush Presets* |
+
+| Export dialog | Low-spec CPU proof |
+|---|---|
+| ![](assets/export-dialog-png.png) | ![](assets/qemu-denverton-sse42-proof.png) |
+| *File → Export to PNG from the packaged AppImage* | *Running under QEMU Denverton emulation — a J1800-class, SSE4.2-only CPU with no AVX* |
+
+![](assets/appimage-export-pixel-proof.png)
+*Pixel-verified export: brush stroke painted in the AppImage, exported to PNG, and diff-checked at pixel level.*
 
 ## What this is
 
@@ -73,6 +93,7 @@ Raw evidence (screenshots, round-trip files, benchmark CSVs, investigation logs)
 ## Repository layout
 
 ```
+├── assets/            screenshots used in this README (captured from the released AppImage)
 ├── appimage/          checksums for the released artifact
 ├── reports/           acceptance, performance, compatibility, limitations reports
 ├── evidence/          recorded proof: screenshots, round-trip KRA/PSD, exports, CSVs, logs
