@@ -1,0 +1,24 @@
+{
+  "name": "creative-pic-youtube-short",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts --no-open",
+    "check": "tsc --noEmit",
+    "render": "remotion render src/index.ts CreativePicShort out/creative-pic-youtube-short.mp4 --codec h264 --crf 18 --concurrency 2"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/media": "4.0.534",
+    "@remotion/transitions": "4.0.534",
+    "remotion": "4.0.534",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "@remotion/captions": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}
