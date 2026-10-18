@@ -1,0 +1,103 @@
+name: Creative Pic website and product film
+
+on:
+  pull_request:
+    paths:
+      - 'landing-page/**'
+      - 'video/**'
+      - 'assets/**'
+      - '.github/workflows/creative-pic-site.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'landing-page/**'
+      - 'video/**'
+      - 'assets/**'
+      - '.github/workflows/creative-pic-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: creative-pic-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      HYPERFRAMES_NO_UPDATE_CHECK: '1'
+      HYPERFRAMES_SKIP_SKILLS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install video dependencies
+        working-directory: video
+        run: npm install
+      - name: Prepare genuine project screenshots
+        working-directory: video
+        run: npm run prepare-assets
+      - name: Scaffold HyperFrames opening
+        working-directory: video
+        run: |
+          npx --yes hyperframes@0.8.172 init .hf-stage --non-interactive
+          cp hyperframes/index.html hyperframes/DESIGN.md .hf-stage/
+      - name: Check the opening composition
+        working-directory: video/.hf-stage
+        run: |
+          npx --yes hyperframes@0.8.172 lint
+          npx --yes hyperframes@0.8.172 validate
+          npx --yes hyperframes@0.8.172 inspect
+      - name: Render the HyperFrames opening
+        working-directory: video/.hf-stage
+        run: npx --yes hyperframes@0.8.172 render --fps 30 --quality high --workers 2 --output ../public/opening.mp4
+      - name: Check Remotion types
+        working-directory: video
+        run: npm run check
+      - name: Render the Remotion product film
+        working-directory: video
+        run: npm run render
+      - name: Build the static website package
+        run: |
+          mkdir -p dist
+          cp -R assets landing-page dist/
+          printf '%s\n' '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=landing-page/"><title>Creative Pic</title><a href="landing-page/">Open Creative Pic</a></html>' > dist/index.html
+          touch dist/.nojekyll
+          test -s dist/landing-page/media/creative-pic-tour.mp4
+          ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 dist/landing-page/media/creative-pic-tour.mp4
+      - name: Save website and MP4 for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: creative-pic-website-with-video
+          path: dist/
+          retention-days: 14
+      - name: Prepare Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
