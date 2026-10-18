@@ -136,11 +136,33 @@ jobs:
           # resolution against these 3.x-era dep configs)
           pip install -r ..\krita-deps-management\requirements.txt
           pip install packaging "cmake==3.31.6"
+          # Python 3.8+ ignores PATH when resolving DLL dependencies of .pyd
+          # extension modules; the KDE deps layout puts every DLL in
+          # _install\bin (which IS on PATH). Restore pre-3.8 behavior for all
+          # python processes of this venv via sitecustomize (documented).
+          $sc = @(
+            'import os',
+            "for _d in os.environ.get('PATH', '').split(os.pathsep):",
+            '    if _d and os.path.isdir(_d):',
+            '        try:',
+            '            os.add_dll_directory(_d)',
+            '        except OSError:',
+            '            pass'
+          )
+          Set-Content .\venv\Lib\site-packages\sitecustomize.py ($sc -join "`r`n") -NoNewline
           python -u ..\krita-deps-management\tools\replace-branch-in-seed-file.py ..\krita-deps-management\latest\krita-deps.yml -p -o branch-corrected-deps.yml -d master
           python -u ..\krita-deps-management\tools\generate-deps-file.py -s branch-corrected-deps.yml -o .kde-ci.yml
           # ccache is disabled for this runner: cold cache would give no speedup
           # and cl-integration is tuned for KDE's own VM images (documented)
           (Get-Content .kde-ci.yml -Raw) -replace 'use-ccache: True', 'use-ccache: False' | Set-Content .kde-ci.yml -NoNewline
+          # exiv2 0.28.x deps ship the import library as lib/libexiv2.dll.a,
+          # but krita 5.2's FindLibExiv2.cmake searches exiv2/libexiv2 with
+          # standard suffixes only. Teach this module the .dll.a suffix
+          # (documented build-environment compatibility patch).
+          $fx = "cmake\modules\FindLibExiv2.cmake"
+          $fc = Get-Content $fx -Raw
+          $fc = $fc.Replace('find_library(LibExiv2_LIBRARIES NAMES exiv2 libexiv2', "list(APPEND CMAKE_FIND_LIBRARY_SUFFIXES `".dll.a`")`r`nfind_library(LibExiv2_LIBRARIES NAMES exiv2 libexiv2")
+          Set-Content $fx $fc -NoNewline
           python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing 2>&1 | Tee-Object -FilePath build-krita.log
           if ($LASTEXITCODE -ne 0) { throw "krita build failed (see build-krita.log artifact)" }
 
