@@ -120,7 +120,15 @@ jobs:
         env:
           KDECI_CACHE_PATH: ${{ runner.temp }}\krita-package-cache
           KDECI_CC_CACHE: ${{ runner.temp }}\krita-ccache
-          KDECI_WORKDIR_PATH: ${{ runner.temp }}\krita-workdir
+          # NOTE: KDECI_WORKDIR_PATH is intentionally NOT set. With it unset,
+          # run-ci-build.py puts _build and _install directly in the source
+          # dir (its documented fallback: baseWorkDirectoryPath = cwd), which
+          # is exactly the layout build-windows-package.py expects
+          # (buildPath=_build, depsPath=_install relative to cwd). KDE's own
+          # windows.yml does the same with the comment "don't use separate
+          # workdir since package script will fail!" — run #15 hit precisely
+          # that failure (packaging could not find _build\libs\version\
+          # kritaversion.h because the build went to runner.temp\krita-workdir).
         run: |
           # Force FindPython to the venv interpreter: setup-python exports
           # Python3_ROOT_DIR pointing at the base 3.10 install, and CMake's
@@ -205,7 +213,9 @@ jobs:
           # entry broke tool resolution from other working directories)
           $env:PATH = "$lmBin;$env:PATH"
           clang --version | Select-Object -First 1
-          $installBin = Join-Path $env:KDECI_WORKDIR_PATH "krita\_install\bin"
+          # deps were unpacked into the source dir (_install) because
+          # KDECI_WORKDIR_PATH is unset (see the env note above)
+          $installBin = Join-Path (Get-Location).Path "_install\bin"
           Copy-Item (Join-Path $lmBin "..\x86_64-w64-mingw32\bin\libc++.dll"), (Join-Path $lmBin "..\x86_64-w64-mingw32\bin\libunwind.dll") $installBin -Force
           Get-ChildItem (Join-Path $installBin "libc++.dll"), (Join-Path $installBin "libunwind.dll") | Format-Table Name, Length
           # cmake args must come after the toolchain exists: absolute compiler
@@ -221,6 +231,28 @@ jobs:
         shell: pwsh
         working-directory: krita-5.2.16
         run: |
+          # build-windows-package.py -> package-complete.py rebuilds a clean
+          # PATH as system32 + MINGW_BIN_DIR + _install\bin, then probes
+          # clang++ / llvm-objdump (must be in MINGW_BIN_DIR) and bare
+          # objcopy / strip (debug-split step). llvm-mingw ships the llvm-*
+          # names, so provide the two bare-name aliases KDE's own image has.
+          $lmBin = [System.IO.Path]::GetFullPath((Join-Path (Get-Location).Path "..\llvm-mingw\llvm-mingw-20251118-ucrt-x86_64\bin"))
+          if (-not (Test-Path (Join-Path $lmBin "objcopy.exe"))) {
+            Copy-Item (Join-Path $lmBin "llvm-objcopy.exe") (Join-Path $lmBin "objcopy.exe")
+          }
+          if (-not (Test-Path (Join-Path $lmBin "strip.exe"))) {
+            Copy-Item (Join-Path $lmBin "llvm-strip.exe") (Join-Path $lmBin "strip.exe")
+          }
+          $env:MINGW_BIN_DIR = $lmBin
+          # MakeinstallerNsis.cmake.in declares cmake_minimum_required(3.0),
+          # which CMake 4.x (the runner's preinstalled cmake) refuses in
+          # script mode. The venv has era-correct cmake 3.31.6 — put it on
+          # PATH so build-windows-package.py's `cmake -P` call uses it.
+          # CMAKE_POLICY_VERSION_MINIMUM is a belt-and-suspenders fallback.
+          $env:PATH = "$(Join-Path (Get-Location).Path 'venv\Scripts');$env:PATH"
+          $env:CMAKE_POLICY_VERSION_MINIMUM = "3.5"
+          cmake --version | Select-Object -First 1
+          Get-ChildItem (Join-Path $lmBin "clang++.exe"), (Join-Path $lmBin "llvm-objdump.exe"), (Join-Path $lmBin "objcopy.exe"), (Join-Path $lmBin "strip.exe") | Format-Table Name, Length
           python -u build-tools\ci-scripts\build-windows-package.py 2>&1 | Tee-Object -FilePath build-installers.log
           if ($LASTEXITCODE -ne 0) { throw "packaging failed (see build-installers.log artifact)" }
           Get-ChildItem -File | Where-Object Name -like "krita-x64-5.2.16*" | Format-Table Name, Length
