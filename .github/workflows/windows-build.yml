@@ -87,8 +87,10 @@ jobs:
         shell: pwsh
         run: |
           $src = Join-Path (Get-Location) "krita-5.2.16"
+          # the script throws on its own on any failure (ErrorActionPreference
+          # = Stop); $LASTEXITCODE is not set by cmdlet-only scripts
           & ".\windows\apply-branding.ps1" -KritaSrc $src
-          if ($LASTEXITCODE -ne 0) { throw "branding overlay failed" }
+          if (-not (Test-Path "krita-5.2.16\libs\ui\KisApplication.cpp")) { throw "krita source missing after overlay" }
 
       - name: Commit branding overlay into source repo
         shell: pwsh
