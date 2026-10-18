@@ -178,9 +178,9 @@ jobs:
           # package. Provide them from a pinned llvm-mingw release into
           # _install\bin (same-dir resolution then fixes QtCore.pyd imports
           # AND the AUTORCC rcc.exe test — run #8 diagnosis).
-          Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20261006/llvm-mingw-20261006-ucrt-x86_64.zip" -OutFile ..\llvm-mingw.zip
+          Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20240619/llvm-mingw-20240619-ucrt-x86_64.zip" -OutFile ..\llvm-mingw.zip
           Expand-Archive ..\llvm-mingw.zip -DestinationPath ..\llvm-mingw
-          $lmBin = Join-Path (Get-Location).Path "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\bin"
+          $lmBin = Join-Path (Get-Location).Path "..\llvm-mingw\llvm-mingw-20240619-ucrt-x86_64\bin"
           $lmBin = [System.IO.Path]::GetFullPath($lmBin)
           # clang toolchain FIRST on PATH so CMake/Ninja use it (not the
           # preinstalled MSVC-targeting LLVM clang — run #11: a relative PATH
