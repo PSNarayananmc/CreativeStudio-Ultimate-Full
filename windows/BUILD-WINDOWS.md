@@ -11,12 +11,14 @@ platform requires.
 
 ## How it works (mirrors KDE's official Krita Windows CI)
 
-1. Download `krita-5.2.16.tar.xz` from `download.kde.org`, **verify SHA-256**
-   (`3bd3bf78…2ed875`), extract and git-init the source.
-2. Apply the Creative Studio branding overlay
+1. Download the verified `krita-5.2.16.tar.xz` (SHA-256
+   `3bd3bf78…2ed875`, KDE's official tarball), extract and git-init the
+   source.
+2. Apply the Creative Pic branding overlay
    ([`apply-branding.ps1`](apply-branding.ps1)): splash screen, start-page
-   banner, application icon (`.ico`), Creative Studio Dark theme, Creative
-   Studio workspace — the same modifications as the Linux build (see
+   banner, application icon (`.ico`), Creative Pic Dark theme, Creative Pic
+   workspace, window/about/dialog titles, NSIS product name — the same
+   modifications as the Linux build (see
    `compliance/SOURCE-CODE-OFFER.txt`). The Qt 5.12 compat patches from Linux
    are **not needed here** because KDE's Windows dependency packages ship a
    newer Qt 5.
@@ -27,13 +29,27 @@ platform requires.
    from KDE's public artifact registry
    [`teams/ci-artifacts/krita-windows`](https://invent.kde.org/teams/ci-artifacts/krita-windows)
    — the exact same packages the official Krita releases are built against —
-   then configures and compiles Krita with CMake/Ninja under MSVC.
-5. `build-windows-package.py` produces:
+   then configures and compiles Krita with CMake/Ninja. The compiler is
+   **llvm-mingw clang** (pinned 20251118), not MSVC: KDE's current Windows
+   deps are clang-built against libc++ and ship GNU-style `.a` import
+   libraries that MSVC's linker cannot consume (the same toolchain family
+   KDE's own Windows CI uses today). The deps land in the source dir as
+   `_install` and the build in `_build` (`KDECI_WORKDIR_PATH` is
+   intentionally unset — KDE's own `windows.yml` comments "don't use
+   separate workdir since package script will fail!", and run #15 proved
+   exactly that failure mode).
+5. `build-windows-package.py` (run with `MINGW_BIN_DIR` pointing at the
+   llvm-mingw `bin` so its clean-PATH probes for clang++/objdump/objcopy/strip
+   resolve, and with the venv's cmake 3.31.6 first on PATH because
+   `MakeInstallerNsis.cmake.in` declares `cmake_minimum_required(3.0)` which
+   CMake 4.x refuses) produces:
    - `krita-x64-5.2.16.zip` — **portable** package containing `krita.exe`,
      renamed on upload to `CreativePic-x64-5.2.16-portable.zip`
    - `krita-x64-5.2.16-setup.exe` — **NSIS installer**, renamed on upload to
-     `CreativePic-x64-5.2.16-setup.exe` (needs `nsis` via choco; built
-     best-effort)
+     `CreativePic-x64-5.2.16-setup.exe` (the packaging script downloads
+     NSIS 3.05 itself from `files.kde.org` with a pinned SHA-1; a
+     by-product unsigned `.msix` is produced by the upstream script and
+     discarded)
 
 Both are attached to the `v0.2` release and kept as workflow artifacts.
 The installer wizard title, Add/Remove-Programs entry and Start-Menu
@@ -53,10 +69,13 @@ Notes kept honest about the runner environment:
 
 ## Current status & known caveats (kept honest)
 
-- The first pipeline run is an experiment: on any failure, the raw logs
-  (`build-krita.log`, `build-installers.log`) are uploaded as artifacts so
-  each iteration can be diagnosed and fixed — that is the normal way this
-  pipeline reaches green.
+- The pipeline reached green on run #16 (after 15 diagnosed iterations —
+  the commit history of this file's neighbours records each fix: python
+  3.10 pin, cmake 3.31.6 pin, llvm-mingw ABI match, KisHalfTraits
+  clang-21 backport, workdir layout). Every run compiles the full krita
+  tree from source on a fresh runner; the raw logs (`build-krita.log`,
+  `build-installers.log`) are uploaded as artifacts for any future
+  diagnosis.
 - **Unsigned binaries**: there is no code-signing certificate, so
   Windows SmartScreen shows a warning on first launch of the setup exe
   (choose "More info → Run anyway"). The portable zip has no such prompt.

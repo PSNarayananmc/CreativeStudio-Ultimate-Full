@@ -15,8 +15,12 @@ name: windows-build
 on:
   push:
     paths:
+      # only files that actually affect the build; docs under windows/ are
+      # deliberately excluded so honest doc fixes do not burn a 45-minute
+      # rebuild (and re-upload) of already-verified artifacts
       - ".github/workflows/windows-build.yml"
-      - "windows/**"
+      - "windows/apply-branding.ps1"
+      - "windows/branding/**"
   workflow_dispatch:
 
 permissions:
