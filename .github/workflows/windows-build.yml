@@ -174,10 +174,10 @@ jobs:
           # package. Provide them from a pinned llvm-mingw release into
           # _install\bin (same-dir resolution then fixes QtCore.pyd imports
           # AND the AUTORCC rcc.exe test — run #8 diagnosis).
-          Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20240619/llvm-mingw-20240619-ucrt-windows-x86_64.zip" -OutFile ..\llvm-mingw.zip
+          Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20261006/llvm-mingw-20261006-ucrt-x86_64.zip" -OutFile ..\llvm-mingw.zip
           Expand-Archive ..\llvm-mingw.zip -DestinationPath ..\llvm-mingw
           $installBin = Join-Path $env:KDECI_WORKDIR_PATH "krita\_install\bin"
-          Copy-Item "..\llvm-mingw\llvm-mingw-20240619-ucrt-windows-x86_64\x86_64-w64-mingw32\bin\libc++.dll", "..\llvm-mingw\llvm-mingw-20240619-ucrt-windows-x86_64\x86_64-w64-mingw32\bin\libunwind.dll" $installBin -Force
+          Copy-Item "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\x86_64-w64-mingw32\bin\libc++.dll", "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\x86_64-w64-mingw32\bin\libunwind.dll" $installBin -Force
           Get-ChildItem (Join-Path $installBin "libc++.dll"), (Join-Path $installBin "libunwind.dll") | Format-Table Name, Length
 
           # ---- phase 3: configure + compile + install (deps already merged) ----
