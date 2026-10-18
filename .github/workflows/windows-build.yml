@@ -163,7 +163,25 @@ jobs:
           $fc = Get-Content $fx -Raw
           $fc = $fc.Replace('find_library(LibExiv2_LIBRARIES NAMES exiv2 libexiv2', "list(APPEND CMAKE_FIND_LIBRARY_SUFFIXES `".dll.a`")`r`nfind_library(LibExiv2_LIBRARIES NAMES exiv2 libexiv2")
           Set-Content $fx $fc -NoNewline
-          python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing 2>&1 | Tee-Object -FilePath build-krita.log
+
+          # ---- phase 1: fetch + merge the prebuilt deps only ----
+          python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing --only-deps 2>&1 | Tee-Object -FilePath deps-fetch.log
+          if ($LASTEXITCODE -ne 0) { throw "deps fetch failed (see deps-fetch.log artifact)" }
+
+          # ---- phase 2: provide the clang runtime DLLs the deps were built against ----
+          # KDE's deps (icu, qt, ...) are clang-built and import libc++.dll +
+          # libunwind.dll, which live in KDE's own VM image, not in any
+          # package. Provide them from a pinned llvm-mingw release into
+          # _install\bin (same-dir resolution then fixes QtCore.pyd imports
+          # AND the AUTORCC rcc.exe test — run #8 diagnosis).
+          Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20240619/llvm-mingw-20240619-ucrt-windows-x86_64.zip" -OutFile ..\llvm-mingw.zip
+          Expand-Archive ..\llvm-mingw.zip -DestinationPath ..\llvm-mingw
+          $installBin = Join-Path $env:KDECI_WORKDIR_PATH "krita\_install\bin"
+          Copy-Item "..\llvm-mingw\llvm-mingw-20240619-ucrt-windows-x86_64\x86_64-w64-mingw32\bin\libc++.dll", "..\llvm-mingw\llvm-mingw-20240619-ucrt-windows-x86_64\x86_64-w64-mingw32\bin\libunwind.dll" $installBin -Force
+          Get-ChildItem (Join-Path $installBin "libc++.dll"), (Join-Path $installBin "libunwind.dll") | Format-Table Name, Length
+
+          # ---- phase 3: configure + compile + install (deps already merged) ----
+          python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing --skip-dependencies-fetch 2>&1 | Tee-Object -FilePath build-krita.log
           if ($LASTEXITCODE -ne 0) { throw "krita build failed (see build-krita.log artifact)" }
 
       - name: Package portable zip + NSIS setup exe
