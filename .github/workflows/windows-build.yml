@@ -1,0 +1,180 @@
+name: windows-build
+
+# Real Windows 11 (x64) build of Creative Pic, following KDE's official
+# Krita Windows CI recipe (build-tools/ci-scripts/windows.yml in the
+# krita-5.2.16 sources):
+#   - MSVC compile on a Windows runner (no cross-compilation)
+#   - prebuilt dependency packages from KDE's public artifact registry
+#     (invent.kde.org teams/ci-artifacts/krita-windows) fetched through
+#     KDE's own ci-utilities (run-ci-build.py)
+#   - Creative Pic branding overlay applied to the source before compile
+#     (windows/apply-branding.ps1: splash, icons, theme, workspace,
+#     window/about titles, NSIS product name)
+#   - portable .zip + NSIS setup .exe, attached to the v0.2 release
+#     (unsigned — no code-signing certificate exists; documented)
+on:
+  push:
+    paths:
+      - ".github/workflows/windows-build.yml"
+      - "windows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    timeout-minutes: 350
+    env:
+      # --- KDE CI tooling environment (mirrors krita's windows.yml) ---
+      KDECI_BUILD_TYPE: RelWithDebInfo
+      KDECI_ONLY_BUILD: "True" # prebuilt deps are fetched, not rebuilt
+      KDECI_GITLAB_SERVER: https://invent.kde.org/
+      KDECI_PACKAGE_PROJECT: teams/ci-artifacts/krita-windows
+      KDECI_REPO_METADATA_PATH: ${{ github.workspace }}\krita-deps-management\repo-metadata
+      KDECI_CACHE_PATH: ${{ runner.temp }}\krita-package-cache
+      KDECI_CC_CACHE: ${{ runner.temp }}\krita-ccache
+      KDECI_WORKDIR_PATH: ${{ runner.temp }}\krita-workdir
+      KDECI_COMPRESS_PACKAGES_ON_DOWNLOAD: "False"
+      KDECI_EXTRA_CMAKE_ARGS: -DHIDE_SAFE_ASSERTS=ON -DBUILD_TESTING=OFF
+      # --- krita packaging environment (mirrors krita's windows-release) ---
+      KRITACI_SKIP_DEBUG_PACKAGE: "True" # huge -dbg zip is not shipped here
+      KRITACI_BUILD_INSTALLERS: "True" # build the NSIS setup .exe
+      KRITACI_RELEASE_PACKAGE_NAMING: "True" # krita-x64-5.2.16 (no sha suffix)
+      # NOTE: KRITACI_WINDOWS_SIGN_CONFIG is intentionally NOT set —
+      # there is no code-signing certificate, and build-windows-package.py
+      # then skips signing gracefully (upstream-documented behaviour).
+      PYTHONUTF8: "1"
+
+    steps:
+      - name: Checkout Creative Pic repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSVC x64 build environment
+        uses: ilammy/msvc-dev-cmd@v1 # exports cl.exe/INCLUDE/LIB for later steps
+
+      - name: Install packaging tools (ninja, nsis, ccache)
+        run: choco install ninja nsis ccache -y --no-progress
+        shell: pwsh
+
+      - name: Download and verify Krita 5.2.16 source
+        shell: pwsh
+        run: |
+          $expected = "3bd3bf786be78185a9d93cca14a9d5f2dcdc227e895d8f5fc836a04b2f2ed875"
+          $url = "https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/download/v0.2/krita-5.2.16.tar.xz"
+          Invoke-WebRequest -Uri $url -OutFile krita-5.2.16.tar.xz
+          $hash = (Get-FileHash krita-5.2.16.tar.xz -Algorithm SHA256).Hash.ToLower()
+          if ($hash -ne $expected) {
+            Write-Host "hash mismatch ($hash), falling back to download.kde.org"
+            Invoke-WebRequest -Uri "https://download.kde.org/stable/krita/5.2.16/krita-5.2.16.tar.xz" -OutFile krita-5.2.16.tar.xz
+            $hash = (Get-FileHash krita-5.2.16.tar.xz -Algorithm SHA256).Hash.ToLower()
+            if ($hash -ne $expected) { throw "SHA-256 verification FAILED: $hash" }
+          }
+          Write-Host "SHA-256 verified: $hash"
+          tar -xf krita-5.2.16.tar.xz
+
+      - name: Init source git repo (CI tooling requires one)
+        shell: pwsh
+        working-directory: krita-5.2.16
+        run: |
+          git init -b master
+          git config user.name "creative-pic-ci"
+          git config user.email "ci@creative-pic.invalid"
+          git add -A
+          git commit -q -m "krita 5.2.16 baseline (verified tarball)"
+
+      - name: Apply Creative Pic branding overlay (source patch + assets)
+        shell: pwsh
+        run: |
+          $src = Join-Path (Get-Location) "krita-5.2.16"
+          & ".\windows\apply-branding.ps1" -KritaSrc $src
+          if ($LASTEXITCODE -ne 0) { throw "branding overlay failed" }
+
+      - name: Commit branding overlay into source repo
+        shell: pwsh
+        working-directory: krita-5.2.16
+        run: |
+          git add -A
+          git commit -q -m "Creative Pic branding overlay"
+
+      - name: Clone KDE CI tooling (deps recipes + ci-utilities)
+        shell: pwsh
+        run: |
+          git clone --depth=1 -b krita/5.2 https://invent.kde.org/packaging/krita-deps-management.git
+          git clone --depth=1 https://invent.kde.org/packaging/krita-ci-utilities.git krita-deps-management\ci-utilities
+
+      - name: Build Krita / Creative Pic (fetch prebuilt deps, cmake+ninja, MSVC)
+        shell: pwsh
+        working-directory: krita-5.2.16
+        run: |
+          $env:KDECI_REPO_METADATA_PATH = "$(Get-Location)\..\krita-deps-management\repo-metadata"
+          python -m venv venv --upgrade-deps
+          .\venv\Scripts\Activate.ps1
+          python -m pip install --upgrade pip
+          pip install -r ..\krita-deps-management\requirements.txt
+          python -u ..\krita-deps-management\tools\replace-branch-in-seed-file.py ..\krita-deps-management\latest\krita-deps.yml -p -o branch-corrected-deps.yml -d master
+          python -u ..\krita-deps-management\tools\generate-deps-file.py -s branch-corrected-deps.yml -o .kde-ci.yml
+          # ccache is disabled for this runner: cold cache would give no speedup
+          # and cl-integration is tuned for KDE's own VM images (documented)
+          (Get-Content .kde-ci.yml -Raw) -replace 'use-ccache: True', 'use-ccache: False' | Set-Content .kde-ci.yml -NoNewline
+          python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing 2>&1 | Tee-Object -FilePath build-krita.log
+          if ($LASTEXITCODE -ne 0) { throw "krita build failed (see build-krita.log artifact)" }
+
+      - name: Package portable zip + NSIS setup exe
+        shell: pwsh
+        working-directory: krita-5.2.16
+        run: |
+          python -u build-tools\ci-scripts\build-windows-package.py 2>&1 | Tee-Object -FilePath build-installers.log
+          if ($LASTEXITCODE -ne 0) { throw "packaging failed (see build-installers.log artifact)" }
+          Get-ChildItem -File | Where-Object Name -like "krita-x64-5.2.16*" | Format-Table Name, Length
+
+      - name: Rename packages to Creative Pic
+        shell: pwsh
+        working-directory: krita-5.2.16
+        run: |
+          if (Test-Path krita-x64-5.2.16.zip) {
+            Copy-Item krita-x64-5.2.16.zip CreativePic-x64-5.2.16-portable.zip
+            Write-Host "portable: CreativePic-x64-5.2.16-portable.zip"
+          } else { Write-Host "::warning:: portable zip missing" }
+          if (Test-Path krita-x64-5.2.16-setup.exe) {
+            Copy-Item krita-x64-5.2.16-setup.exe CreativePic-x64-5.2.16-setup.exe
+            Write-Host "installer: CreativePic-x64-5.2.16-setup.exe"
+          } else { Write-Host "::warning:: setup exe missing" }
+
+      - name: Upload raw build logs (diagnosis artifacts)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            krita-5.2.16/build-krita.log
+            krita-5.2.16/build-installers.log
+          if-no-files-found: ignore
+
+      - name: Upload packages (workflow artifacts)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-packages
+          path: |
+            krita-5.2.16/CreativePic-x64-5.2.16-portable.zip
+            krita-5.2.16/CreativePic-x64-5.2.16-setup.exe
+          if-no-files-found: warn
+
+      - name: Attach packages to v0.2 release
+        if: success()
+        shell: pwsh
+        working-directory: krita-5.2.16
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $files = @()
+          if (Test-Path CreativePic-x64-5.2.16-portable.zip) { $files += "CreativePic-x64-5.2.16-portable.zip" }
+          if (Test-Path CreativePic-x64-5.2.16-setup.exe) { $files += "CreativePic-x64-5.2.16-setup.exe" }
+          if ($files.Count -gt 0) {
+            gh release upload v0.2 @files --clobber --repo $env:GITHUB_REPOSITORY
+            Write-Host "attached to release v0.2: $($files -join ', ')"
+          } else {
+            throw "no packages produced"
+          }

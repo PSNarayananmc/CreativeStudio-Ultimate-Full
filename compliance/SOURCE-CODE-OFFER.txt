@@ -19,8 +19,15 @@ Modifications applied for this distribution (also available on request):
      krita_qt512_compat.h + source patches: Qt::SkipEmptyParts,
      QImage::convertTo, QWidget::screen, QPainterPath::clear)
   2. Branding assets: splash screen, start-page banner, desktop entry,
-     application icon, color scheme "Creative Pic Dark", product display
-     name (KisApplication.cpp applicationDisplayName -> "Creative Pic")
+     application icon, color scheme "Creative Pic Dark", plus product
+     display strings (applied by build-scripts/apply-creative-pic-branding.sh
+     on Linux and windows/apply-branding.ps1 on Windows):
+     KisApplication.cpp applicationDisplayName -> "Creative Pic",
+     About-dialog title -> "About Creative Pic",
+     dialog/message-box titles i18nc("@title:window", "Krita") ->
+     "Creative Pic". Internal identifiers (application name "krita",
+     MIME types, .kra format, config keys, Kis* class names) and upstream
+     GPL attribution texts are intentionally left unchanged.
   3. Default configuration: tuned low-spec profile (root-group keys of
      kritarc) and the "Creative Pic" workspace preset
 

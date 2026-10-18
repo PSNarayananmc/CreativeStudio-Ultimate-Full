@@ -39,7 +39,17 @@ Both are attached to the `v0.2` release and kept as workflow artifacts.
 The installer wizard title, Add/Remove-Programs entry and Start-Menu
 folder say **Creative Pic** (patched into `installer_krita.nsi` by
 `apply-branding.ps1`); the main window title reports **Creative Pic**
-(patched `KisApplication.cpp` display name).
+(patched `KisApplication.cpp` display name), the About dialog says
+**About Creative Pic**, and error/message-box titles say **Creative Pic**
+(patched `i18nc("@title:window", …)` strings — same patch set as the
+Linux build's `build-scripts/apply-creative-pic-branding.sh`).
+
+Notes kept honest about the runner environment:
+
+- `ccache` is disabled in the generated `.kde-ci.yml` for this workflow:
+  on a fresh GitHub runner a cold cache gives no speedup, and KDE's
+  ccache/cl integration is tuned for their own VM images. Build time is
+  unaffected on a cold machine.
 
 ## Current status & known caveats (kept honest)
 

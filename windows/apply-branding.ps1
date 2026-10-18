@@ -57,6 +57,35 @@ if ((Get-Content $appCpp -Raw) -notmatch 'setApplicationDisplayName\("Creative P
 }
 Write-Host "  patched: libs/ui/KisApplication.cpp (applicationDisplayName -> Creative Pic)"
 
+# 4b. About dialog title ("About Krita" -> "About Creative Pic")
+$aboutCpp = "$KritaSrc\libs\ui\dialogs\kis_about_application.cpp"
+if (Test-Path $aboutCpp) {
+    (Get-Content $aboutCpp -Raw) `
+        -replace 'i18n\("About Krita"\)', 'i18n("About Creative Pic")' `
+        | Set-Content $aboutCpp -NoNewline
+    if ((Get-Content $aboutCpp -Raw) -notmatch 'i18n\("About Creative Pic"\)') {
+        throw "about-dialog title patch did not apply"
+    }
+    Write-Host "  patched: libs/ui/dialogs/kis_about_application.cpp (About Creative Pic)"
+} else {
+    Write-Host "  note: kis_about_application.cpp not present, skipping about title"
+}
+
+# 4c. Message-box / dialog window titles: i18nc("@title:window", "Krita")
+#     -> "Creative Pic" (display strings only; GPL attribution texts and
+#     upstream website links are intentionally preserved).
+$titleMatches = 0
+Get-ChildItem "$KritaSrc\libs\ui" -Recurse -Filter *.cpp | ForEach-Object {
+    $content = Get-Content $_.FullName -Raw
+    if ($null -ne $content -and $content.Contains('i18nc("@title:window", "Krita")')) {
+        $count = ([regex]::Matches($content, [regex]::Escape('i18nc("@title:window", "Krita")'))).Count
+        $new = $content.Replace('i18nc("@title:window", "Krita")', 'i18nc("@title:window", "Creative Pic")')
+        Set-Content $_.FullName $new -NoNewline
+        $titleMatches += $count
+    }
+}
+Write-Host "  patched: $titleMatches dialog title(s) across libs/ui (@title:window Krita -> Creative Pic)"
+
 # 5. NSIS installer product name (installer wizard, Add/Remove Programs)
 $nsi = "$KritaSrc\packaging\windows\installer\installer_krita.nsi"
 if (Test-Path $nsi) {
