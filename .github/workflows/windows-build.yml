@@ -168,6 +168,24 @@ jobs:
           $fc = $fc.Replace('find_library(LibExiv2_LIBRARIES NAMES exiv2 libexiv2', "list(APPEND CMAKE_FIND_LIBRARY_SUFFIXES `".dll.a`")`r`nfind_library(LibExiv2_LIBRARIES NAMES exiv2 libexiv2")
           Set-Content $fx $fc -NoNewline
 
+          # Backport upstream commit cc113e991c "Remove our own redifinition
+          # of std::is_integral for half" (krita master, 2024-12-05): the
+          # libc++ that ships with clang 21 removed the internal
+          # __libcpp_is_integral/__libcpp_is_floating_point hooks that krita
+          # 5.2.16's KisHalfTraits.h specializes. This is upstream's own fix,
+          # needed to compile the 5.2.16 tag against the current toolchain.
+          $fh = "libs\global\KisHalfTraits.h"
+          $ch = Get-Content $fh -Raw
+          $ch = $ch -replace '(?s)#if defined __GLIBCXX__.*?#endif\r?\n\r?\n  inline bool', "  inline bool"
+          if ($ch.Contains('__libcpp_is_integral')) { throw "KisHalfTraits backport did not apply" }
+          Set-Content $fh $ch -NoNewline
+          $fm = "libs\pigment\KoMixColorsOpImpl.h"
+          $cm = Get-Content $fm -Raw
+          $cm = $cm.Replace('std::enable_if_t<std::is_floating_point<T>::value, T> divisor', 'std::enable_if_t<!std::numeric_limits<T>::is_integer, T> divisor')
+          $cm = $cm.Replace('std::enable_if_t<std::is_integral<T>::value, T> divisor', 'std::enable_if_t<std::numeric_limits<T>::is_integer, T> divisor')
+          if ($cm.Contains('std::is_floating_point<T>::value')) { throw "KoMixColorsOpImpl backport did not apply" }
+          Set-Content $fm $cm -NoNewline
+
           # ---- phase 1: fetch + merge the prebuilt deps only ----
           python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing --only-deps 2>&1 | Tee-Object -FilePath deps-fetch.log
           if ($LASTEXITCODE -ne 0) { throw "deps fetch failed (see deps-fetch.log artifact)" }
