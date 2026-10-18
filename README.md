@@ -20,19 +20,21 @@ Grab the AppImage from the [**v0.2 release page**](https://github.com/PSNarayana
 
 | File | What it is |
 |---|---|
-| `CreativePic-x86_64.AppImage` | Rebranded v0.2 build (Krita 5.2.16 engine, Creative Pic identity) |
+| `CreativePic-x86_64.AppImage` | Rebranded v0.2 build (Krita 5.2.16 engine, full Creative Pic identity incl. window title) |
 | `krita-5.2.16.tar.xz` + `.sig` | Complete corresponding source per GPL §3 (official KDE tarball + GPG signature) |
 
+> **v0.2 asset updated (title rebrand)** — the AppImage was rebuilt so the *window title bar*, *About dialog* and *splash screen* say **Creative Pic** (v0.2 originally carried the compiled-in upstream title). Splash/window-title evidence: [`evidence/creative-pic-splash.png`](evidence/creative-pic-splash.png), [`evidence/creative-pic-window-title.png`](evidence/creative-pic-window-title.png), verification log: [`evidence/creative-pic-title-verify.log`](evidence/creative-pic-title-verify.log). Internal identifiers stay `krita` on purpose (file formats, config paths, plugins — see `compliance/SOURCE-CODE-OFFER.txt`).
+
 ```
-sha256sum CreativeStudio-Ultimate-Full-x86_64.AppImage
-# 4121b810e4faf4fdd0f936bb3c5ea3ac868f03b31e00f417ea7832783f6ce535
+sha256sum CreativePic-x86_64.AppImage
+# edca6e1df20485186699e349004dd6bea70b7eaa3893f2516a739b881b37e991
 ```
 
 ## Quick start
 
 ```bash
-chmod +x CreativeStudio-Ultimate-Full-x86_64.AppImage
-./CreativeStudio-Ultimate-Full-x86_64.AppImage [file.kra|file.png|file.psd ...]
+chmod +x CreativePic-x86_64.AppImage
+./CreativePic-x86_64.AppImage [file.kra|file.png|file.psd ...]
 ```
 
 - **No installation, no root, no FUSE requirement** (extraction mode works everywhere; mount mode optional)
