@@ -51,16 +51,19 @@ jobs:
       - name: Checkout Creative Pic repository
         uses: actions/checkout@v4
 
-      - name: Setup MSVC x64 build environment
-        uses: ilammy/msvc-dev-cmd@v1 # exports cl.exe/INCLUDE/LIB for later steps
+      # NOTE: no MSVC environment — the prebuilt KDE deps for this branch are
+      # built with clang (llvm-mingw family: GNU-style .a import libraries,
+      # libc++ runtime), so krita is compiled with the same clang toolchain
+      # (see the build step; run #10 diagnosis: MSVC link.exe cannot consume
+      # the GNU import libraries).
 
       - name: Use Python 3.10 (the krita-5.2 deps line is built against python310)
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
-      - name: Install packaging tools (ninja, nsis, ccache)
-        run: choco install ninja nsis ccache -y --no-progress
+      - name: Install packaging tools (ninja, nsis)
+        run: choco install ninja nsis -y --no-progress
         shell: pwsh
 
       - name: Download and verify Krita 5.2.16 source
@@ -123,8 +126,10 @@ jobs:
           # Python3_ROOT_DIR pointing at the base 3.10 install, and CMake's
           # FindPython then prefers it over the activated venv — the base
           # python lacks the venv's modules (packaging) that the deps'
-          # sipbuild needs (run #6 diagnosis)
-          $env:KDECI_EXTRA_CMAKE_ARGS = "-DHIDE_SAFE_ASSERTS=ON -DBUILD_TESTING=OFF -DPython_EXECUTABLE=$(Get-Location)\venv\Scripts\python.exe -DPython3_EXECUTABLE=$(Get-Location)\venv\Scripts\python.exe"
+          # sipbuild needs (run #6 diagnosis). The compiler pins select the
+          # llvm-mingw clang (run #10: the deps ship GNU-style import libs
+          # and a libc++ runtime — MSVC is ABI-incompatible with them).
+          $env:KDECI_EXTRA_CMAKE_ARGS = "-DHIDE_SAFE_ASSERTS=ON -DBUILD_TESTING=OFF -DPython_EXECUTABLE=$(Get-Location)\venv\Scripts\python.exe -DPython3_EXECUTABLE=$(Get-Location)\venv\Scripts\python.exe -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++"
           $env:KDECI_REPO_METADATA_PATH = "$(Get-Location)\..\krita-deps-management\repo-metadata"
           python -m venv venv --upgrade-deps
           .\venv\Scripts\Activate.ps1
@@ -176,6 +181,10 @@ jobs:
           # AND the AUTORCC rcc.exe test — run #8 diagnosis).
           Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20261006/llvm-mingw-20261006-ucrt-x86_64.zip" -OutFile ..\llvm-mingw.zip
           Expand-Archive ..\llvm-mingw.zip -DestinationPath ..\llvm-mingw
+          $lmBin = "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\bin"
+          # clang toolchain FIRST on PATH so CMake/Ninja use it (not MSVC)
+          $env:PATH = "$lmBin;$env:PATH"
+          clang --version | Select-Object -First 1
           $installBin = Join-Path $env:KDECI_WORKDIR_PATH "krita\_install\bin"
           Copy-Item "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\x86_64-w64-mingw32\bin\libc++.dll", "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\x86_64-w64-mingw32\bin\libunwind.dll" $installBin -Force
           Get-ChildItem (Join-Path $installBin "libc++.dll"), (Join-Path $installBin "libunwind.dll") | Format-Table Name, Length
