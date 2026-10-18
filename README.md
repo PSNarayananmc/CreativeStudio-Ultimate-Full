@@ -77,11 +77,18 @@ What this demonstrates beyond the synthetic acceptance tests:
 - **Desktop integration**: launches and behaves as a normal windowed application on a stock Ubuntu session, with no bundled-library conflicts on the host
 - **Portability**: the same binary moved from the build sandbox to user hardware with zero installation steps
 
-## Windows build (in progress)
+## Windows build (released)
 
-A real Windows pipeline is running on GitHub Actions — it uses **KDE's official Krita Windows CI machinery** (prebuilt dependency packages from KDE's public artifact registry + `run-ci-build.py`) on `windows-latest` runners, with the same Creative Pic branding overlay applied to the Krita 5.2.16 source before compilation. Output: portable `CreativePic-x64-5.2.16-portable.zip` (contains `krita.exe`) + NSIS `CreativePic-x64-5.2.16-setup.exe` (unsigned — SmartScreen note in [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md)).
+A **real Windows build** produced on GitHub Actions using **KDE's official Krita Windows CI machinery** (prebuilt dependency packages from KDE's public artifact registry + `run-ci-build.py`) on `windows-latest` runners, with the same Creative Pic branding overlay applied to the Krita 5.2.16 source before compilation — window title, About dialog, message-box titles and the NSIS installer's product name all say **Creative Pic** (verified in the shipped binaries). The compiler is llvm-mingw clang, matching the ABI of KDE's prebuilt dependency packages (details in [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md)).
 
-![windows-build status](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/actions/workflows/windows-build.yml/badge.svg) — artifacts are attached to the [v0.2 release](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.2) as soon as a run produces them. Full details and caveats: [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md).
+Downloads on the [v0.2 release](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/releases/tag/v0.2):
+
+| File | Size | What it is |
+|---|---|---|
+| `CreativePic-x64-5.2.16-setup.exe` | ~142 MiB | NSIS installer (Start-menu folder, Add/Remove-Programs entry — "Creative Pic (x64)"). **Unsigned** — SmartScreen shows a warning on first launch ("More info → Run anyway") |
+| `CreativePic-x64-5.2.16-portable.zip` | ~192 MiB | Portable zip, run `bin\krita.exe` directly, no installation |
+
+![windows-build status](https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full/actions/workflows/windows-build.yml/badge.svg) — every run compiles the full Krita tree from source on a fresh runner (green on run #16 after 15 diagnosed iterations, each fix recorded in the commit history). Pipeline details and caveats: [windows/BUILD-WINDOWS.md](windows/BUILD-WINDOWS.md).
 
 ## What this is
 
