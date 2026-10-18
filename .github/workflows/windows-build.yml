@@ -33,9 +33,8 @@ jobs:
       KDECI_GITLAB_SERVER: https://invent.kde.org/
       KDECI_PACKAGE_PROJECT: teams/ci-artifacts/krita-windows
       KDECI_REPO_METADATA_PATH: ${{ github.workspace }}\krita-deps-management\repo-metadata
-      KDECI_CACHE_PATH: ${{ runner.temp }}\krita-package-cache
-      KDECI_CC_CACHE: ${{ runner.temp }}\krita-ccache
-      KDECI_WORKDIR_PATH: ${{ runner.temp }}\krita-workdir
+      # NOTE: runner.temp is not available in job-level env, so the three
+      # cache/workdir paths are set in the build step's env below.
       KDECI_COMPRESS_PACKAGES_ON_DOWNLOAD: "False"
       KDECI_EXTRA_CMAKE_ARGS: -DHIDE_SAFE_ASSERTS=ON -DBUILD_TESTING=OFF
       # --- krita packaging environment (mirrors krita's windows-release) ---
@@ -107,6 +106,10 @@ jobs:
       - name: Build Krita / Creative Pic (fetch prebuilt deps, cmake+ninja, MSVC)
         shell: pwsh
         working-directory: krita-5.2.16
+        env:
+          KDECI_CACHE_PATH: ${{ runner.temp }}\krita-package-cache
+          KDECI_CC_CACHE: ${{ runner.temp }}\krita-ccache
+          KDECI_WORKDIR_PATH: ${{ runner.temp }}\krita-workdir
         run: |
           $env:KDECI_REPO_METADATA_PATH = "$(Get-Location)\..\krita-deps-management\repo-metadata"
           python -m venv venv --upgrade-deps
