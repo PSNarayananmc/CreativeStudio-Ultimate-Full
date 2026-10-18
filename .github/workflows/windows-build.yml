@@ -122,10 +122,13 @@ jobs:
           python -m venv venv --upgrade-deps
           .\venv\Scripts\Activate.ps1
           python -m pip install --upgrade pip
-          # packaging: needed by the deps' sipbuild; cmake==3.31.6: era-correct
-          # CMake (the runner's 4.4 breaks FindLibExiv2 + Qt5::Core
-          # IMPORTED_LOCATION resolution against these 3.x-era dep configs)
-          pip install -r ..\krita-deps-management\requirements.txt packaging "cmake==3.31.6"
+          # the deps' requirements.txt is --require-hashes pinned: it MUST be
+          # installed alone. Extras go in a separate invocation: packaging is
+          # needed by the deps' sipbuild; cmake==3.31.6 is era-correct (the
+          # runner's 4.4 breaks FindLibExiv2 + Qt5::Core imported-target
+          # resolution against these 3.x-era dep configs)
+          pip install -r ..\krita-deps-management\requirements.txt
+          pip install packaging "cmake==3.31.6"
           python -u ..\krita-deps-management\tools\replace-branch-in-seed-file.py ..\krita-deps-management\latest\krita-deps.yml -p -o branch-corrected-deps.yml -d master
           python -u ..\krita-deps-management\tools\generate-deps-file.py -s branch-corrected-deps.yml -o .kde-ci.yml
           # ccache is disabled for this runner: cold cache would give no speedup
