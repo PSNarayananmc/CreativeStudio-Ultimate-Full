@@ -129,7 +129,6 @@ jobs:
           # sipbuild needs (run #6 diagnosis). The compiler pins select the
           # llvm-mingw clang (run #10: the deps ship GNU-style import libs
           # and a libc++ runtime — MSVC is ABI-incompatible with them).
-          $env:KDECI_EXTRA_CMAKE_ARGS = "-DHIDE_SAFE_ASSERTS=ON -DBUILD_TESTING=OFF -DPython_EXECUTABLE=$(Get-Location)\venv\Scripts\python.exe -DPython3_EXECUTABLE=$(Get-Location)\venv\Scripts\python.exe -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++"
           $env:KDECI_REPO_METADATA_PATH = "$(Get-Location)\..\krita-deps-management\repo-metadata"
           python -m venv venv --upgrade-deps
           .\venv\Scripts\Activate.ps1
@@ -181,13 +180,20 @@ jobs:
           # AND the AUTORCC rcc.exe test — run #8 diagnosis).
           Invoke-WebRequest -Uri "https://github.com/mstorsjo/llvm-mingw/releases/download/20261006/llvm-mingw-20261006-ucrt-x86_64.zip" -OutFile ..\llvm-mingw.zip
           Expand-Archive ..\llvm-mingw.zip -DestinationPath ..\llvm-mingw
-          $lmBin = "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\bin"
-          # clang toolchain FIRST on PATH so CMake/Ninja use it (not MSVC)
+          $lmBin = Join-Path (Get-Location).Path "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\bin"
+          $lmBin = [System.IO.Path]::GetFullPath($lmBin)
+          # clang toolchain FIRST on PATH so CMake/Ninja use it (not the
+          # preinstalled MSVC-targeting LLVM clang — run #11: a relative PATH
+          # entry broke tool resolution from other working directories)
           $env:PATH = "$lmBin;$env:PATH"
           clang --version | Select-Object -First 1
           $installBin = Join-Path $env:KDECI_WORKDIR_PATH "krita\_install\bin"
-          Copy-Item "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\x86_64-w64-mingw32\bin\libc++.dll", "..\llvm-mingw\llvm-mingw-20261006-ucrt-x86_64\x86_64-w64-mingw32\bin\libunwind.dll" $installBin -Force
+          Copy-Item (Join-Path $lmBin "..\x86_64-w64-mingw32\bin\libc++.dll"), (Join-Path $lmBin "..\x86_64-w64-mingw32\bin\libunwind.dll") $installBin -Force
           Get-ChildItem (Join-Path $installBin "libc++.dll"), (Join-Path $installBin "libunwind.dll") | Format-Table Name, Length
+          # cmake args must come after the toolchain exists: absolute compiler
+          # paths + venv python (FindPython pin)
+          $venvPy = Join-Path (Get-Location).Path "venv\Scripts\python.exe"
+          $env:KDECI_EXTRA_CMAKE_ARGS = "-DHIDE_SAFE_ASSERTS=ON -DBUILD_TESTING=OFF -DPython_EXECUTABLE=$venvPy -DPython3_EXECUTABLE=$venvPy -DCMAKE_C_COMPILER=$lmBin\clang.exe -DCMAKE_CXX_COMPILER=$lmBin\clang++.exe"
 
           # ---- phase 3: configure + compile + install (deps already merged) ----
           python -u ..\krita-deps-management\ci-utilities\run-ci-build.py --project krita --branch master --platform Windows/Qt5/Shared --skip-publishing --skip-dependencies-fetch 2>&1 | Tee-Object -FilePath build-krita.log
