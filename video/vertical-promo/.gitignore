@@ -1,0 +1,5 @@
+node_modules/
+exports/
+.env
+.DS_Store
+preview.html

@@ -1,0 +1,30 @@
+import {asset} from './assets';
+import React from 'react';
+import {AbsoluteFill,CanvasImage,Easing,interpolate,useCurrentFrame,useVideoConfig} from 'remotion';
+import {BRAND} from './theme-v2';
+export const clamp={extrapolateLeft:'clamp',extrapolateRight:'clamp'} as const;
+export const ease=Easing.bezier(.16,1,.3,1);
+export const Backdrop:React.FC<{children?:React.ReactNode;light?:boolean}>=({children,light=false})=>{
+ const frame=useCurrentFrame();
+ return <AbsoluteFill style={{background:light?'#eae2fc':BRAND.ink,color:light?BRAND.ink:BRAND.paper,fontFamily:BRAND.font,overflow:'hidden'}}>
+  <AbsoluteFill style={{background:light?'radial-gradient(ellipse at 80% 15%,#fff9,transparent 65%)':'radial-gradient(ellipse at 80% 15%,#7142bd35,transparent 65%)'}}/>
+  <div style={{position:'absolute',width:1100,height:1100,borderRadius:'50%',border:`1px solid ${light?'#634b7b18':'#bca3ff13'}`,left:290,top:510,translate:`${Math.sin(frame/100)*24}px ${Math.cos(frame/100)*24}px`}}/>
+  <div style={{position:'absolute',width:760,height:760,borderRadius:'50%',border:`1px solid ${light?'#634b7b13':'#bca3ff0d'}`,left:460,top:680}}/>{children}
+ </AbsoluteFill>;
+};
+export const Mark:React.FC<{size?:number;dark?:boolean}>=({size=64,dark=false})=><div style={{width:size,height:size,borderRadius:size*.29,background:dark?'#0b0b12':'linear-gradient(145deg,#ddcbff,#9e76eb)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}><svg width={size*.61} height={size*.61} viewBox="0 0 100 100"><path d="M50 3C53 35 65 46 97 50C65 53 54 65 50 97C46 65 35 54 3 50C35 46 46 35 50 3Z" fill={dark?'#d9c5ff':'#231637'}/></svg></div>;
+export const Brand:React.FC<{light?:boolean}>=({light=false})=><div style={{position:'absolute',top:132,left:80,right:80,display:'flex',alignItems:'center',gap:19,color:light?BRAND.ink:BRAND.paper}}><Mark size={58} dark={light}/><span style={{fontSize:32,fontWeight:600,letterSpacing:-1}}>Creative Pic</span><span style={{marginLeft:'auto',fontSize:18,letterSpacing:3,opacity:.5}}>IMAGE STUDIO</span></div>;
+export const Label:React.FC<{children:React.ReactNode;light?:boolean;style?:React.CSSProperties}>=({children,light=false,style})=><div style={{fontSize:22,fontWeight:600,letterSpacing:4,textTransform:'uppercase',color:light?'#665079':BRAND.violet,...style}}>{children}</div>;
+export const Reveal:React.FC<{children:React.ReactNode;at?:number;size?:number;color?:string;style?:React.CSSProperties}>=({children,at=0,size=110,color,style})=>{
+ const f=useCurrentFrame();const {fps}=useVideoConfig();
+ return <div style={{overflow:'hidden',paddingBottom:12,marginBottom:-12,...style}}><div style={{fontSize:size,fontWeight:600,lineHeight:1.04,letterSpacing:-size*.062,color,translate:`0 ${interpolate(f,[at,at+fps*.65],[120,0],{...clamp,easing:ease})}%`,opacity:interpolate(f,[at,at+fps*.3],[0,1],clamp)}}>{children}</div></div>;
+};
+export const Badge:React.FC<{children:React.ReactNode;color?:string}>=({children,color=BRAND.violet})=><div style={{display:'inline-flex',alignItems:'center',gap:12,padding:'14px 22px',border:`1px solid ${color}40`,borderRadius:100,background:`${color}0a`,fontSize:23,color,whiteSpace:'nowrap'}}><span style={{width:7,height:7,borderRadius:'50%',background:color}}/>{children}</div>;
+export const Screenshot:React.FC<{file:string;crop?:[number,number,number,number];width:number;height:number;style?:React.CSSProperties;focus?:string}>=({file,crop=[320,180,1280,720],width,height,style,focus='50% 50%'})=>{
+ const [x,y,w,h]=crop;const ow=file==='real-hardware-psd-youtube-template.png'?1366:1920;const oh=file==='real-hardware-psd-youtube-template.png'?768:1080;
+ const scale=Math.max(width/w,height/h);const [fx,fy]=focus.split(' ').map(v=>parseFloat(v)/100);
+ return <div style={{width,height,overflow:'hidden',position:'relative',background:'#252528',...style}}><CanvasImage src={asset(file)} style={{position:'absolute',width:ow*scale,height:oh*scale,maxWidth:'none',left:-x*scale+(width-w*scale)*fx,top:-y*scale+(height-h*scale)*fy}}/></div>;
+};
+export const Window:React.FC<{children:React.ReactNode;title:string;width?:number;style?:React.CSSProperties}>=({children,title,width=920,style})=><div style={{width,border:'1px solid #ffffff28',borderRadius:26,overflow:'hidden',background:'#17151f',boxShadow:'0 35px 100px #0005',...style}}><div style={{height:60,padding:'0 22px',display:'flex',alignItems:'center',gap:9,borderBottom:'1px solid #ffffff10'}}><span style={{width:9,height:9,borderRadius:'50%',background:'#bca3ff'}}/><span style={{width:9,height:9,borderRadius:'50%',background:'#66606e'}}/><span style={{width:9,height:9,borderRadius:'50%',background:'#66606e'}}/><span style={{fontSize:18,color:'#a9a6bd',marginLeft:17}}>{title}</span></div>{children}</div>;
+export const Brush:React.FC<{progress?:number;style?:React.CSSProperties;light?:boolean}>=({progress=1,style,light=false})=><svg viewBox="0 0 1080 700" style={{width:1080,height:700,position:'absolute',left:0,...style}}><defs><linearGradient id={light?'brushLight':'brush'} x1="0" x2="1"><stop stopColor={light?'#8a59d4':'#8151d1'}/><stop offset=".5" stopColor="#cdb4ff"/><stop offset="1" stopColor="#9bd5ea"/></linearGradient></defs><path d="M-90 540 C 100 260, 280 740, 460 415 S 850 100, 1160 305" fill="none" stroke={light?'#ae88e944':'#ac7ffb15'} strokeWidth="115" strokeLinecap="round"/><path d="M-90 540 C 100 260, 280 740, 460 415 S 850 100, 1160 305" fill="none" stroke={`url(#${light?'brushLight':'brush'})`} strokeWidth="82" strokeLinecap="round" pathLength="1" strokeDasharray="1" strokeDashoffset={1-progress}/><path d="M-90 540 C 100 260, 280 740, 460 415 S 850 100, 1160 305" fill="none" stroke="#ffffff48" strokeWidth="2" pathLength="1" strokeDasharray="1" strokeDashoffset={1-progress}/></svg>;
+export const Footer:React.FC<{index:string;light?:boolean;text?:string}>=({index,light=false,text='YOUR IDEAS. YOUR WAY.'})=><div style={{position:'absolute',left:80,right:80,bottom:184,display:'flex',justifyContent:'space-between',fontSize:18,letterSpacing:2,color:light?'#756281':'#827990'}}><span>{text}</span><span>{index} / 05</span></div>;
