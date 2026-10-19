@@ -1,0 +1,17 @@
+TITLE
+Your creative studio. Freely yours. ✦ Creative Pic #Shorts
+
+DESCRIPTION
+Big ideas deserve room to grow. Meet Creative Pic: a free, open-source creative studio built on Krita 5.2.16.
+
+Download for Linux or Windows:
+https://psnarayananmc.github.io/CreativeStudio-Ultimate-Full/
+
+Explore the project:
+https://github.com/PSNarayananmc/CreativeStudio-Ultimate-Full
+
+100+ brush presets, layers and masks, PSD import/export, and offline creation. File compatibility varies. Product visuals are genuine project screenshots, not a live screen recording; the PSD workflow capture is from the v0.1-era build.
+
+AI voiceover and original instrumental music generated with ElevenLabs. Animation by HyperFrames; edit and captions by Remotion. Built on Krita, © the Krita Foundation and contributors; GNU GPL v3 or later.
+
+#CreativePic #DigitalArt #OpenSource #Krita #Shorts

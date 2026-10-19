@@ -1,0 +1,83 @@
+name: Creative Pic YouTube Short commercial
+on:
+  push:
+    branches: [codex/creative-pic-short-commercial]
+    paths: ['shorts/**', '.github/workflows/creative-pic-short.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: creative-pic-commercial-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      HYPERFRAMES_NO_UPDATE_CHECK: '1'
+      HYPERFRAMES_SKIP_SKILLS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install Remotion dependencies
+        working-directory: shorts
+        run: npm install
+      - name: Prepare ElevenLabs audio and real product screenshots
+        working-directory: shorts
+        run: node prepare.mjs
+      - name: Mix and master narration plus music
+        working-directory: shorts
+        run: bash mix.sh
+      - name: Scaffold HyperFrames hook
+        working-directory: shorts
+        run: |
+          npx --yes hyperframes@0.8.172 init .hf-stage --non-interactive
+          cp hyperframes/index.html hyperframes/DESIGN.md .hf-stage/
+      - name: Validate the animated hook
+        working-directory: shorts/.hf-stage
+        run: |
+          npx --yes hyperframes@0.8.172 lint
+          npx --yes hyperframes@0.8.172 validate
+          npx --yes hyperframes@0.8.172 inspect
+      - name: Render HyperFrames hook
+        working-directory: shorts/.hf-stage
+        run: npx --yes hyperframes@0.8.172 render --fps 30 --quality high --workers 2 --output ../public/hook.mp4
+      - name: Check Remotion types
+        working-directory: shorts
+        run: npm run check
+      - name: Render the vertical commercial
+        working-directory: shorts
+        run: npm run render
+      - name: Export thumbnail and inspect video and audio
+        working-directory: shorts
+        run: |
+          npx remotion still src/index.ts CreativePicShort out/thumbnail.png --frame 600
+          ffprobe -v error -show_entries stream=codec_name,width,height -show_entries format=duration -of json out/creative-pic-youtube-short.mp4 > out/metadata.json
+          ffmpeg -hide_banner -i out/creative-pic-youtube-short.mp4 -af loudnorm=I=-14:TP=-1.5:LRA=8:print_format=json -f null - 2> out/loudness-report.txt
+          cp captions.json out/
+          cp upload-description.txt out/
+      - name: Save the finished commercial
+        uses: actions/upload-artifact@v4
+        with:
+          name: creative-pic-youtube-short
+          path: shorts/out/
+          retention-days: 30
+      - name: Save editable source and generated audio
+        uses: actions/upload-artifact@v4
+        with:
+          name: creative-pic-short-editable-source
+          path: |
+            shorts/src/
+            shorts/hyperframes/
+            shorts/public/
+            shorts/package.json
+            shorts/tsconfig.json
+            shorts/captions.json
+            shorts/DESIGN.md
+            shorts/README.md
+            shorts/mix.sh
+          retention-days: 30
