@@ -6,7 +6,8 @@
     "studio": "remotion studio src/index.ts --no-open --port=3000",
     "typecheck": "tsc --noEmit",
     "render": "remotion render src/index.ts CreativePic-Promo exports/creative-pic-promo.mp4 --crf=14 --image-format=png",
-    "preview": "node references/build-preview.cjs"
+    "preview": "node references/build-preview.cjs",
+    "render:reference": "remotion render src/index.ts CreativePic-ReferenceStyle exports/creative-pic-reference-style.mp4 --crf=14 --image-format=png"
   },
   "dependencies": {
     "@fontsource/inter": "5.2.8",

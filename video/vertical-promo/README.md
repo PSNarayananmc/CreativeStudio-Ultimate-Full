@@ -50,3 +50,9 @@ Creative Pic is a desktop image studio built on Krita 5.2.16, distributed by its
 Inter is bundled under the SIL Open Font License, included in `public/FONT-LICENSE.txt`. Remotion has its own licensing terms; see https://www.remotion.dev/license.
 
 The design and plan in `docs/superpowers/` reflect the direction approved in chat. No external reference videos were supplied; visual direction comes from the product's own landing page.
+
+## Reference-style revision
+
+Select `CreativePic-ReferenceStyle` for the revised 20-second vertical cut inspired by the user-uploaded agency reel. It uses a black/white editorial opening, circular logo aperture, lime/purple screen stacks, fast product crops and a collapsed-stack brand close. The previous `CreativePic-Promo` composition remains available.
+
+Export the new version with `npm run render:reference`. The reference breakdown is in `references/template-breakdown.md`. The uploaded reference is not redistributed.
